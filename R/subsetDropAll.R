@@ -1,5 +1,5 @@
 ##' @title Drop unused levels after subset
-##' @name subset.drop.all
+##' @name subsetDropAll
 ##'
 ##' @description This function is designed to be used in place of
 ##'     \code{\link[base]{subset}} when you want to drop off all empty
@@ -17,12 +17,12 @@
 ##'     one or more levels emptied after the subset, will have this
 ##'     levels droped off.
 ##'
-##' @author Fernando Mayer \email{fernando.mayer@ufpr.br}
+##' @author Fernando Mayer
 ##'
 ##' @seealso \code{\link[base]{subset}}
 ##'
 ##' @export
-subset.drop.all <- function(x, ...){
+subsetDropAll <- function(x, ...){
     if(!is.data.frame(x)) stop("'x' must be a data.frame")
     x <- subset(x, ...)
     factors <- which(sapply(x, class) %in% "factor")
