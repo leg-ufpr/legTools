@@ -1,10 +1,24 @@
 Package: legTools
 Title: Convenience Functions, Small GUI to Teach Statistics and Some Datasets
 Version: 0.1-0
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: legTools is a collection of R functions and datasets, maintained by the LEG group (Statistics and Geoinformation Laboratory).
-Depends: R (>= 3.2.1)
+Authors@R: person("LEG", "Core Team", email = "leg.ufpr@gmail.com", role = c("aut", "cre"))
+Description:
+    legTools is a collection of R functions and datasets used for
+    academic purposes. These functions mainly include small GUI to teach
+    statistics, conveninece functions to visualize data and datasets,
+    nost part of them from books. It is maintained by the LEG group (Statistics and
+    Geoinformation Laboratory). Please visit http://www.leg.ufpr.br.
+Depends:
+    R (>= 3.2.1)
+Imports:
+    lattice,
+    latticeExtra
+Suggests:
+    plyr,
+    rpanel,
+    gWidgets
 License: GPL-3 | file LICENSE
 URL: http://git.leg.ufpr.br/leg/legTools
 BugReports: http://git.leg.ufpr.br/leg/legTools/issues
 LazyData: true
+
