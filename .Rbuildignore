@@ -1,0 +1,7 @@
+README.md
+Rplots.pdf
+.gitignore
+.Rprofile
+^\.travis\.yml$
+^\.git$
+^data-raw$
