@@ -17,7 +17,7 @@ Estatística e Geoinformação*).
 
 This R package is develop using [`roxygen2`][] for documentation and
 [`devtools`] to check and build. Please, see the
-[instructions for contributing][./contributing.md] to collaborate.
+[instructions for contributing](./contributing.md) to collaborate.
 
 To contribute wit
 
