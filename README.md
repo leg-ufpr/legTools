@@ -13,6 +13,14 @@ Estatística e Geoinformação*).
 
 ## Documentation
 
+## Contributing
+
+This R package is develop using [`roxygen2`][] for documentation and
+[`devtools`] to check and build. Please, see the
+[instructions for contributing][./contributing.md] to collaborate.
+
+To contribute wit
+
 ## License
 
 This package is released under the
@@ -24,3 +32,5 @@ See [LICENSE](./LICENSE)
 <!-- links -->
 
 [GNU General Public License (GPL) v3.0]: http://www.gnu.org/licenses/gpl-3.0.html
+[`roxygen2`]: https://github.com/klutometis/roxygen
+[`devtools`]: https://github.com/hadley/devtools
