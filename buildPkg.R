@@ -10,14 +10,19 @@ if(!grepl(x=getwd(), pattern="/legTools$")){
 
 ## Create/update NAMESPACE, *.Rd files.
 document()
+
+## Check documentation.
 check_doc()
 
+## Check functions, datasets, run examples, etc.
 check()
-## Updating legTools documentation
-## Loading legTools
-## Warning message:
-## In setup_ns_exports(pkg, export_all) :
-##   Objects listed as exports, but not present in namespace: wgpigs
+
+## Load the package.
+load_all()
+
+## Show all exported objects.
+ls("package:legTools")
+packageVersion("legTools")
 
 ## build()
 ## build_win()
