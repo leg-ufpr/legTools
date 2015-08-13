@@ -1,13 +1,12 @@
 ##----------------------------------------------------------------------
 ## Data generation.
 
-da <- read.table("http://www.leg.ufpr.br/~walmes/data/pimentel_racoes.txt",
-                 header=TRUE, sep="\t")
-names(da) <- c("ft","wg")
-str(da)
+wgpigs <- read.table("http://www.leg.ufpr.br/~walmes/data/pimentel_racoes.txt",
+                     header=TRUE, sep="\t")
+names(wgpigs) <- c("ft","wg")
+str(wgpigs)
 
-save(da, file="../data/wgpigs.rda")
-wgpigs <- da
+save(wgpigs, file="../data/wgpigs.RData")
 
 ##----------------------------------------------------------------------
 ## Examples.
@@ -17,3 +16,8 @@ require(lattice)
 xyplot(wg~ft, data=wgpigs,
        ylab="Weight gain (kg)",
        xlab="Feeding type")
+
+rm(list=ls())
+load("../data/wgpigs.RData")
+ls()
+str(wgpigs)
