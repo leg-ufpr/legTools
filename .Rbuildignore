@@ -1,6 +1,7 @@
 README.md
 Rplots.pdf
 contributing.md
+buildPkg.R
 .gitignore
 .Rprofile
 ^\.travis\.yml$
