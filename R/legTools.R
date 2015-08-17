@@ -44,3 +44,40 @@ NULL
 #'        xlab="Feeding type")
 #'
 NULL
+
+#' @name potatoyield
+#'
+#' @title Potato variety competition experiment
+#' 
+#' @description These data are from an experiment done by the engineer
+#' Oscar A. Garay at Balcare, Argentina. The experiment was done in a
+#' randomized complete block design with 4 blocks. Potato yield (t
+#' ha^{-1}) was recorded in each experimental unit.
+#'
+#' \itemize{
+#'     \item block a categorical unordered factor with 4 levels.
+#'     \item variety a categorical unordered factor with 8 levels.
+#'     \item yield potato yield (t ha^{-1}).
+#' }
+#'
+#' @docType data
+#' 
+#' @keywords datasets
+#' 
+#' @usage data(potatoyield)
+#' 
+#' @format a \code{data.frame} with 32 records and 3 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estat{\'i}stica Experimental
+#' (15th ed.). Piracicaba, S{\~a}o Paulo: FEALQ. (page 76)
+#'
+#' @examples
+#' require(lattice)
+#' data(potatoyield)
+#' 
+#' plot(yield~variety, data=potatoyield,
+#'      groups=block, type="o",
+#'      ylab=expression(Yield~(t~ha^{-1})),
+#'      xlab="Variety")
+#' 
+NULL
