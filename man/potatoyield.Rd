@@ -6,8 +6,8 @@
 \title{Potato variety competition experiment}
 \format{a \code{data.frame} with 32 records and 3 variables.}
 \source{
-Frederico, P. (2009). Curso de Estat{\'i}stica Experimental
-(15th ed.). Piracicaba, S{\~a}o Paulo: FEALQ. (page 76)
+Frederico, P. (2009). Curso de Estatística Experimental
+(15th ed.). Piracicaba, São Paulo: FEALQ. (page 76)
 }
 \usage{
 data(potatoyield)

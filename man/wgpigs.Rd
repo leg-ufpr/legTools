@@ -6,8 +6,8 @@
 \title{Feeding type in pig weight gain}
 \format{a \code{data.frame} with 20 records and 2 variables.}
 \source{
-Frederico, P. (2009). Curso de Estat{\'i}stica Experimental
-(15th ed.). Piracicaba, S{\~a}o Paulo: FEALQ.
+Frederico, P. (2009). Curso de Estatística Experimental
+(15th ed.). Piracicaba, São Paulo: FEALQ.
 }
 \usage{
 data(wgpigs)
