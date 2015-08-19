@@ -17,14 +17,14 @@ These data are from an experiment done by the engineer
 Duvilio Ometto to study the effect of plowing level on corn yield. It
 was used 2 levels of plowing: normal (or superficial) and deep. The
 experiment was done in a randomized complete block design with 6
-blocks. Corn yield (t ha^{-1}) was recorded in each experimental unit
+blocks. Corn yield (t/ha) was recorded in each experimental unit
 but in this experiment there was 2 experimental units for each factor
 level in each block.
 
 \itemize{
     \item block a categorical unordered factor with 6 levels.
     \item plow a categorical unordered factor with 2 levels.
-    \item yield corn yield (kg in 200 m^{2} of area).
+    \item yield corn yield (kg in 200 m\eqn{^2} of area).
 }
 }
 \examples{

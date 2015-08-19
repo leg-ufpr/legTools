@@ -51,13 +51,13 @@ NULL
 #'
 #' @description These data are from an experiment done by the engineer
 #' Oscar A. Garay at Balcare, Argentina. The experiment was done in a
-#' randomized complete block design with 4 blocks. Potato yield (t
-#' ha^{-1}) was recorded in each experimental unit.
+#' randomized complete block design with 4 blocks. Potato yield (t/ha)
+#' was recorded in each experimental unit.
 #'
 #' \itemize{
 #'     \item block a categorical unordered factor with 4 levels.
 #'     \item variety a categorical unordered factor with 8 levels.
-#'     \item yield potato yield (t ha^{-1}).
+#'     \item yield potato yield (t/ha).
 #' }
 #'
 #' @docType data
@@ -90,14 +90,14 @@ NULL
 #' Duvilio Ometto to study the effect of plowing level on corn yield. It
 #' was used 2 levels of plowing: normal (or superficial) and deep. The
 #' experiment was done in a randomized complete block design with 6
-#' blocks. Corn yield (t ha^{-1}) was recorded in each experimental unit
+#' blocks. Corn yield (t/ha) was recorded in each experimental unit
 #' but in this experiment there was 2 experimental units for each factor
 #' level in each block.
 #'
 #' \itemize{
 #'     \item block a categorical unordered factor with 6 levels.
 #'     \item plow a categorical unordered factor with 2 levels.
-#'     \item yield corn yield (kg in 200 m^{2} of area).
+#'     \item yield corn yield (kg in 200 m\eqn{^2} of area).
 #' }
 #'
 #' @docType data
