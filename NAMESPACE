@@ -2,3 +2,7 @@
 
 export(poly.gui)
 export(subsetDropAll)
+export(twoStripCombined)
+import(gWidgets)
+import(gWidgetstcltk)
+import(lattice)
