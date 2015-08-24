@@ -1,6 +1,6 @@
 #' @title Polynomial regression GUI
-#' 
-#' @name poly.gui
+#'
+#' @name polyGui
 #'
 #' @description This function opens a interface to control the
 #' polynomial degree in linear regression. It shows the observed values
@@ -9,7 +9,7 @@
 #' that \code{gWidgets} and \code{gWidgetstcltk} packages are available.
 #'
 #' @param x,y independent and dependent (numeric) regression variables.
-#' 
+#'
 #' @param data an optional \code{data.frame}.
 #'
 #' @param er stands for extend range. It is used to extend the plotting
@@ -18,20 +18,22 @@
 #'
 #' @return None is returned by the function.
 #'
+#' @import gWidgets gWidgetstcltk
+#'
 #' @export
 #' @examples
 #' \donttest{
-#' 
+#'
 #' poly.gui(x=area, y=peri, data=rock, er=0.3)
 #' poly.gui(x=speed, y=dist, data=cars, er=0.3)
 #' poly.gui(x=eruptions, y=waiting, data=faithful, er=0.3)
-#' 
+#'
 #' }
 poly.gui <- function(x, y, data, er=0.05){
     ##
     ##-------------------------------------------
     ## Loading the required packages.
-    ## 
+    ##
     if (!requireNamespace("gWidgets", quietly=TRUE)){
         stop("`gWidgets` needed for this function to work. Please install it.",
              call.=FALSE)
@@ -40,13 +42,13 @@ poly.gui <- function(x, y, data, er=0.05){
         stop("`gWidgetstcltk` needed for this function to work. Please install it.",
              call.=FALSE)
     }
-    stopifnot(require(gWidgets))
-    stopifnot(require(gWidgetstcltk))
+    ## stopifnot(require(gWidgets))
+    ## stopifnot(require(gWidgetstcltk))
     options(guiToolkit="tcltk")
     ##
     ##-------------------------------------------
     ## Functions to annotate in the plot upper margin.
-    ## 
+    ##
     annotations <- function(lm.obj){
         mtext(side=3, adj=0, line=1.5,
               text=sprintf("X rank: %i", lm.obj$rank))
@@ -60,7 +62,7 @@ poly.gui <- function(x, y, data, er=0.05){
                             sm$coeff[length(coef(lm.obj)), 4])
         mtext(side=3, adj=1, line=2.5, text=lastcoef)
         mtext(side=3, adj=1, line=1.5,
-              text=sprintf("R² (adj. R²): %0.2f (%0.2f)",
+              text=sprintf("R^2 (adj. R^2): %0.2f (%0.2f)",
                   100*sm$r.squared, 100*sm$adj.r.squared))
     }
     ##
@@ -81,7 +83,7 @@ poly.gui <- function(x, y, data, er=0.05){
     ##
     ##-------------------------------------------
     ## Function controled by the GUI.
-    ## 
+    ##
     draw.poly <- function(h, ...){
         svalue(degree) <- min(c(
             max(c(1L, svalue(degree)+h$action$val)),
@@ -104,7 +106,7 @@ poly.gui <- function(x, y, data, er=0.05){
     ##
     ##-------------------------------------------
     ## Building the GUI.
-    ## 
+    ##
     w <- gwindow(title="Polynomial regression", visible=FALSE)
     g <- ggroup(container=w, horizontal=FALSE)
     gg_label <- ggroup(container=g)
