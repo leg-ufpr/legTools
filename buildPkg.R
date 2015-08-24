@@ -19,7 +19,7 @@ check_doc()
 
 ## Check functions, datasets, run examples, etc. Using cleanup = FALSE
 ## and check_dir = "../" will create a directory named legTools.Rcheck
-## with all the logs, manuals, figures from exemples, etc.
+## with all the logs, manuals, figures from examples, etc.
 check(cleanup = FALSE, manual = TRUE, vignettes = FALSE,
       check_dir = "../")
 

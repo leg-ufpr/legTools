@@ -2,7 +2,7 @@
 % Please edit documentation in R/twoStripCombined.R
 \name{twoStripCombined}
 \alias{twoStripCombined}
-\title{Combine two strips in one to save space}
+\title{Combine two (lattice) strips in one to save space}
 \usage{
 twoStripCombined(textPos = c("border", "center"), sep = ": ",
   invert = TRUE, which.given, which.panel, factor.levels, var.name,
@@ -24,11 +24,12 @@ placed on left strip side.}
 \item{which.given,which.panel,factor.levels,var.name,strip.names,bg,...}{arguments of \link[lattice]{strip.default}.}
 }
 \description{
-this function allow combine tow strips in one to save
-space. It was designed to be used with two conditioning variables.
+This function allows combining two strips in one to save
+space in lattice graphics. It was designed to be used with two
+conditioning variables.
 }
 \examples{
-require(lattice)
+library(lattice)
 
 xyplot(yield~K|N+P, data=npk, type=c("p","a"))
 

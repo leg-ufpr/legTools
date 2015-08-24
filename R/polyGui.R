@@ -2,10 +2,10 @@
 #'
 #' @name polyGui
 #'
-#' @description This function opens a interface to control the
+#' @description This function opens an interface to control the
 #' polynomial degree in linear regression. It shows the observed values
 #' and the corresponding fitted curve superimposed with confidence bands
-#' (for the fitted value) and show the residuals plot too. It assumes
+#' (for the fitted values) and also show the residuals plot. It assumes
 #' that \code{gWidgets} and \code{gWidgetstcltk} packages are available.
 #'
 #' @param x,y independent and dependent (numeric) regression variables.

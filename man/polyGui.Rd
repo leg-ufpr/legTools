@@ -19,10 +19,10 @@ range by a fraction on both sides and directions. Default is
 None is returned by the function.
 }
 \description{
-This function opens a interface to control the
+This function opens an interface to control the
 polynomial degree in linear regression. It shows the observed values
 and the corresponding fitted curve superimposed with confidence bands
-(for the fitted value) and show the residuals plot too. It assumes
+(for the fitted values) and also show the residuals plot. It assumes
 that \code{gWidgets} and \code{gWidgetstcltk} packages are available.
 }
 \examples{

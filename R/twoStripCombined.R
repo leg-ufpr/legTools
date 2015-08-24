@@ -1,9 +1,10 @@
-#' @title Combine two strips in one to save space
+#' @title Combine two (lattice) strips in one to save space
 #'
 #' @name twoStripCombined
 #'
-#' @description this function allow combine tow strips in one to save
-#' space. It was designed to be used with two conditioning variables.
+#' @description This function allows combining two strips in one to save
+#' space in lattice graphics. It was designed to be used with two
+#' conditioning variables.
 #'
 #' @param textPos position of the strip annotation. The \code{"border"}
 #' value indicates that the first conditioning variable is to be aligned
@@ -26,7 +27,7 @@
 #'
 #' @examples
 #'
-#' require(lattice)
+#' library(lattice)
 #'
 #' xyplot(yield~K|N+P, data=npk, type=c("p","a"))
 #'
