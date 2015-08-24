@@ -1,4 +1,4 @@
-# legTools 0.1-0
+# legTools 0.1.1
 
 An R package containing convenience functions, small GUI to teach
 statistics and some datasets.

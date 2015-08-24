@@ -1,6 +1,6 @@
 Package: legTools
 Title: Convenience Functions, Small GUI to Teach Statistics and Some Datasets
-Version: 0.1-1
+Version: 0.1.1
 Authors@R: person("LEG", "Core Team", email = "leg.ufpr@gmail.com", role =
     c("aut", "cre"))
 Description: legTools is a collection of R functions and datasets used for
