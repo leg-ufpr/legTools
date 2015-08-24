@@ -24,12 +24,12 @@
 #' @examples
 #' \donttest{
 #'
-#' poly.gui(x=area, y=peri, data=rock, er=0.3)
-#' poly.gui(x=speed, y=dist, data=cars, er=0.3)
-#' poly.gui(x=eruptions, y=waiting, data=faithful, er=0.3)
+#' polyGui(x=area, y=peri, data=rock, er=0.3)
+#' polyGui(x=speed, y=dist, data=cars, er=0.3)
+#' polyGui(x=eruptions, y=waiting, data=faithful, er=0.3)
 #'
 #' }
-poly.gui <- function(x, y, data, er=0.05){
+polyGui <- function(x, y, data, er=0.05){
     ##
     ##-------------------------------------------
     ## Loading the required packages.
