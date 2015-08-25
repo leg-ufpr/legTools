@@ -15,7 +15,7 @@ Estatística e Geoinformação*).
 
 Use the `devtools` package (available from
 [CRAN](http://cran-r.c3sl.ufpr.br/web/packages/devtools/index.html)) to
-install automatically from this GitLub repository:
+install automatically from this GitLab repository:
 
 ```r
 library(devtools)
