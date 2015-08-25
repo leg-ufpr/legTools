@@ -1,0 +1,9 @@
+v 0.1.1
+  - Added functions: polyGui, twoStripCombined
+  - Script buildPkg.R updated to send source tarball, compiled zip
+    and manual to remote server
+
+v 0.1.0
+  - Initial version
+  - Added datasets: plowing, potatoyield, wgpigs
+  - Added functions: subsetDropAll
