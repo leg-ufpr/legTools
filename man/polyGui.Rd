@@ -34,4 +34,7 @@ polyGui(x=eruptions, y=waiting, data=faithful, er=0.3)
 
 }
 }
+\author{
+Walmes Zeviani, \email{walmes@ufpr.br}
+}
 

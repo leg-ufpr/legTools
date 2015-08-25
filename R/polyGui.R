@@ -20,6 +20,8 @@
 #'
 #' @import gWidgets gWidgetstcltk
 #'
+#' @author Walmes Zeviani, \email{walmes@@ufpr.br}
+#'
 #' @export
 #' @examples
 #' \donttest{
