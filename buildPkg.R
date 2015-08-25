@@ -32,9 +32,21 @@ packageVersion("legTools")
 
 ## Build the package (it will be one directory up)
 build(manual = TRUE, vignettes = FALSE)
-## build_win()
+# build the binary version for windows
+build_win()
 
 ## Test install with install.packages
-pkg <- paste("../legTools_", packageVersion("legTools"),
-             ".tar.gz", sep = "")
+pkg <- paste0("../legTools_", packageVersion("legTools"), ".tar.gz")
 install.packages(pkg, repos = NULL)
+
+##======================================================================
+## Sending package tarballs and manual to remote server to be
+## downloadable
+pkg.win <- paste0("../legTools_", packageVersion("legTools"), ".zip")
+cmd.win <- paste("cd ../legTools.Rcheck && zip -r", pkg.win, "legTools")
+system(cmd.win)
+man <- "../legTools.Rcheck/legTools-manual.pdf"
+cmd <- paste("scp -P $PATAXOP", pkg, man, pkg.win,
+             "fernandomayer@$PATAXO:~/public_html/legTools")
+system(cmd)
+##======================================================================
