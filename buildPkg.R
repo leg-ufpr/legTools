@@ -11,6 +11,9 @@ if(!grepl(x=getwd(), pattern="/legTools$")){
 ## Packages
 library(devtools)
 
+## Load the package (to make functiona available)
+load_all()
+
 ## Create/update NAMESPACE, *.Rd files.
 document()
 
@@ -23,8 +26,11 @@ check_doc()
 check(cleanup = FALSE, manual = TRUE, vignettes = FALSE,
       check_dir = "../")
 
-## Load the package.
-load_all()
+## Examples
+# Run examples from all functions of the package
+# run_examples()
+# Run examples from a specific function
+# dev_example("loessGui")
 
 ## Show all exported objects.
 ls("package:legTools")
