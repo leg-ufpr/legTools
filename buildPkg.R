@@ -32,8 +32,8 @@ packageVersion("legTools")
 
 ## Build the package (it will be one directory up)
 build(manual = TRUE, vignettes = FALSE)
-# build the binary version for windows
-build_win()
+# build the binary version for windows (not used)
+# build_win()
 
 ## Test install with install.packages
 pkg <- paste0("../legTools_", packageVersion("legTools"), ".tar.gz")
