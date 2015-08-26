@@ -19,9 +19,10 @@ randomized complete block design with 4 blocks. Potato yield (t/ha)
 was recorded in each experimental unit.
 
 \itemize{
-    \item block a categorical unordered factor with 4 levels.
-    \item variety a categorical unordered factor with 8 levels.
-    \item yield potato yield (t/ha).
+    \item \code{block} a categorical unordered factor with 4 levels.
+    \item \code{variety} a categorical unordered factor with 8
+    levels.
+    \item \code{yield} potato yield (t/ha).
 }
 }
 \examples{

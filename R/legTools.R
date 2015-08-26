@@ -19,8 +19,9 @@ NULL
 #' from the beggining to the end of the experiment.
 #'
 #' \itemize{
-#'     \item ft feeding type, a categorical factor with 4 levels.
-#'     \item wg weight gain (kg).
+#'     \item \code{ft} feeding type, a categorical factor with 4
+#'     levels.
+#'     \item \code{wg} weight gain (kg).
 #' }
 #'
 #' @docType data
@@ -55,9 +56,10 @@ NULL
 #' was recorded in each experimental unit.
 #'
 #' \itemize{
-#'     \item block a categorical unordered factor with 4 levels.
-#'     \item variety a categorical unordered factor with 8 levels.
-#'     \item yield potato yield (t/ha).
+#'     \item \code{block} a categorical unordered factor with 4 levels.
+#'     \item \code{variety} a categorical unordered factor with 8
+#'     levels.
+#'     \item \code{yield} potato yield (t/ha).
 #' }
 #'
 #' @docType data
@@ -95,9 +97,9 @@ NULL
 #' level in each block.
 #'
 #' \itemize{
-#'     \item block a categorical unordered factor with 6 levels.
-#'     \item plow a categorical unordered factor with 2 levels.
-#'     \item yield corn yield (kg in 200 m\eqn{^2} of area).
+#'     \item \code{block} a categorical unordered factor with 6 levels.
+#'     \item \code{plow} a categorical unordered factor with 2 levels.
+#'     \item \code{yield} corn yield (kg in 200 m\eqn{^2} of area).
 #' }
 #'
 #' @docType data
