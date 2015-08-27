@@ -21,8 +21,9 @@ experimental unit was a pig. The response measured was weight gain
 from the beggining to the end of the experiment.
 
 \itemize{
-    \item ft feeding type, a categorical factor with 4 levels.
-    \item wg weight gain (kg).
+    \item \code{ft} feeding type, a categorical factor with 4
+    levels.
+    \item \code{wg} weight gain (kg).
 }
 }
 \examples{
