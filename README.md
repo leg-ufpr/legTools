@@ -61,7 +61,8 @@ The reference manual in PDF can be found here: [legTools-manual.pdf][]
 ## Contributing
 
 This R package is develop using [`roxygen2`][] for documentation and
-[`devtools`] to check and build. Please, see the
+[`devtools`] to check and build. Also, we adopt the [Gitflow worflow][]
+in this repository. Please, see the
 [instructions for contributing](./contributing.md) to collaborate.
 
 ## License
@@ -80,3 +81,4 @@ See [LICENSE](./LICENSE)
 [legTools_0.1.1.tar.gz]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools_0.1.1.tar.gz
 [legTools_0.1.1.zip]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools_0.1.1.zip
 [legTools-manual.pdf]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools-manual.pdf
+[Gitflow worflow]: http://nvie.com/posts/a-successful-git-branching-model/
