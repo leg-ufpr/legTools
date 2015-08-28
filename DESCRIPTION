@@ -14,7 +14,8 @@ Imports:
     lattice
 Depends:
     gWidgets,
-    gWidgetstcltk
+    gWidgetstcltk,
+    knitr
 License: GPL-3 | file LICENSE
 URL: http://git.leg.ufpr.br/leg/legTools
 BugReports: http://git.leg.ufpr.br/leg/legTools/issues
