@@ -11,7 +11,8 @@ Description: legTools is a collection of R functions and datasets used for
 Depends:
     R (>= 3.2.1)
 Imports:
-    lattice
+    lattice,
+    latticeExtra
 Depends:
     gWidgets,
     gWidgetstcltk,
