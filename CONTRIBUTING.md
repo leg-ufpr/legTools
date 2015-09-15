@@ -16,11 +16,11 @@ two links: [A successful Git branching model][], and
 Basically, all the ongoing development is made in the `devel`
 branch. New features and bug fixes are made in additional (parallell)
 branches such like `feature/<num>`, where `<num>` is an incremental
-number. Feature branches are merged with the `devel` branch. When a new
-version is supposed to be ready for release, it is moved to the
-`release` branch, where final tests are made to guarantee it is
-stable. Only then it is moved to the `master` branch, where it receives
-a tag with the version number.
+number. Feature branches are merged with the `devel` branch, where final
+tests are made to guarantee it is stable. Only then it is moved to the
+`master` branch, where it receives a tag with the version number. Note
+that we don't use a `release` branch as in a traditional Gitflow
+workflow (this is the only difference).
 
 This way, users may opt to install the stable version, from the `master`
 branch, or they may install the development version from the `devel`
