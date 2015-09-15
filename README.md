@@ -1,4 +1,4 @@
-# legTools 0.1.1
+# legTools 0.1.2
 
 An R package containing convenience functions, small GUI to teach
 statistics and some datasets.
@@ -22,18 +22,18 @@ library(devtools)
 install_git("http://git.leg.ufpr.br/leg/legTools.git")
 ```
 
-Alternatively, download the package tarball: [legTools_0.1.1.tar.gz][]
+Alternatively, download the package tarball: [legTools_0.1.2.tar.gz][]
 and run from a UNIX terminal (make sure you are on the container file
 directory):
 
 ```shell
-R CMD INSTALL -l /path/to/your/R/library legTools_0.1.1.tar.gz
+R CMD INSTALL -l /path/to/your/R/library legTools_0.1.2.tar.gz
 ```
 
 Or, inside an `R` session:
 
 ```r
-install.packages("legTools_0.1.1.tar.gz", repos = NULL,
+install.packages("legTools_0.1.2.tar.gz", repos = NULL,
                  lib.loc = "/path/to/your/R/library"
                  dependencies = TRUE)
 ```
@@ -45,14 +45,30 @@ library.
 
 ### Windows
 
-Download Windows binary version: [legTools_0.1.1.zip][] (**do not unzip
+Download Windows binary version: [legTools_0.1.2.zip][] (**do not unzip
 it under Windows**), put the file in your working directory, and from
 inside `R`:
 
 ```r
-install.packages("legTools_0.1.1.zip", repos = NULL,
+install.packages("legTools_0.1.2.zip", repos = NULL,
                  dependencies = TRUE)
 ```
+
+### Development version
+
+By default, if you use `devtools::install_git()`, or download any of the
+package tarball or Windows binary version, it will install the stable
+version of the package (from the `master` branch of this repository).
+
+If you want to install the development version, you can use
+
+```r
+library(devtools)
+install_git("http://git.leg.ufpr.br/leg/legTools.git", branch = "devel")
+```
+
+Note that the development version can contain bugs and other unknown
+features, so use it at your own risk!
 
 ## Documentation
 
