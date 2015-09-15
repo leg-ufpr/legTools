@@ -27,16 +27,17 @@ page.}
 \item{publish}{logical, if the post is to be published or stay in
 draft mode.}
 
-\item{write}{logical, is the result of knit be written to a html
-    file. This is useful to copy from this file and paste inside the
-    wordpress post editor (on text mode, not visual mode).}
+\item{write}{logical, if the result of knit should be written to a
+    html file. This is useful to copy from this file and paste inside
+    the Wordpress editor (on text mode, not visual mode).}
 }
 \value{
-None is returned by the function.
+Nothing is returned by the function.
 }
 \description{
-This function improves the \code{RWordPress::knit2wp} to
-    allow properly render code when using Crayon Sintax Highlighter.
+This function improves \code{RWordPress::knit2wp} to
+    allow properly render code when using Crayon Sintax Highlighter
+    in Wordpress.
 }
 \examples{
 \donttest{
