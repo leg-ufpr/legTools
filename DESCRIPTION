@@ -1,6 +1,6 @@
 Package: legTools
 Title: Convenience Functions, Small GUI to Teach Statistics and Some Datasets
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: person("LEG", "Core Team", email = "leg@ufpr.br", role =
     c("aut", "cre"))
 Description: legTools is a collection of R functions and datasets used for
@@ -16,7 +16,9 @@ Imports:
 Depends:
     gWidgets,
     gWidgetstcltk,
-    knitr
+    knitr,
+    markdown,
+    RWordPress
 License: GPL-3 | file LICENSE
 URL: http://git.leg.ufpr.br/leg/legTools
 BugReports: http://git.leg.ufpr.br/leg/legTools/issues
