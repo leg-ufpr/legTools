@@ -30,7 +30,7 @@ check(cleanup = FALSE, manual = TRUE, vignettes = FALSE,
 # Run examples from all functions of the package
 # run_examples()
 # Run examples from a specific function
-# dev_example("loessGui")
+# dev_example("yscale.components.right")
 
 ## Show all exported objects.
 ls("package:legTools")

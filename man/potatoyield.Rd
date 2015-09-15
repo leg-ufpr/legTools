@@ -6,17 +6,17 @@
 \title{Potato variety competition experiment}
 \format{a \code{data.frame} with 32 records and 3 variables.}
 \source{
-Frederico, P. (2009). Curso de Estatística Experimental
-(15th ed.). Piracicaba, São Paulo: FEALQ. (page 76)
+Frederico, P. (2009). Curso de Estatística Experimental (15th
+    ed.). Piracicaba, São Paulo: FEALQ. (page 76)
 }
 \usage{
 data(potatoyield)
 }
 \description{
 These data are from an experiment done by the engineer
-Oscar A. Garay at Balcare, Argentina. The experiment was done in a
-randomized complete block design with 4 blocks. Potato yield (t/ha)
-was recorded in each experimental unit.
+    Oscar A. Garay at Balcare, Argentina. The experiment was done in
+    a randomized complete block design with 4 blocks. Potato yield
+    (t/ha) was recorded in each experimental unit.
 
 \itemize{
     \item \code{block} a categorical unordered factor with 4 levels.
