@@ -39,9 +39,9 @@ install.packages("legTools_0.1.2.tar.gz", repos = NULL,
 ```
 
 Note that `-l /path/to/your/R/library` in the former and `lib.loc =
-"/path/to/your/R/library"` in the latter are optional. Only use it if you
-want to install in a personal library, other than the standard R
-library. 
+"/path/to/your/R/library"` in the latter are optional. Only use it if
+you want to install in a personal library, other than the standard R
+library.
 
 ### Windows
 
@@ -94,7 +94,7 @@ See [LICENSE](./LICENSE)
 [GNU General Public License (GPL) v3.0]: http://www.gnu.org/licenses/gpl-3.0.html
 [`roxygen2`]: https://github.com/klutometis/roxygen
 [`devtools`]: https://github.com/hadley/devtools
-[legTools_0.1.1.tar.gz]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools_0.1.1.tar.gz
-[legTools_0.1.1.zip]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools_0.1.1.zip
+[legTools_0.1.1.tar.gz]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools_0.1.2.tar.gz
+[legTools_0.1.1.zip]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools_0.1.2.zip
 [legTools-manual.pdf]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools-manual.pdf
 [Gitflow worflow]: http://nvie.com/posts/a-successful-git-branching-model/
