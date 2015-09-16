@@ -22,7 +22,7 @@
 #'     comparisons.
 #'
 #' @return a \eqn{K\times p} matrix with the linear functions that
-#'     define all pairwise contrasts. \eqn{K} is \eqn{\binom{k}{2}}.
+#'     define all pairwise contrasts. \eqn{K} is \eqn{k\choose 2}.
 #'
 #' @seealso \link[doBy]{LSmatrix}.
 #'
