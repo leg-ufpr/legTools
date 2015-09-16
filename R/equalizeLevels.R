@@ -13,10 +13,10 @@
 #'     to the levels present in the data frame used to fit the model and
 #'     estimate the parameters.
 #'
-#' @param \code{target} the target data frame that will have factor
-#'     levels reordered.
-#' @param \code{ref} the reference data frame that contains the desired
-#'     level order.
+#' @param target the target data frame that will have factor levels
+#'     reordered.
+#' @param ref the reference data frame that contains the desired level
+#'     order.
 #'
 #' @return the first data data frame with the levels in a new order.
 #'
