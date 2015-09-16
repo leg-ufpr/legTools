@@ -28,6 +28,16 @@
 #'
 #' @examples
 #'
+#' a <- data.frame(
+#'     Species=as.character(sample(iris$Species, size=10, replace=TRUE)),
+#'     stringsAsFactors=FALSE)
+#' str(a)
+#'
+#' levels(a$Species)
+#' levels(iris$Species)
+#'
+#' b <- equalizeLevels(target=a, ref=iris)
+#' str(b)
 #'
 equalizeLevels <- function(target, ref){
     if(is.data.frame(target) & is.data.frame(ref)){
@@ -41,14 +51,3 @@ equalizeLevels <- function(target, ref){
     }
     else stop("`target` and `ref` must be a data.frame.")
 }
-
-a <- data.frame(
-    Species=as.character(sample(iris$Species, size=10, replace=TRUE)),
-    stringsAsFactors=FALSE)
-str(a)
-
-levels(a$Species)
-levels(iris$Species)
-
-b <- equalizeLevels(target=a, ref=iris)
-str(b)
