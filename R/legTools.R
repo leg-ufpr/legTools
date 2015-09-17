@@ -206,3 +206,44 @@ NULL
 #'     layer(panel.abline(a=0, b=1, lty=2))
 #'
 NULL
+
+#' @name cassavaYield
+#'
+#' @title Cassava variety competition experiment
+#'
+#' @description These data are from an experiment done by The Brazilian
+#'     Agricultural Research Corporation in Cassava & Tropical Fruits
+#'     (Centro Nacional de Pesquisa da Mandioca e Fruticultura da
+#'     Embrapa) at Cruz das Almas, Bahia. The experiment was done in a
+#'     randomized complete block design with 4 blocks. Cassava yield
+#'     (t/ha) was recorded in each experimental unit.
+#'
+#' \itemize{
+#'     \item \code{block} a categorical unordered factor with 4 levels.
+#'     \item \code{variety} a categorical unordered factor with 6
+#'     levels.
+#'     \item \code{yield} cassava yield (t/ha).
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(cassavaYield)
+#'
+#' @format a \code{data.frame} with 24 records and 3 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 93)
+#'
+#' @examples
+#' 
+#' require(lattice)
+#' data(cassavaYield)
+#'
+#' plot(yield~variety, data=cassavaYield,
+#'      groups=block, type="o",
+#'      ylab=expression(Yield~(t~ha^{-1})),
+#'      xlab="Variety")
+#'
+NULL
