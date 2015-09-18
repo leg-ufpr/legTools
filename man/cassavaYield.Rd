@@ -28,7 +28,7 @@ These data are from an experiment done by The Brazilian
 }
 }
 \examples{
-require(lattice)
+library(lattice)
 data(cassavaYield)
 
 plot(yield~variety, data=cassavaYield,

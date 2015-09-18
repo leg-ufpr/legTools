@@ -28,7 +28,7 @@ These data are from an experiment done by the engineer
 }
 }
 \examples{
-require(lattice)
+library(lattice)
 data(potatoyield)
 
 xyplot(yield~plow|block, data=plowing, type=c("p", "a"),

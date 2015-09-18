@@ -26,7 +26,7 @@ These data are from an experiment done by the engineer
 }
 }
 \examples{
-require(lattice)
+library(lattice)
 data(potatoyield)
 
 plot(yield~variety, data=potatoyield,

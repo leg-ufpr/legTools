@@ -26,7 +26,7 @@ These data are from an experiment done by The West São
 }
 }
 \examples{
-require(lattice)
+library(lattice)
 data(sugarcaneYield)
 
 plot(yield~variety, data=sugarcaneYield,

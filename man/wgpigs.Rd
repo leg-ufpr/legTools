@@ -28,7 +28,7 @@ This is an artifial dataset corresponding a experiment
 }
 }
 \examples{
-require(lattice)
+library(lattice)
 data(wgpigs)
 
 xyplot(wg~ft, data=wgpigs,
