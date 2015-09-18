@@ -45,6 +45,13 @@ build(manual = TRUE, vignettes = FALSE)
 pkg <- paste0("../legTools_", packageVersion("legTools"), ".tar.gz")
 install.packages(pkg, repos = NULL)
 
+##----------------------------------------------------------------------
+## Package vignette.
+## Based on: http://r-pkgs.had.co.nz/vignettes.html
+
+use_vignette("PimentelGomes")
+
+
 ##======================================================================
 ## Sending package tarballs and manual to remote server to be
 ## downloadable

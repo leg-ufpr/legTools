@@ -9,18 +9,21 @@ Description: legTools is a collection of R functions and datasets used for
     of them from books. It is maintained by the LEG group (Statistics and
     Geoinformation Laboratory). Please visit http://www.leg.ufpr.br.
 Depends:
-    R (>= 3.2.1)
-Imports:
-    lattice,
-    latticeExtra
-Depends:
+    R (>= 3.2.1),
     gWidgets,
     gWidgetstcltk,
     knitr,
     markdown,
     RWordPress
+Imports: 
+    lattice,
+    latticeExtra
 License: GPL-3 | file LICENSE
 URL: http://git.leg.ufpr.br/leg/legTools
 BugReports: http://git.leg.ufpr.br/leg/legTools/issues
 LazyData: true
 Encoding: UTF-8
+Suggests:
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
