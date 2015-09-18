@@ -38,7 +38,7 @@ NULL
 #'
 #' @examples
 #'
-#' require(lattice)
+#' library(lattice)
 #' data(wgpigs)
 #'
 #' xyplot(wg~ft, data=wgpigs,
@@ -75,7 +75,7 @@ NULL
 #'     ed.). Piracicaba, São Paulo: FEALQ. (page 76)
 #'
 #' @examples
-#' require(lattice)
+#' library(lattice)
 #' data(potatoyield)
 #'
 #' plot(yield~variety, data=potatoyield,
@@ -115,7 +115,7 @@ NULL
 #'     ed.). Piracicaba, São Paulo: FEALQ. (page 91)
 #'
 #' @examples
-#' require(lattice)
+#' library(lattice)
 #' data(potatoyield)
 #'
 #' xyplot(yield~plow|block, data=plowing, type=c("p", "a"),
@@ -237,8 +237,8 @@ NULL
 #'     ed.). Piracicaba, São Paulo: FEALQ. (page 93)
 #'
 #' @examples
-#' 
-#' require(lattice)
+#'
+#' library(lattice)
 #' data(cassavaYield)
 #'
 #' plot(yield~variety, data=cassavaYield,
@@ -276,13 +276,70 @@ NULL
 #'     ed.). Piracicaba, São Paulo: FEALQ. (page 92)
 #'
 #' @examples
-#' 
-#' require(lattice)
+#'
+#' library(lattice)
 #' data(sugarcaneYield)
 #'
 #' plot(yield~variety, data=sugarcaneYield,
 #'      groups=block, type="o",
 #'      ylab=expression(Yield~(kg~plot^{-1})),
 #'      xlab="Variety")
+#'
+NULL
+
+#' @name sugarcaneYield2
+#'
+#' @title Sugarcane variety competition experiment
+#'
+#' @description These data are from an experiment done in a latin square
+#'     design of size 5. Sugarcane yield (kg/plot) was recorded in each
+#'     experimental unit.
+#'
+#' \itemize{
+#'     \item \code{row} the rows of the latin square that controls in
+#'     one dimention. A categorical unordered factor with 5 levels.
+#'     \item \code{col} the columns of the latin square that controls in
+#'     one dimention perpendicular to the previus. A categorical
+#'     unordered factor with 5 levels.
+#'     \item \code{variety} a categorical unordered factor with 5
+#'     levels.
+#'     \item \code{yield} sugarcane yield (kg/plot).
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield2)
+#'
+#' @format a \code{data.frame} with 28 records and 3 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 96)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' xyplot(yield~variety|col,  groups=row, data=sugarcaneYield2,
+#'        ylab=expression(Yield~(kg~plot^{-1})),
+#'        xlab="Variety")
+#'
+#' ## display.brewer.all()
+#'
+#' levelplot(yield~row+col,
+#'           data=sugarcaneYield2, aspect="iso",
+#'           xlab="Row", ylab="Column",
+#'           main=expression(Yield~(kg~plot^{-1})),
+#'           col.regions=colorRampPalette(
+#'               colors=brewer.pal(n=11, name="Spectral")))+
+#'     layer(with(sugarcaneYield2,
+#'                panel.text(x=row, y=col,
+#'                           label=paste(variety, yield))))
+#'
+#' aggregate(yield~row, data=sugarcaneYield2, FUN=mean)
+#' aggregate(yield~col, data=sugarcaneYield2, FUN=mean)
+#' aggregate(yield~variety, data=sugarcaneYield2, FUN=mean)
 #'
 NULL
