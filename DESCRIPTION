@@ -18,12 +18,12 @@ Depends:
 Imports: 
     lattice,
     latticeExtra
+Suggests:
+    knitr,
+    rmarkdown
 License: GPL-3 | file LICENSE
 URL: http://git.leg.ufpr.br/leg/legTools
 BugReports: http://git.leg.ufpr.br/leg/legTools/issues
 LazyData: true
 Encoding: UTF-8
-Suggests:
-    knitr,
-    rmarkdown
 VignetteBuilder: knitr
