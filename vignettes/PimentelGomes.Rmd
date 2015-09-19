@@ -1,13 +1,90 @@
 ---
 title: "Análise dos dados em Pimentel-Gomes (2009)"
 author: "Walmes Zeviani"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+date: "`r paste('legTools', packageVersion('legTools'), Sys.Date())`"
+output:
+  rmarkdown::html_vignette:
+    fig_width: 6
+    fig_height: 6
+    toc: true
+    toc_dep: 3
 vignette: >
   %\VignetteIndexEntry{Análise dos dados em Pimentel-Gomes (2009)}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+
+<!-- pdf_document: -->
+<!--   fig_width: 6 -->
+<!--   fig_height: 6 -->
+<!--   number_sections: yes -->
+<!--   keep_tex: true -->
+<!--   template: vignette_style.tex -->
+
+<style type="text/css">
+body, td, caption {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    background-color: white;
+    font-size: 16px;
+}
+
+tt, code, pre {
+    font-family: "Inconsolata", "Andale Mono", monospace;
+}
+
+code {
+    font-size: 16px;
+}
+
+pre code {
+    font-size: 14px;
+}
+
+pre:not([class]) code {
+    background-color: #92BFB1;
+}
+pre, code {
+    background-color: #62BFB1;
+    border-radius: 3px;
+    color: #333;
+}
+
+/* R output */
+pre:not([class]) code {
+    background-color: #D4D4D4;
+}
+pre:not([class]), code {
+    background-color: #D4D4D4;
+}
+
+/* R input */
+pre, code {
+    border-radius: 3px;
+    background-color: #EDEDED;
+    color: #333;
+}
+
+img {
+    max-width: 100% !important;
+    display: block;
+    margin: auto;
+}
+
+.MathJax {
+    font-size: 80% !important;
+}
+
+</style>
+
+```{r setup, include=FALSE}
+opts_chunk$set(
+    dev.args=list(family="Palatino"))
+
+options(width=68)
+
+```
+
+****
 
 Essa *vignette* tem como objetivo fazer a análise dos conjuntos de dados
 do livro Pimentel-Gomes (2009), a décima quinta edição da obra **Curso
@@ -21,100 +98,339 @@ install_git("http://git.leg.ufpr.br/leg/legTools.git")
 
 ```
 
-```{r}
+```{r, error=FALSE, message=FALSE, warning=FALSE}
 library(legTools)
 packageVersion("legTools")
 
 ```
-[`legTools`]: http://git.leg.ufpr.br/leg/legTools
 
-
+****
 ## Delineamento Inteiramente Casualizado
 
-Considere os dados disponíveis na página 62 referentes à valores
+### Ganho de peso de leitões
+
+#### Análise com dados completos
+
+Considere os dados disponíveis na página 62 referentes aos valores
 fictícios de um experimento de alimentação de porcos no qual se usou 4
-níveis do fator ração. O experimento foi instalado em um delineamento
-inteiramente casualizado com 5 animais (unidades experimentais) para
-cada nível de ração. A variável resposta medida foi o ganho de peso dos
-animais (kg).
+níveis do fator ração tipo de ração. O experimento foi instalado em um
+delineamento inteiramente casualizado com 5 animais (unidades
+experimentais) para cada nível de ração. A variável resposta medida foi
+o ganho de peso (kg, diferença entre o peso final e inicial) dos animais
+após um período de consumo das rações.
 
 Esses dados fazem parte do pacote `legTools` e estão no *data frame*
 `wgpigs`. Alternativamente, pode-se fazer o download do mesmo no formato
 texto separado por tabulação.
 
 ```{r}
+##----------------------------------------------------------------------
+## Para carregar da cópia web.
+
 ## url <- "http://blog.leg.ufpr.br/~leg/legTools/dataset/wgpigs.txt"
 ## browseURL(url)
 ## wgpigs <- read.table(file=url, header=TRUE, sep="\t")
+## str(wgpigs)
 
-library(legTools)
+##----------------------------------------------------------------------
+## Para carregar do pacote legTools.
 
 data(wgpigs)
 str(wgpigs)
 
 ```
 
+Antes de especificar o modelo e ajustar aos dados, vamos fazer uma
+análise exploratória para conhecer os dados. Por meio da análise
+exploratória pode-se verificar alguma inconsistência como, por exemplo,
+a falta de observações ou valores discrepantes. Tabelas de frequência e
+de medidas descritivas bem como gráficos são usados para isso. Para
+gráficos vamos considerar o pacote [`lattice`][].
 
+```{r, message=FALSE}
+##----------------------------------------------------------------------
+## Pacotes auxiliares.
 
-<!--==================================================================== -->
+library(lattice)
+library(latticeExtra)
 
-Vignettes are long form documentation commonly included in
-packages. Because they are part of the distribution of the package, they
-need to be as compact as possible. The `html_vignette` output type
-provides a custom style sheet (and tweaks some options) to ensure that
-the resulting html is as small as possible. The `html_vignette` format:
+##----------------------------------------------------------------------
+## Análise exploratória.
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap
-  style
+## Valores observados de ganho de peso (wg) em função do tipo de ração
+## (ft).
+unstack(x=wgpigs, form=wg~ft)
 
-## Vignette Info
+xyplot(wg~ft, data=wgpigs,
+       ylab="Ganho de peso (kg)",
+       xlab="Tipo de ração")
 
-Note the various macros within the `vignette` setion of the metadata
-block above. These are required in order to instruct R how to build the
-vignette. Note that you should change the `title` field and the
-`\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override
-this theme you can specify your own CSS in the document metadata as
-follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two
-images side-by-side.
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+Verifica-se pela tabela dos valores que o experimento é balanceado. Por
+meio do gráfico verifica-se não haver observações discrepantes bem como
+uma variância semelhante dos registros de ganho de peso em cada nível de
+tipo de ração.
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+Para espeficicar o modelo para esse experimento vamos considerar que a
+resposta, por ser contínua, tenha distribuição normal e que a média
+dessa distribuição está sob o efeito do tipo de ração usado. A
+variância, por outro lado, vamos assumir não depender das rações
+usadas. A independência entre observações é garantida pelo desenho e
+técnicas de controle local. Sendo assim, pode-se escrever que a variável
+aleatória $Y$ (ganho de peso, kg) é uma variável aleatória Normal cuja
+média ($\mu$) está sob o efeito do tipo de ração e a variância é
+constante, embora deconhecida. A média é função linear dos níveis de
+ração.
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in
-**knitr**.
+$$
+\begin{aligned}
+Y_{ij} &\stackrel{iid}{\sim} \text{Normal}(\mu_{i}, \sigma^2) \\
+\mu_{i} &= \mu+\tau_i,\quad i=1,\ldots,4,\quad j=1,\ldots,5.
+\end{aligned}
+$$
 
-## More Examples
+O experimento avaliou 4 níveis de ração e o nosso modelo, na parte da
+média, contém 5 parâmetros ($\mu$, $\tau_1,\ldots,\tau_4$). Não é
+possível determinar 5 quantidades conhecendo-se 4 restrições (ou
+equações) então o R, assim como qualquer outro aplicativo, considera uma
+particular parametrização para estimar os efeitos. A parametrização
+padrão é a contraste tipo tratamento na qual a restrição é assumir que o
+efeito do primeiro nível é zero ($\tau_1=0$) e assim $\mu$ para
+representar a média do primeiro nível e os demais parâmetros ($\tau_i,
+i>1)$ são diferenças com relação ao nível de referência.
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$,
-footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+Para ajustar esse modelo no R, usa-se a função `lm()` (*linear model*)
+ou a função `aov()` (*analysis of variance*). Para o modelo que será
+trabalhado qualquer uma das duas funções pode ser empregada. Quando não
+existe uma clara justificativa para o uso da `aov`, optar pela `lm` é
+vantajoso pela maior disponibilidade de métodos.
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+```{r}
+##----------------------------------------------------------------------
+## Ajuste do modelo.
+
+## Especificação e ajuste do modelo.
+m0 <- lm(wg~ft, data=wgpigs)
+
+## Verificação dos pressupostos.
+par(mfrow=c(2,2)); plot(m0); layout(1)
+
+## Estimativas dos efeitos, seus erros padrões e medidas de ajuste.
+summary(m0)
+
+## Quadro de análise de variância.
+anova(m0)
+
+##----------------------------------------------------------------------
+## Explorando mais os resultados e componentes do modelo.
+
+## Vetor de estimativas e matriz de covariância.
+coef(m0)
+vcov(m0)
+
+## Tabela de estimativas e intervalos de confiança para os efeitos.
+summary(m0)$coefficients
+confint(m0, level=0.95)
+
+## Matriz (de incidência dos termos) do modelo.
+X <- model.matrix(m0)
+head(X)
+
+## Contrastes considerados.
+m0$contrasts
+contrasts(wgpigs$ft)
+
+##----------------------------------------------------------------------
+## Estimativas das médias.
+
+L <- cbind(1, contrasts(wgpigs$ft))
+L
+L%*%coef(m0)
+
+## Contém a função estimable().
+library(gmodels)
+## ls("package:gmodels")
+
+## Requer nomes corretos.
+colnames(L) <- names(coef(m0))
+pred <- estimable(obj=m0, cm=L, conf.int=0.95)
+pred
+
+pred <- cbind(ft=levels(wgpigs$ft), pred)
+
+segplot(ft~Lower.CI+Upper.CI, data=pred,
+        centers=Estimate, draw=FALSE,
+        xlab="Ganho de peso (kg)",
+        ylab="Tipos de ração")
+
+## Valores observados sobrepostos as médias estimadas.
+xyplot(wg~ft, data=wgpigs,
+       ylab="Ganho de peso (kg)",
+       xlab="Tipo de reação")+
+    as.layer(segplot(ft~Lower.CI+Upper.CI, data=pred,
+                     centers=Estimate, draw=FALSE, horizontal=FALSE,
+                     ylab="Ganho de peso (kg)",
+                     xlab="Tipos de ração"))
+
+##----------------------------------------------------------------------
+## Comparações múltiplas.
+
+library(multcomp)
+
+summary(glht(model=m0, linfct=L), test=adjusted(type="none"))
+
+## Não é teste de Tukey mas contrastes de Tukey (all pairwise).
+g0 <- glht(model=m0, linfct=mcp(ft="Tukey"))
+
+## Controle da multiplicidade pelo método single-step.
+summary(g0)
+
+## Sem correção para multiplicidade (evitar).
+summary(g0, test=adjusted(type="none"))
+
+## Usando o critério False Discovery Rate.
+summary(g0, test=adjusted(type="fdr"))
+
+## Usando o Bonferroni.
+summary(g0, test=adjusted(type="bonferroni"))
+
+## Intervalos de confiança para os contrastes.
+g1 <- summary(g0, test=adjusted(type="fdr"))
+
+## Cobertura global de 0.95.
+confint(g1)
+
+## Cobertura individual de 0.95.
+confint(g1, calpha=univariate_calpha())
+
+## Representação compacta com letras (compact letter display).
+cld(g1, decreasing=TRUE)
+
+pred$cld <- cld(g1, decreasing=TRUE)$mcletters$Letters
+
+segplot(ft~Lower.CI+Upper.CI, data=pred,
+        centers=Estimate, draw=FALSE,
+        xlab="Ganho de peso (kg)",
+        ylab="Tipos de ração")+
+    layer(with(pred,
+               panel.text(y=as.integer(ft),
+                          x=Estimate,
+                          labels=sprintf("%0.1f %s", Estimate, cld),
+                          pos=3)))
+
 ```
 
-Also a quote using `>`:
+Na análise dos dados do experimento, logo após a especificação do
+modelo, procedeu-se com a verificação dos pressupostos. A análise
+gráfica não apontou desvios para os pressupostos de normalidade (qq-norm
+dos resíduos padronizados vs quantis teóricos) a tão pouco da suposição
+de homogeneidade de variâncias (resíduos padronizados vs valores
+ajustados).
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+Após verificar o não afastamento dos pressupostos, teve-se que o quadro
+de análise de variância rejeitou a hipótese nula da ausência de efeito
+das rações sobre a média de ganho de peso dos leitões, $\text{H}_0:
+\tau_i = 0, i>1$ ($p<0.05$).
+
+Dada o efeito dos níveis ração são obtidas as correspondentes médias a
+partir dos efeitos. Aplicou-se teste de comparações múltiplas de médias
+para melhor compreender o efeito das rações. É importante salientar que
+não foi aplicado o teste de Tukey mas sim um teste sobre os contrastes
+de Tukey que significam todas as comparações duas a duas. O $p$-valor
+correspondentes às estatísticas $t$ de cada contraste foi ajustado por
+um critério de correção para a multiplicidade (teste de múltiplas
+hipóteses).
+
+#### Análise com uma parcela perdida
+
+A análise com um parcela perdida não requer nenhuma modificação no
+código. Essa é a vantagem de usar contrastes com correção para
+multiplicidade se comparada com comparações múltiplas pelo teste de
+Tukey ou qualquer outro que se baseia em diferença mínima
+significativa. O erro padrão das médias não é mais igual ao perder uma
+obseração. Assim os erros padrões dos contrastes também não serão todos
+iguais e portanto um teste de médias baseado em uma única diferença
+mínima significativa não pode ser aplicado. Certos aplicativos (como
+`agricolae::HSD.test()`) usam a média harmônica do número de repetições
+para ter uma tamanho de amostra aproximado e assim aplicar o teste de
+Tukey (ou outro) usando uma única dms. O procedimento baseado em
+contrastes feito pela `multicomp::summary.glht()` não faz aproximações
+nesse sentido.
+
+```{r}
+##----------------------------------------------------------------------
+## Ajuste do modelo.
+
+wgpigs$wg[1] <- NA
+unstack(x=wgpigs, form=wg~ft)
+
+## Especificação e ajuste do modelo.
+m0 <- lm(wg~ft, data=wgpigs)
+
+## Verificação dos pressupostos.
+par(mfrow=c(2,2)); plot(m0); layout(1)
+
+## Quadro de análise de variância.
+anova(m0)
+
+##----------------------------------------------------------------------
+## Estimativas das médias.
+
+L%*%coef(m0)
+
+## Requer nomes corretos.
+colnames(L) <- names(coef(m0))
+pred <- estimable(obj=m0, cm=L, conf.int=0.95)
+pred
+
+pred <- cbind(ft=levels(wgpigs$ft), pred)
+
+##----------------------------------------------------------------------
+## Comparações múltiplas.
+
+## Não é teste de Tukey mas contrastes de Tukey (all pairwise).
+g0 <- glht(model=m0, linfct=mcp(ft="Tukey"))
+
+## Intervalos de confiança para os contrastes.
+g1 <- summary(g0, test=adjusted(type="fdr"))
+g1
+
+## Cobertura individual de 0.95.
+confint(g1, calpha=univariate_calpha())
+
+## Representação compacta com letras (compact letter display).
+cld(g1, decreasing=TRUE)
+
+pred$cld <- cld(g1, decreasing=TRUE)$mcletters$Letters
+
+segplot(ft~Lower.CI+Upper.CI, data=pred,
+        centers=Estimate, draw=FALSE,
+        xlab="Ganho de peso (kg)",
+        ylab="Tipos de ração")+
+    layer(with(pred,
+               panel.text(y=as.integer(ft),
+                          x=Estimate,
+                          labels=sprintf("%0.1f %s", Estimate, cld),
+                          pos=3)))
+
+
+```
+
+O desbalanceamento pode ser visto nos erros padrões dos efeitos e nos
+erros padrões das comparações múltiplas. Os contrastes envolvendo o
+nível `A` tem erro padrão maior que os demais contrastes. O gráfico de
+segmentos ao final apresenta um intervlao de confiança mais amplo para a
+média de `A`.
+
+****
+## Delineamento de Blocos Casualizados
+
+### Produção de batatinha em função da variaedade
+
+### Efeito da aradura na produção de milho
+
+<!---------------------------------------------------------------------- -->
+
+[`legTools`]: http://git.leg.ufpr.br/leg/legTools
+[`lattice`]: http://lattice.r-forge.r-project.org/documentation.php
