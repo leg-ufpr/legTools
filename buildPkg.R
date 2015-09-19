@@ -20,6 +20,9 @@ document()
 ## Check documentation.
 check_doc()
 
+## Create the vignettes.
+build_vignettes()
+
 ## Check functions, datasets, run examples, etc. Using cleanup = FALSE
 ## and check_dir = "../" will create a directory named legTools.Rcheck
 ## with all the logs, manuals, figures from examples, etc.
@@ -49,8 +52,8 @@ install.packages(pkg, repos = NULL)
 ## Package vignette.
 ## Based on: http://r-pkgs.had.co.nz/vignettes.html
 
+## Create the vignette template. Do just once.
 use_vignette("PimentelGomes")
-
 
 ##======================================================================
 ## Sending package tarballs and manual to remote server to be
