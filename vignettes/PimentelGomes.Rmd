@@ -77,6 +77,8 @@ img {
 </style>
 
 ```{r setup, include=FALSE}
+library(knitr)
+
 opts_chunk$set(
     dev.args=list(family="Palatino"))
 
