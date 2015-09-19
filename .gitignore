@@ -4,3 +4,4 @@ Rplots.pdf
 \#*\#
 .\#*
 inst/doc
+vignettes/*.html
