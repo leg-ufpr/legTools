@@ -18,20 +18,20 @@ These data are from an experiment done in a latin square
     experimental unit.
 
 \itemize{
-    \item \code{row} the rows of the latin square that controls in
+  \item \code{row} the rows of the latin square that controls in
     one dimention. A categorical unordered factor with 6 levels.
-    \item \code{col} the columns of the latin square that controls in
+  \item \code{col} the columns of the latin square that controls in
     one dimention perpendicular to the previus. A categorical
     unordered factor with 6 levels.
-    \item \code{fertil} a categorical unordered factor with 6
+  \item \code{fertil} a categorical unordered factor with 6
     levels that is the fertilization strategy applied. These levels
     are a result of treatment cells in a three incomplete factorial
     arrangrment. See detais for more information.
-    \item \code{yield} sugarcane yield (kg/plot).
+  \item \code{yield} sugarcane yield (kg/plot).
 }
 }
 \details{
-The levels of fetilization are in fact a combination of a
+The levels of fertilization are in fact a combination of a
     \eqn{3^2} factorial experiment but not all cells are present, so
     this is a (intentional) incomplete three factorial
     experiment. The factors used were limestone (A: present, a:

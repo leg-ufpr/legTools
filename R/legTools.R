@@ -353,19 +353,19 @@ NULL
 #'     experimental unit.
 #'
 #' \itemize{
-#'     \item \code{row} the rows of the latin square that controls in
+#'   \item \code{row} the rows of the latin square that controls in
 #'     one dimention. A categorical unordered factor with 6 levels.
-#'     \item \code{col} the columns of the latin square that controls in
+#'   \item \code{col} the columns of the latin square that controls in
 #'     one dimention perpendicular to the previus. A categorical
 #'     unordered factor with 6 levels.
-#'     \item \code{fertil} a categorical unordered factor with 6
+#'   \item \code{fertil} a categorical unordered factor with 6
 #'     levels that is the fertilization strategy applied. These levels
 #'     are a result of treatment cells in a three incomplete factorial
 #'     arrangrment. See detais for more information.
-#'     \item \code{yield} sugarcane yield (kg/plot).
+#'   \item \code{yield} sugarcane yield (kg/plot).
 #' }
 #'
-#' @details The levels of fetilization are in fact a combination of a
+#' @details The levels of fertilization are in fact a combination of a
 #'     \eqn{3^2} factorial experiment but not all cells are present, so
 #'     this is a (intentional) incomplete three factorial
 #'     experiment. The factors used were limestone (A: present, a:
@@ -494,5 +494,82 @@ NULL
 #'
 #' summary(glht(m3, linfct=mcp(age="Dunnet")),
 #'         test=adjusted(type="single-step"))
+#'
+NULL
+
+#' @name kornYield
+#'
+#' @title Korn yield as function of fertilization with NPK
+#'
+#' @description These data are from an \eqn{2^3} factorial experiment
+#'     studing the effect of Nitrogen (N), Phosporus (P) and Potassium
+#'     (K) on korn yield in a randomized block design.
+#'
+#' \itemize{
+#'   \item \code{block} a factor with 4 levels.
+#'   \item \code{N} low (-1) and high (+1) levels of nitrogen.
+#'   \item \code{P} low (-1) and high (+1) levels of phosporus.
+#'   \item \code{K} low (-1) and high (+1) levels of potassium.
+#'   \item \code{yield} korn yield (ton/ha).
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(kornYield)
+#'
+#' @format a \code{data.frame} with 32 records and 4 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 115)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#' 
+#' data(kornYield)
+#' str(kornYield)
+#' 
+#' xyplot(yield~N|P, groups=K,
+#'        data=kornYield, type=c("p", "a"),
+#'        ylab=expression(Yield~(ton~ha^{-1})),
+#'        xlab="Nutrient level")
+#' 
+#' xyplot(yield~N, groups=interaction(P, K),
+#'        data=kornYield, type=c("p", "a"),
+#'        auto.key=list(columns=2),
+#'        ylab=expression(Yield~(ton~ha^{-1})),
+#'        xlab="Nutrient level")
+#' 
+#' m0 <- lm(yield~block+(N+P+K)^3, data=kornYield)
+#' par(mfrow=c(2,2)); plot(m0); layout(1)
+#' anova(m0)
+#' 
+#' m1 <- update(m0, .~block+N+K)
+#' par(mfrow=c(2,2)); plot(m1); layout(1)
+#' 
+#' anova(m0, m1)
+#' anova(m1)
+#' 
+#' summary(m1)
+#' 
+#' pred <- expand.grid(block="1",
+#'                     N=seq(-1, 1, by=0.1),
+#'                     K=seq(-1, 1, by=0.1))
+#' pred$mu <- predict(m1, newdata=pred)
+#' 
+#' wireframe(mu~N+K, data=pred,
+#'           scales=list(arrows=FALSE),
+#'           zlab=list(expression(Yield~(ton~ha^{-1})), rot=90),
+#'           drape=TRUE, cuts=20,
+#'           col.regions=colorRampPalette(
+#'               color=brewer.pal(n=11, name="Spectral"))(21))
+#' 
+#' levelplot(mu~N+K, data=pred, aspect=1,
+#'           main=expression(Yield~(ton~ha^{-1})),
+#'           col.regions=colorRampPalette(
+#'               color=brewer.pal(n=11, name="Spectral")))
 #'
 NULL

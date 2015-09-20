@@ -29,7 +29,7 @@ These data are from an experiment done by the engineer
 }
 \examples{
 library(lattice)
-data(potatoyield)
+data(plowing)
 
 xyplot(yield~plow|block, data=plowing, type=c("p", "a"),
        ylab=expression(Yield~(t~ha^{-1})),
