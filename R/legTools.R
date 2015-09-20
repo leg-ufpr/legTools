@@ -47,7 +47,7 @@ NULL
 #'
 NULL
 
-#' @name potatoyield
+#' @name potatoYield
 #'
 #' @title Potato variety competition experiment
 #'
@@ -67,7 +67,7 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @usage data(potatoyield)
+#' @usage data(potatoYield)
 #'
 #' @format a \code{data.frame} with 32 records and 3 variables.
 #'
@@ -76,9 +76,9 @@ NULL
 #'
 #' @examples
 #' library(lattice)
-#' data(potatoyield)
+#' data(potatoYield)
 #'
-#' plot(yield~variety, data=potatoyield,
+#' plot(yield~variety, data=potatoYield,
 #'      groups=block, type="o",
 #'      ylab=expression(Yield~(t~ha^{-1})),
 #'      xlab="Variety")
@@ -116,7 +116,7 @@ NULL
 #'
 #' @examples
 #' library(lattice)
-#' data(potatoyield)
+#' data(plowing)
 #'
 #' xyplot(yield~plow|block, data=plowing, type=c("p", "a"),
 #'        ylab=expression(Yield~(t~ha^{-1})),
@@ -417,5 +417,82 @@ NULL
 #'
 #' ftable(with(sugarcaneYield3, tapply(yield, list(B, A, C), FUN=mean)))
 #' aggregate(yield~A+B+C, data=sugarcaneYield3, FUN=mean)
+#'
+NULL
+
+#' @name wgpigs2
+#'
+#' @title Age of castration in pig weight gain
+#'
+#' @description This is an artifial dataset corresponding a experiment
+#'     to study the effect of feeding type (factor with 4 categorical
+#'     nominal levels) in pig weight gain. The experiment was a
+#'     randomized complete design with five experimental units per
+#'     treatment level. The experimental unit was a pig. The response
+#'     measured was weight gain from the beggining to the end of the
+#'     experiment.
+#'
+#' \itemize{
+#'   \item \code{litter} a categorical factor with 4 levels that
+#'     represents the rows of the lattin square design and control for
+#'     the differences among litters.
+#'   \item code{size} a categorical ordered variable that represents the
+#'     columns of latin square desing and control for the weight of the
+#'     animals at the beggining of the experiment.
+#'   \item \code{age} age of the animal (days) when castration was
+#'     done. \code{controls} are the animals without castration.
+#'   \item \code{wg} weight gain (kg) after 252 days.
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(wgpigs2)
+#'
+#' @format a \code{data.frame} with 16 records and 4 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 110)
+#'
+#' @examples
+#'
+#' library(lattice)
+#'
+#' data(wgpigs2)
+#' str(wgpigs2)
+#'
+#' xyplot(wg~age, data=wgpigs2, groups=litter,
+#'        ylab="Weight gain (kg)",
+#'        xlab="Age at castration (days)")
+#'
+#' m0 <- lm(wg~litter+size+age, data=wgpigs2)
+#' par(mfrow=c(2,2)); plot(m0); layout(1)
+#' anova(m0)
+#'
+#' summary(m0)
+#'
+#' library(multcomp)
+#' summary(glht(m0, linfct=mcp(age="Dunnet")),
+#'         test=adjusted(type="single-step"))
+#'
+#' m1 <- glm(wg~litter+size+age, data=wgpigs2, family=Gamma)
+#' m2 <- glm(wg~litter+size+age, data=wgpigs2,
+#'           family=Gamma(link="log"))
+#' m3 <- glm(wg~litter+size+age, data=wgpigs2,
+#'           family=Gamma(link="identity"))
+#'
+#' rbind(logLik(m0),
+#'       logLik(m1),
+#'       logLik(m2),
+#'       logLik(m3))
+#'
+#' par(mfrow=c(2,2)); plot(m1); layout(1)
+#' anova(m1, test="F")
+#' anova(m2, test="F")
+#' anova(m3, test="F")
+#'
+#' summary(glht(m3, linfct=mcp(age="Dunnet")),
+#'         test=adjusted(type="single-step"))
 #'
 NULL
