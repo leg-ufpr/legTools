@@ -528,48 +528,105 @@ NULL
 #'
 #' library(lattice)
 #' library(latticeExtra)
-#' 
+#'
 #' data(kornYield)
 #' str(kornYield)
-#' 
+#'
 #' xyplot(yield~N|P, groups=K,
 #'        data=kornYield, type=c("p", "a"),
 #'        ylab=expression(Yield~(ton~ha^{-1})),
 #'        xlab="Nutrient level")
-#' 
+#'
 #' xyplot(yield~N, groups=interaction(P, K),
 #'        data=kornYield, type=c("p", "a"),
 #'        auto.key=list(columns=2),
 #'        ylab=expression(Yield~(ton~ha^{-1})),
 #'        xlab="Nutrient level")
-#' 
+#'
 #' m0 <- lm(yield~block+(N+P+K)^3, data=kornYield)
 #' par(mfrow=c(2,2)); plot(m0); layout(1)
 #' anova(m0)
-#' 
+#'
 #' m1 <- update(m0, .~block+N+K)
 #' par(mfrow=c(2,2)); plot(m1); layout(1)
-#' 
+#'
 #' anova(m0, m1)
 #' anova(m1)
-#' 
+#'
 #' summary(m1)
-#' 
+#'
 #' pred <- expand.grid(block="1",
 #'                     N=seq(-1, 1, by=0.1),
 #'                     K=seq(-1, 1, by=0.1))
 #' pred$mu <- predict(m1, newdata=pred)
-#' 
+#'
 #' wireframe(mu~N+K, data=pred,
 #'           scales=list(arrows=FALSE),
 #'           zlab=list(expression(Yield~(ton~ha^{-1})), rot=90),
 #'           drape=TRUE, cuts=20,
 #'           col.regions=colorRampPalette(
 #'               color=brewer.pal(n=11, name="Spectral"))(21))
-#' 
+#'
 #' levelplot(mu~N+K, data=pred, aspect=1,
 #'           main=expression(Yield~(ton~ha^{-1})),
 #'           col.regions=colorRampPalette(
 #'               color=brewer.pal(n=11, name="Spectral")))
+#'
+NULL
+
+#' @name vinasseFert
+#'
+#' @title Fertilization with vinasse and mineral
+#'
+#' @description These data are from an \eqn{2^2} factorial experiment
+#'     studing the effect of fertilizaton with vinasse (organic font)
+#'     and complete mineral fertilization.
+#'
+#' \itemize{
+#'   \item \code{block} a factor with 4 levels.
+#'   \item \code{mineral} low (-1) and high (+1) levels of mineral
+#'     fertilization.
+#'   \item \code{vinasse} low (-1) and high (+1) levels of fetilization
+#'     with vinasse.
+#'   \item \code{y} some response variable. The text book doesn't give
+#'     any information.
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(vinasseFert)
+#'
+#' @format a \code{data.frame} with 16 records and 4 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 119)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(vinasseFert)
+#' str(vinasseFert)
+#'
+#' xyplot(y~vinasse, groups=mineral,
+#'        auto.key=list(title="Mineral", columns=2),
+#'        data=vinasseFert, type=c("p", "a"),
+#'        ylab="y",
+#'        xlab="Vinasse level")
+#'
+#' m0 <- lm(y~block+(vinasse+mineral)^2, data=vinasseFert)
+#' par(mfrow=c(2,2)); plot(m0); layout(1)
+#' anova(m0)
+#'
+#' m1 <- update(m0, .~block+vinasse)
+#' par(mfrow=c(2,2)); plot(m1); layout(1)
+#'
+#' anova(m0, m1)
+#' anova(m1)
+#'
+#' summary(m1)
 #'
 NULL
