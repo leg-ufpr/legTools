@@ -579,8 +579,9 @@ NULL
 #' @title Fertilization with vinasse and mineral
 #'
 #' @description These data are from an \eqn{2^2} factorial experiment
-#'     studing the effect of fertilizaton with vinasse (organic font)
-#'     and complete mineral fertilization.
+#'     studing the effect of fertilizaton with vinasse (a residual from
+#'     industrial processing of sugar cane) and complete mineral
+#'     fertilization.
 #'
 #' \itemize{
 #'   \item \code{block} a factor with 4 levels.
@@ -628,5 +629,69 @@ NULL
 #' anova(m1)
 #'
 #' summary(m1)
+#'
+NULL
+
+#' @name filterCake
+#'
+#' @title Fertilization with filter cake and mineral
+#'
+#' @description These data are from an \eqn{2^2} factorial experiment
+#'     studing the effect of fertilizaton with filter cake (a residual
+#'     from industrial processing of sugar cane) and traditional mineral
+#'     fertilization.
+#'
+#' \itemize{
+#'   \item \code{block} a factor with 4 levels.
+#'   \item \code{mineral} low (-1) and high (+1) levels of mineral
+#'     fertilization.
+#'   \item \code{cake} low (-1) and high (+1) levels of fetilization
+#'     with filter cake.
+#'   \item \code{y} some response variable. The text book doesn't give
+#'     any information.
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(filterCake)
+#'
+#' @format a \code{data.frame} with 16 records and 4 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 120)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(filterCake)
+#' str(filterCake)
+#'
+#' xyplot(y~cake, groups=mineral,
+#'        auto.key=list(title="Mineral", columns=2),
+#'        data=filterCake, type=c("p", "a"),
+#'        ylab="y",
+#'        xlab="Filter cake level")
+#'
+#' m0 <- lm(y~block+(cake+mineral)^2, data=filterCake)
+#' par(mfrow=c(2,2)); plot(m0); layout(1)
+#' anova(m0)
+#'
+#' summary(m0)
+#'
+#' filterCake$Mineral <- factor(filterCake$mineral,
+#'                              labels=c("absent", "present"))
+#'
+#' m1 <- aov(y~block+Mineral/cake, data=filterCake)
+#' anova(m1)
+#'
+#' ## Split SS to see effect of cake in each level of mineral.
+#' summary(m1, split=list("Mineral:cake"=list("absent"=1, "present"=2)))
+#'
+#' summary.lm(m1)
+#'
 #'
 NULL

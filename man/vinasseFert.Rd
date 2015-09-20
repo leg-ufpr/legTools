@@ -14,8 +14,9 @@ data(vinasseFert)
 }
 \description{
 These data are from an \eqn{2^2} factorial experiment
-    studing the effect of fertilizaton with vinasse (organic font)
-    and complete mineral fertilization.
+    studing the effect of fertilizaton with vinasse (a residual from
+    industrial processing of sugar cane) and complete mineral
+    fertilization.
 
 \itemize{
   \item \code{block} a factor with 4 levels.
