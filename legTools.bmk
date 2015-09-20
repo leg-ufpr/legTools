@@ -2,7 +2,19 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("sugarcaneYield4" 0 15
+(#1=(#("mangoAcidity" 0 12
+      (bmkp-full-record #1#))
+    (filename . "~/GitLab/legTools/R/legTools.R")
+    (buffer-name . "legTools.R")
+    (front-context-string . "@name mangoAcidi")
+    (rear-context-string . "())\n#'\nNULL\n\n#' ")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 0)
+    (time . #2=(22014 65331 826950 768000))
+    (created . #2#)
+    (position . 24814))
+#1=(#("sugarcaneYield4" 0 15
       (bmkp-full-record #1#))
     (filename . "~/GitLab/legTools/R/legTools.R")
     (buffer-name . "legTools.R")

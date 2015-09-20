@@ -793,3 +793,110 @@ NULL
 #' confint(g1, calpha=univariate_calpha())
 #'
 NULL
+
+#' @name mangoAcidity
+#'
+#' @title Acidity of mango fruits by varieties, years and months
+#'
+#' @description These data are from an observational study along 3 years
+#'     where acidity in fruits of 6 varieties of mango was determined in
+#'     Novermber, December and January.
+#'
+#' \itemize{
+#'   \item \code{variety} a categorical variable with 6 levels that
+#'     represents mango varieties studied.
+#'   \item \code{year} the year of harvesting.
+#'   \item \code{month} the month of harvesting.
+#'   \item \code{acid} mean of the acidity determined in 3 fruits.
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield4)
+#'
+#' @format a \code{data.frame} with 54 records and 6 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 132)
+#'
+#' Simão, S. (1960). Estudo da planta e dos frutos da mangueira
+#'     (\emph{Manginifera indica} L.). Piracicaba, 1960. Thesis.
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(mangoAcidity)
+#' str(mangoAcidity)
+#'
+#' ## reshape::cast() can also be used.
+#' with(mangoAcidity,
+#'      ftable(tapply(acid,
+#'                    list(variety, year, month),
+#'                    FUN=identity)))
+#'
+#' xyplot(acid~month|variety, groups=year,
+#'        data=mangoAcidity, type=c("p", "a"),
+#'        auto.key=TRUE,
+#'        ylab="Acidity",
+#'        xlab="Month")
+#'
+NULL
+
+#' @name kornYield2
+#'
+#' @title Axial factorial NPK experiment with added treatments
+#'
+#' @description These data are from an axial 3 factorial experiment
+#'     studing NPK in the yield of korn. Tow controls were added, one is
+#'     zer control (no NPK) and the other is central factorial point
+#'     plus presence of limestone.
+#'
+#' \itemize{
+#'   \item \code{N} content of nitrogen in the fertilizer.
+#'   \item \code{P} content of phosphorus in the fertilizer.
+#'   \item \code{K} content of potassium in the fertilizer.
+#'   \item \code{limestone} presence (1) or absence of limestone (0).
+#'   \item \code{acid} mean of korn yield in 16 locations (ton/ha).
+#' }
+#'
+#' @details The experiment was caried out in 16 different locations but
+#'     only the mean by cell combinations were available in the text
+#'     book.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield4)
+#'
+#' @format a \code{data.frame} with 9 records and 5 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 132)
+#'
+#' Simão, S. (1960). Estudo da planta e dos frutos da mangueira
+#'     (\emph{Manginifera indica} L.). Piracicaba, 1960. Thesis.
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(kornYield2)
+#' str(kornYield2)
+#'
+#' ## Axial triple factorial with 2 controls.
+#' ftable(xtabs(~N+P+K, data=kornYield2))
+#'
+#' xyplot(yield~N+P+K,
+#'        groups=as.integer(limestone==1 | (N+P+K)==0),
+#'        data=kornYield2, type=c("p", "a"),
+#'        auto.key=TRUE,
+#'        ylab=expression(Yield~(ton~ha^{-1})),
+#'        xlab="Nutrient content")
+#'
+NULL
