@@ -48,8 +48,8 @@ xyplot(yield~N+P+K,
        groups=as.integer(limestone==1 | (N+P+K)==0),
        data=kornYield2, type=c("p", "a"),
        auto.key=TRUE,
-       ylab="Acidity",
-       xlab="Month")
+       ylab=expression(Yield~(ton~ha^{-1})),
+       xlab="Nutrient content")
 }
 \keyword{datasets}
 
