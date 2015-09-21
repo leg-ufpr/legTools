@@ -2,7 +2,34 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("mangoAcidity" 0 12
+(#1=(#("legTools@git.leg" 0 16
+      (bmkp-full-record #1#))
+    (time 22015 20561 731318 645000)
+    (visits . 0)
+    (filename . "   - no file -")
+    (location . "http://git.leg.ufpr.br/leg/legTools")
+    (handler . bmkp-jump-url-browse))
+#1=(#("directories" 0 11
+      (bmkp-full-record #1#))
+    (buffer-name . "legTools")
+    (front-context-string . "legTools.R\n  -rw")
+    (rear-context-string . "79 Set 20 16:41 ")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 1)
+    (time 22015 20600 851351 336000)
+    (created 22015 19730 128634 379000)
+    (position . 1541)
+    (filename . "/home/walmes/GitLab/legTools/")
+    (dired-directory . "~/GitLab/legTools/")
+    (dired-marked)
+    (dired-switches . "-al")
+    (dired-subdirs
+     ("/home/walmes/GitLab/legTools/data-raw/")
+     ("/home/walmes/GitLab/legTools/R/"))
+    (dired-hidden-dirs "/home/walmes/GitLab/legTools/")
+    (handler . bmkp-jump-dired))
+#1=(#("mangoAcidity" 0 12
       (bmkp-full-record #1#))
     (filename . "~/GitLab/legTools/R/legTools.R")
     (buffer-name . "legTools.R")
