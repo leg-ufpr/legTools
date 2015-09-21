@@ -2,6 +2,7 @@ README.md
 Rplots.pdf
 contributing.md
 buildPkg.R
+legTools.bmk
 .#buildPkg.R
 .gitignore
 .Rprofile
