@@ -55,10 +55,14 @@ if (file.exists(libTest)){
 }
 dir.create(path=libTest)
 
-.libPaths(new=libTest)
+.libPaths(new=libTest); .libPaths()
 
 install_git(url="http://git.leg.ufpr.br/leg/legTools.git",
             branch="issue#9")
+
+library(legTools)
+packageVersion("legTools")
+ls("package:legTools")
 
 ##======================================================================
 ## Sending package tarballs and manual to remote server to be
