@@ -100,11 +100,18 @@ install_git("http://git.leg.ufpr.br/leg/legTools.git")
 
 ```
 
-```{r, error=FALSE, message=FALSE, warning=FALSE}
+```{r, eval=FALSE, error=FALSE, message=FALSE, warning=FALSE}
 library(legTools)
 packageVersion("legTools")
 
 ```
+
+```{r, echo=FALSE, error=FALSE, message=FALSE, warning=FALSE}
+library(legTools, lib.loc="~/R/")
+packageVersion("legTools")
+
+```
+
 
 ****
 ## Delineamento Inteiramente Casualizado
@@ -122,23 +129,23 @@ o ganho de peso (kg, diferença entre o peso final e inicial) dos animais
 após um período de consumo das rações.
 
 Esses dados fazem parte do pacote `legTools` e estão no *data frame*
-`wgpigs`. Alternativamente, pode-se fazer o download do mesmo no formato
+`wgPigs`. Alternativamente, pode-se fazer o download do mesmo no formato
 texto separado por tabulação.
 
 ```{r}
 ##----------------------------------------------------------------------
 ## Para carregar da cópia web.
 
-## url <- "http://blog.leg.ufpr.br/~leg/legTools/dataset/wgpigs.txt"
+## url <- "http://blog.leg.ufpr.br/~leg/legTools/dataset/wgPigs.txt"
 ## browseURL(url)
-## wgpigs <- read.table(file=url, header=TRUE, sep="\t")
-## str(wgpigs)
+## wgPigs <- read.table(file=url, header=TRUE, sep="\t")
+## str(wgPigs)
 
 ##----------------------------------------------------------------------
 ## Para carregar do pacote legTools.
 
-data(wgpigs)
-str(wgpigs)
+data(wgPigs)
+str(wgPigs)
 
 ```
 
@@ -161,9 +168,9 @@ library(latticeExtra)
 
 ## Valores observados de ganho de peso (wg) em função do tipo de ração
 ## (ft).
-unstack(x=wgpigs, form=wg~ft)
+unstack(x=wgPigs, form=wg~ft)
 
-xyplot(wg~ft, data=wgpigs,
+xyplot(wg~ft, data=wgPigs,
        ylab="Ganho de peso (kg)",
        xlab="Tipo de ração")
 
@@ -213,7 +220,7 @@ vantajoso pela maior disponibilidade de métodos.
 ## Ajuste do modelo.
 
 ## Especificação e ajuste do modelo.
-m0 <- lm(wg~ft, data=wgpigs)
+m0 <- lm(wg~ft, data=wgPigs)
 
 ## Verificação dos pressupostos.
 par(mfrow=c(2,2)); plot(m0); layout(1)
@@ -241,12 +248,12 @@ head(X)
 
 ## Contrastes considerados.
 m0$contrasts
-contrasts(wgpigs$ft)
+contrasts(wgPigs$ft)
 
 ##----------------------------------------------------------------------
 ## Estimativas das médias.
 
-L <- cbind(1, contrasts(wgpigs$ft))
+L <- cbind(1, contrasts(wgPigs$ft))
 L
 L%*%coef(m0)
 
@@ -259,7 +266,7 @@ colnames(L) <- names(coef(m0))
 pred <- estimable(obj=m0, cm=L, conf.int=0.95)
 pred
 
-pred <- cbind(ft=levels(wgpigs$ft), pred)
+pred <- cbind(ft=levels(wgPigs$ft), pred)
 
 segplot(ft~Lower.CI+Upper.CI, data=pred,
         centers=Estimate, draw=FALSE,
@@ -267,7 +274,7 @@ segplot(ft~Lower.CI+Upper.CI, data=pred,
         ylab="Tipos de ração")
 
 ## Valores observados sobrepostos as médias estimadas.
-xyplot(wg~ft, data=wgpigs,
+xyplot(wg~ft, data=wgPigs,
        ylab="Ganho de peso (kg)",
        xlab="Tipo de reação")+
     as.layer(segplot(ft~Lower.CI+Upper.CI, data=pred,
@@ -364,11 +371,11 @@ nesse sentido.
 ##----------------------------------------------------------------------
 ## Ajuste do modelo.
 
-wgpigs$wg[1] <- NA
-unstack(x=wgpigs, form=wg~ft)
+wgPigs$wg[1] <- NA
+unstack(x=wgPigs, form=wg~ft)
 
 ## Especificação e ajuste do modelo.
-m0 <- lm(wg~ft, data=wgpigs)
+m0 <- lm(wg~ft, data=wgPigs)
 
 ## Verificação dos pressupostos.
 par(mfrow=c(2,2)); plot(m0); layout(1)
@@ -386,7 +393,7 @@ colnames(L) <- names(coef(m0))
 pred <- estimable(obj=m0, cm=L, conf.int=0.95)
 pred
 
-pred <- cbind(ft=levels(wgpigs$ft), pred)
+pred <- cbind(ft=levels(wgPigs$ft), pred)
 
 ##----------------------------------------------------------------------
 ## Comparações múltiplas.
