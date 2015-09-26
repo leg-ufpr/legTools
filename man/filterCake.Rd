@@ -40,23 +40,6 @@ xyplot(y~cake, groups=mineral,
        data=filterCake, type=c("p", "a"),
        ylab="y",
        xlab="Filter cake level")
-
-m0 <- lm(y~block+(cake+mineral)^2, data=filterCake)
-par(mfrow=c(2,2)); plot(m0); layout(1)
-anova(m0)
-
-summary(m0)
-
-filterCake$Mineral <- factor(filterCake$mineral,
-                             labels=c("absent", "present"))
-
-m1 <- aov(y~block+Mineral/cake, data=filterCake)
-anova(m1)
-
-## Split SS to see effect of cake in each level of mineral.
-summary(m1, split=list("Mineral:cake"=list("absent"=1, "present"=2)))
-
-summary.lm(m1)
 }
 \keyword{datasets}
 

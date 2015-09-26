@@ -40,18 +40,6 @@ xyplot(y~vinasse, groups=mineral,
        data=vinasseFert, type=c("p", "a"),
        ylab="y",
        xlab="Vinasse level")
-
-m0 <- lm(y~block+(vinasse+mineral)^2, data=vinasseFert)
-par(mfrow=c(2,2)); plot(m0); layout(1)
-anova(m0)
-
-m1 <- update(m0, .~block+vinasse)
-par(mfrow=c(2,2)); plot(m1); layout(1)
-
-anova(m0, m1)
-anova(m1)
-
-summary(m1)
 }
 \keyword{datasets}
 

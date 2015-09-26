@@ -41,9 +41,24 @@ build(manual = TRUE, vignettes = FALSE)
 # build the binary version for windows (not used)
 # build_win()
 
+##----------------------------------------------------------------------
+## Test installation.
+
 ## Test install with install.packages
 pkg <- paste0("../legTools_", packageVersion("legTools"), ".tar.gz")
 install.packages(pkg, repos = NULL)
+
+## Test using devtools::install_git().
+libTest <- "~/R/"
+if (file.exists(libTest)){
+    file.remove(libTest)
+}
+dir.create(path=libTest)
+
+.libPaths(new=libTest)
+
+install_git(url="http://git.leg.ufpr.br/leg/legTools.git",
+            branch="issue#9")
 
 ##======================================================================
 ## Sending package tarballs and manual to remote server to be
