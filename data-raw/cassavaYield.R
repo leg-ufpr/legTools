@@ -6,6 +6,10 @@ cassavaYield <- read.table("http://www.leg.ufpr.br/~walmes/data/pimentel_mandioc
 names(cassavaYield) <- c("block", "variety", "yield")
 str(cassavaYield)
 
+levels(cassavaYield$variety) <- 
+    c("Aipim bravo", "Escondida", "Mamão", "Milagrosa", "Salangó Preta", 
+      "Sutinga")
+
 cassavaYield <- cassavaYield[with(cassavaYield, order(block, variety)),]
 
 save(cassavaYield, file="../data/cassavaYield.RData")
@@ -32,7 +36,3 @@ par(mfrow=c(2,2)); plot(m0); layout(1)
 
 ## ANOVA table.
 anova(m0)
-
-library(doBy)
-ls <- LSmatrix(m0, effect="variety")
-dput(ls)
