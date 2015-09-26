@@ -1,33 +1,33 @@
 ##----------------------------------------------------------------------
 ## Data generation.
 
-wgpigs2 <- read.table("http://www.leg.ufpr.br/~walmes/data/pimentel_castracao.txt",
+wgPigs2 <- read.table("http://www.leg.ufpr.br/~walmes/data/pimentel_castracao.txt",
                       header=TRUE, sep="\t")
-names(wgpigs2) <- c("litter", "size", "age", "wg")
-wgpigs2 <- transform(wgpigs2, litter=factor(litter), size=factor(size))
+names(wgPigs2) <- c("litter", "size", "age", "wg")
+wgPigs2 <- transform(wgPigs2, litter=factor(litter), size=factor(size))
 
-aggregate(wg~age, data=wgpigs2, FUN=mean)
+aggregate(wg~age, data=wgPigs2, FUN=mean)
 
-wgpigs2$age <- factor(wgpigs2$age,
-                      levels=levels(wgpigs2$age)[c(4,3,1,2)],
+wgPigs2$age <- factor(wgPigs2$age,
+                      levels=levels(wgPigs2$age)[c(4,3,1,2)],
                       labels=c("control", "7", "21", "56"))
-str(wgpigs2)
+str(wgPigs2)
 
-save(wgpigs2, file="../data/wgpigs2.RData")
+save(wgPigs2, file="../data/wgPigs2.RData")
 
 ##----------------------------------------------------------------------
 ## Examples.
 
 library(lattice)
 
-data(wgpigs2)
-str(wgpigs2)
+data(wgPigs2)
+str(wgPigs2)
 
-xyplot(wg~age, data=wgpigs2, groups=litter,
+xyplot(wg~age, data=wgPigs2, groups=litter,
        ylab="Weight gain (kg)",
        xlab="Age at castration (days)")
 
-m0 <- lm(wg~litter+size+age, data=wgpigs2)
+m0 <- lm(wg~litter+size+age, data=wgPigs2)
 par(mfrow=c(2,2)); plot(m0); layout(1)
 anova(m0)
 
@@ -37,10 +37,10 @@ library(multcomp)
 summary(glht(m0, linfct=mcp(age="Dunnet")),
         test=adjusted(type="single-step"))
 
-m1 <- glm(wg~litter+size+age, data=wgpigs2, family=Gamma)
-m2 <- glm(wg~litter+size+age, data=wgpigs2,
+m1 <- glm(wg~litter+size+age, data=wgPigs2, family=Gamma)
+m2 <- glm(wg~litter+size+age, data=wgPigs2,
           family=Gamma(link="log"))
-m3 <- glm(wg~litter+size+age, data=wgpigs2,
+m3 <- glm(wg~litter+size+age, data=wgPigs2,
           family=Gamma(link="identity"))
 
 rbind(logLik(m0),
@@ -57,7 +57,7 @@ summary(glht(m3, linfct=mcp(age="Dunnet")),
         test=adjusted(type="single-step"))
 
 rm(list=ls())
-load("../data/wgpigs2.RData")
+load("../data/wgPigs2.RData")
 ls()
-str(wgpigs2)
+str(wgPigs2)
 

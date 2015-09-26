@@ -1,15 +1,15 @@
 ##----------------------------------------------------------------------
 ## Data generation.
 
-kornYield <- expand.grid(block=gl(4, 1), N=c(-1,1), P=c(-1,1),
+cornYield <- expand.grid(block=gl(4, 1), N=c(-1,1), P=c(-1,1),
                          K=c(-1,1), KEEP.OUT.ATTRS=FALSE)
-kornYield$yield <- c(1.32, 2.12, 1.75, 2.35, 1.80, 2.20, 2.95, 2.96,
+cornYield$yield <- c(1.32, 2.12, 1.75, 2.35, 1.80, 2.20, 2.95, 2.96,
                      1.66, 2.66, 1.73, 2.58, 1.72, 3.85, 2.62, 3.00,
                      2.58, 3.56, 2.86, 2.75, 2.72, 3.20, 2.25, 2.75,
                      2.26, 2.08, 1.95, 2.70, 2.95, 3.28, 2.40, 3.35)
-str(kornYield)
+str(cornYield)
 
-save(kornYield, file="../data/kornYield.RData")
+save(cornYield, file="../data/cornYield.RData")
 
 ##----------------------------------------------------------------------
 ## Examples.
@@ -17,21 +17,21 @@ save(kornYield, file="../data/kornYield.RData")
 library(lattice)
 library(latticeExtra)
 
-data(kornYield)
-str(kornYield)
+data(cornYield)
+str(cornYield)
 
 xyplot(yield~N|P, groups=K,
-       data=kornYield, type=c("p", "a"),
+       data=cornYield, type=c("p", "a"),
        ylab=expression(Yield~(ton~ha^{-1})),
        xlab="Nutrient level")
 
 xyplot(yield~N, groups=interaction(P, K),
-       data=kornYield, type=c("p", "a"),
+       data=cornYield, type=c("p", "a"),
        auto.key=list(columns=2),
        ylab=expression(Yield~(ton~ha^{-1})),
        xlab="Nutrient level")
 
-m0 <- lm(yield~block+(N+P+K)^3, data=kornYield)
+m0 <- lm(yield~block+(N+P+K)^3, data=cornYield)
 par(mfrow=c(2,2)); plot(m0); layout(1)
 anova(m0)
 
@@ -61,6 +61,6 @@ levelplot(mu~N+K, data=pred, aspect=1,
               color=brewer.pal(n=11, name="Spectral")))
 
 rm(list=ls())
-load("../data/kornYield.RData")
+load("../data/cornYield.RData")
 ls()
-str(kornYield)
+str(cornYield)
