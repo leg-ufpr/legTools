@@ -69,19 +69,19 @@ knit2wpCrayon <- function(input, title="A post from knitr", ...,
         stop("`RWordPress` needed for this function to work. Please install it.",
              call.=FALSE)
     }
-    out <- knit(input, encoding=encoding)
+    out <- knitr::knit(input, encoding=encoding)
     on.exit(unlink(out))
     con <- file(out, encoding=encoding)
     on.exit(close(con), add=TRUE)
-    content <- native_encode(readLines(con, warn=FALSE))
+    content <- knitr:::native_encode(readLines(con, warn=FALSE))
     content <- paste(content, collapse="\n")
-    content <- markdownToHTML(text=content, fragment.only=TRUE)
+    content <- markdown::markdownToHTML(text=content, fragment.only=TRUE)
     content <- gsub(
         pattern="<pre><code class=\"([[:alpha:]]+)\">(.+?)</code></pre>",
         replacement="<pre class=\"lang:\\1 decode:true\">\\2</pre>",
         x=content)
-    content=native_encode(content, "UTF-8")
-    title=native_encode(title, "UTF-8")
+    content=knitr:::native_encode(content, "UTF-8")
+    title=knitr:::native_encode(title, "UTF-8")
     if (write){
         writeLines(text=content,
                    con=gsub(x=out, pattern="\\.md$", replacement=".html"))
