@@ -17,8 +17,6 @@
 #'
 #' @return Objects created in the chunks from the Rmd file.
 #'
-#' @import knitr
-#'
 #' @author Fernando Mayer, \email{fernando.mayer@@ufpr.br}
 #'
 #' @export

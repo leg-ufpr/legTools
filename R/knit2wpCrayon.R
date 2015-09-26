@@ -25,7 +25,6 @@
 #'
 #' @author Walmes Zeviani, \email{walmes@@ufpr.br}
 #'
-#' @import knitr markdown RWordPress
 #' @export
 #' @examples
 #' \donttest{

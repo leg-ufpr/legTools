@@ -18,8 +18,6 @@
 #'
 #' @return None is returned by the function.
 #'
-#' @import gWidgets gWidgetstcltk
-#'
 #' @author Walmes Zeviani, \email{walmes@@ufpr.br}
 #'
 #' @export

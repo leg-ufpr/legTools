@@ -27,8 +27,6 @@
 #'
 #' @return None is returned by the function, only a GUI is opened.
 #'
-#' @import gWidgets gWidgetstcltk
-#'
 #' @author Walmes Zeviani, \email{walmes@@ufpr.br}
 #'
 #' @export
