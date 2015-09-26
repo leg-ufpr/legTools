@@ -3,21 +3,18 @@
 #' @name runAllChunks
 #'
 #' @description This function was developed to run all chunks in a knitr
-#' Rmd (R markdown) file at once. Mainly for exploring and debugging
-#' purposes.
+#'     Rmd (R markdown) file at once. Mainly for exploring and debugging
+#'     purposes.
 #'
 #' @param Rmd the name of the Rmd file.
-#'
 #' @param envir the environment in which the chunks will be
-#' evaluated. By default it is the GlobalEnv.
+#'     evaluated. By default it is the GlobalEnv.
 #'
 #' @references This function was based on this
 #'     \href{http://stackoverflow.com/questions/24753969/knitr-run-all-chunks-in-an-rmarkdown-document}{SO
 #'     thread}.
 #'
 #' @return Objects created in the chunks from the Rmd file.
-#'
-#' @import knitr
 #'
 #' @author Fernando Mayer, \email{fernando.mayer@@ufpr.br}
 #'
@@ -29,6 +26,6 @@ runAllChunks <- function(Rmd, envir = globalenv()){
     }
     tempR <- tempfile(tmpdir = ".", fileext = ".R")
     on.exit(unlink(tempR))
-    purl(Rmd, output = tempR)
+    knitr::purl(Rmd, output = tempR)
     sys.source(tempR, envir = envir)
 }

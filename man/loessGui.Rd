@@ -12,8 +12,8 @@ loessGui(x, y, data, er = 0.05)
 \item{data}{an optional \code{data.frame}.}
 
 \item{er}{stands for extend range. It is used to extend the plotting
-range by a fraction on both sides and directions. Default is
-0.05. See \link[grDevices]{extendrange}.}
+    range by a fraction on both sides and directions. Default is
+    0.05. See \link[grDevices]{extendrange}.}
 }
 \value{
 None is returned by the function, only a GUI is opened.
@@ -22,11 +22,11 @@ None is returned by the function, only a GUI is opened.
 This function opens an interface to control the settings
 of a loess regression:
 \itemize{
-    \item degree choose the local polynomial degree with a radio
+  \item degree choose the local polynomial degree with a radio
 selector;
-    \item span set the span value that controls the degree of
+  \item span set the span value that controls the degree of
 smoothing;
-    \item center move the x value to be predicted;
+  \item center move the x value to be predicted;
 }
 
 The elements of the interface change a plot that shows the observed

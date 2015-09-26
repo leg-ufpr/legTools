@@ -5,11 +5,11 @@
 #' @description This function opens an interface to control the settings
 #' of a loess regression:
 #' \itemize{
-#'     \item degree choose the local polynomial degree with a radio
+#'   \item degree choose the local polynomial degree with a radio
 #' selector;
-#'     \item span set the span value that controls the degree of
+#'   \item span set the span value that controls the degree of
 #' smoothing;
-#'     \item center move the x value to be predicted;
+#'   \item center move the x value to be predicted;
 #' }
 #'
 #' The elements of the interface change a plot that shows the observed
@@ -18,16 +18,12 @@
 #' \code{gWidgets} and \code{gWidgetstcltk} packages are available.
 #'
 #' @param x,y independent and dependent (numeric) regression variables.
-#'
 #' @param data an optional \code{data.frame}.
-#'
 #' @param er stands for extend range. It is used to extend the plotting
-#' range by a fraction on both sides and directions. Default is
-#' 0.05. See \link[grDevices]{extendrange}.
+#'     range by a fraction on both sides and directions. Default is
+#'     0.05. See \link[grDevices]{extendrange}.
 #'
 #' @return None is returned by the function, only a GUI is opened.
-#'
-#' @import gWidgets gWidgetstcltk
 #'
 #' @author Walmes Zeviani, \email{walmes@@ufpr.br}
 #'
@@ -116,8 +112,8 @@ loessGui <- function(x, y, data, er=0.05){
         ## Fit loess regression.
         ## 
         m0 <- loess(formula=y~x,
-                    span=svalue(SPAN),
-                    degree=as.integer(svalue(DEGREE)),
+                    span=gWidgets::svalue(SPAN),
+                    degree=as.integer(gWidgets::svalue(DEGREE)),
                     family="gaussian")
         ##
         ##-------------------------------------------
@@ -131,8 +127,8 @@ loessGui <- function(x, y, data, er=0.05){
         ##-------------------------------------------
         ## Weights to be used in local polynomial.
         ## 
-        x0 <- svalue(XCENTER)
-        sp <- svalue(SPAN)
+        x0 <- gWidgets::svalue(XCENTER)
+        sp <- gWidgets::svalue(SPAN)
         a <- abs(x-x0)
         if (sp < 1){
             q <- as.integer(sp*nx)
@@ -166,53 +162,56 @@ loessGui <- function(x, y, data, er=0.05){
                   sum(s), nx))
         ## NOTE: usar action aqui!
         ## xl <- c(min(c(xl[1], x0)), max(c(x0, xl[2])))
-        do.call(what=paste0("f", svalue(DEGREE)),
+        do.call(what=paste0("f", gWidgets::svalue(DEGREE)),
                 args=list(w=w, xl=xl))
     }
     ##
     ##-------------------------------------------
     ## Building the GUI.
     ##
-    WDW <- gwindow(title="LOESS regression", visible=FALSE)
-    GG <- ggroup(container=WDW, expand=TRUE, horizontal=FALSE)
-    GF_DG <- gframe(text="Local polynomial degree:", container=GG)
-    DEGREE <- gradio(items=0:2, selected=2L, horizontal=TRUE,
+    WDW <- gWidgets::gwindow(title="LOESS regression", visible=FALSE)
+    GG <- gWidgets::ggroup(container=WDW, expand=TRUE, horizontal=FALSE)
+    GF_DG <- gWidgets::gframe(text="Local polynomial degree:", container=GG)
+    DEGREE <- gWidgets::gradio(items=0:2, selected=2L, horizontal=TRUE,
                      handler=draw.loess,
                      container=GF_DG)
-    GF_XC <- gframe(text="Predicted point:", expand=TRUE, container=GG)
-    XCENTER <- gslider(from=erx[1], to=erx[2],
+    GF_XC <- gWidgets::gframe(text="Predicted point:", expand=TRUE,
+                              container=GG)
+    XCENTER <- gWidgets::gslider(from=erx[1], to=erx[2],
                        value=mean(erx),
                        length.out=51,
                        handler=draw.loess,
                        expand=TRUE,
                        container=GF_XC)
-    XCLABEL <- glabel(text=sprintf("%0.2f", svalue(XCENTER)),
+    XCLABEL <- gWidgets::glabel(text=sprintf("%0.2f",
+                                             gWidgets::svalue(XCENTER)),
                       container=GF_XC)
-    addHandlerChanged(XCENTER,
+    gWidgets::addHandlerChanged(XCENTER,
                       action=XCLABEL,
                       handler=function(h, ...){
-                          svalue(h$action) <-
-                              sprintf("%0.2f", svalue(h$obj))
+                          gWidgets::svalue(h$action) <-
+                              sprintf("%0.2f", gWidgets::svalue(h$obj))
                       })
-    GF_SP <- gframe(text="Span:", expand=TRUE,container=GG)
-    SPAN <- gslider(from=0, to=1.5,
+    GF_SP <- gWidgets::gframe(text="Span:", expand=TRUE,container=GG)
+    SPAN <- gWidgets::gslider(from=0, to=1.5,
                     value=0.75, by=0.05,
                     handler=draw.loess,
                     expand=TRUE,
                     container=GF_SP)
-    SPLABEL <- glabel(text=sprintf("%0.2f", svalue(SPAN)),
+    SPLABEL <- gWidgets::glabel(text=sprintf("%0.2f",
+                                             gWidgets::svalue(SPAN)),
                       container=GF_SP)
-    addHandlerChanged(SPAN,
+    gWidgets::addHandlerChanged(SPAN,
                       action=SPLABEL,
                       handler=function(h, ...){
-                          svalue(h$action) <-
-                              sprintf("%0.2f", svalue(h$obj))
+                          gWidgets::svalue(h$action) <-
+                              sprintf("%0.2f", gWidgets::svalue(h$obj))
                       })
     ##-------------------------------------------
     ## Initializing.
-    svalue(SPAN) <- 0.75
-    svalue(DEGREE) <- 1L
-    svalue(XCENTER) <- mean(erx)
+    gWidgets::svalue(SPAN) <- 0.75
+    gWidgets::svalue(DEGREE) <- 1L
+    gWidgets::svalue(XCENTER) <- mean(erx)
     do.call(what=draw.loess, args=list(NA))
-    visible(WDW) <- TRUE
+    gWidgets::visible(WDW) <- TRUE
 }

@@ -37,7 +37,7 @@
 #' p3 <- xyplot(yield~K|N+P, data=npk,
 #'              scales=list(y=list(relation="free", alternating=2)),
 #'              ylab=NULL, ylab.right="Yield",
-#'              yscale.component=yscale.component.right,
+#'              yscale.component=yscale.components.right,
 #'              between=list(x=0.5, y=0.2),
 #'              par.settings=list(
 #'                  layout.widths=list(
@@ -48,7 +48,7 @@
 #'              )
 #' useOuterStrips(p3)
 #'
-yscale.component.right <- function(...){
+yscale.components.right <- function(...){
     ans <- yscale.components.default(...)
     ans$right <- ans$left
     ans$left <- NULL
