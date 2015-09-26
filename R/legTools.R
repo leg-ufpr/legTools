@@ -7,7 +7,7 @@
 ##' @name legTools
 NULL
 
-#' @name wgpigs
+#' @name wgPigs
 #'
 #' @title Feeding type in pig weight gain
 #'
@@ -29,7 +29,7 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @usage data(wgpigs)
+#' @usage data(wgPigs)
 #'
 #' @format a \code{data.frame} with 20 records and 2 variables.
 #'
@@ -39,9 +39,9 @@ NULL
 #' @examples
 #'
 #' library(lattice)
-#' data(wgpigs)
+#' data(wgPigs)
 #'
-#' xyplot(wg~ft, data=wgpigs,
+#' xyplot(wg~ft, data=wgPigs,
 #'        ylab="Weight gain (kg)",
 #'        xlab="Feeding type")
 #'
@@ -422,7 +422,7 @@ NULL
 #'
 NULL
 
-#' @name wgpigs2
+#' @name wgPigs2
 #'
 #' @title Age of castration in pig weight gain
 #'
@@ -450,7 +450,7 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @usage data(wgpigs2)
+#' @usage data(wgPigs2)
 #'
 #' @format a \code{data.frame} with 16 records and 4 variables.
 #'
@@ -461,36 +461,36 @@ NULL
 #'
 #' library(lattice)
 #'
-#' data(wgpigs2)
-#' str(wgpigs2)
+#' data(wgPigs2)
+#' str(wgPigs2)
 #'
-#' xyplot(wg~age, data=wgpigs2, groups=litter,
+#' xyplot(wg~age, data=wgPigs2, groups=litter,
 #'        ylab="Weight gain (kg)",
 #'        xlab="Age at castration (days)")
 #'
 NULL
 
-#' @name kornYield
+#' @name cornYield
 #'
-#' @title Korn yield as function of fertilization with NPK
+#' @title Corn yield as function of fertilization with NPK
 #'
 #' @description These data are from an \eqn{2^3} factorial experiment
 #'     studing the effect of Nitrogen (N), Phosporus (P) and Potassium
-#'     (K) on korn yield in a randomized block design.
+#'     (K) on corn yield in a randomized block design.
 #'
 #' \itemize{
 #'   \item \code{block} a factor with 4 levels.
 #'   \item \code{N} low (-1) and high (+1) levels of nitrogen.
 #'   \item \code{P} low (-1) and high (+1) levels of phosporus.
 #'   \item \code{K} low (-1) and high (+1) levels of potassium.
-#'   \item \code{yield} korn yield (ton/ha).
+#'   \item \code{yield} corn yield (ton/ha).
 #' }
 #'
 #' @docType data
 #'
 #' @keywords datasets
 #'
-#' @usage data(kornYield)
+#' @usage data(cornYield)
 #'
 #' @format a \code{data.frame} with 32 records and 4 variables.
 #'
@@ -502,16 +502,16 @@ NULL
 #' library(lattice)
 #' library(latticeExtra)
 #'
-#' data(kornYield)
-#' str(kornYield)
+#' data(cornYield)
+#' str(cornYield)
 #'
 #' xyplot(yield~N|P, groups=K,
-#'        data=kornYield, type=c("p", "a"),
+#'        data=cornYield, type=c("p", "a"),
 #'        ylab=expression(Yield~(ton~ha^{-1})),
 #'        xlab="Nutrient level")
 #'
 #' xyplot(yield~N, groups=interaction(P, K),
-#'        data=kornYield, type=c("p", "a"),
+#'        data=cornYield, type=c("p", "a"),
 #'        auto.key=list(columns=2),
 #'        ylab=expression(Yield~(ton~ha^{-1})),
 #'        xlab="Nutrient level")
@@ -711,12 +711,12 @@ NULL
 #'
 NULL
 
-#' @name kornYield2
+#' @name cornYield2
 #'
 #' @title Axial factorial NPK experiment with added treatments
 #'
 #' @description These data are from an axial 3 factorial experiment
-#'     studing NPK in the yield of korn. Tow controls were added, one is
+#'     studing NPK in the yield of corn. Tow controls were added, one is
 #'     zer control (no NPK) and the other is central factorial point
 #'     plus presence of limestone.
 #'
@@ -725,7 +725,7 @@ NULL
 #'   \item \code{P} content of phosphorus in the fertilizer.
 #'   \item \code{K} content of potassium in the fertilizer.
 #'   \item \code{limestone} presence (1) or absence of limestone (0).
-#'   \item \code{acid} mean of korn yield in 16 locations (ton/ha).
+#'   \item \code{acid} mean of corn yield in 16 locations (ton/ha).
 #' }
 #'
 #' @details The experiment was caried out in 16 different locations but
@@ -751,15 +751,15 @@ NULL
 #' library(lattice)
 #' library(latticeExtra)
 #'
-#' data(kornYield2)
-#' str(kornYield2)
+#' data(cornYield2)
+#' str(cornYield2)
 #'
 #' ## Axial triple factorial with 2 controls.
-#' ftable(xtabs(~N+P+K, data=kornYield2))
+#' ftable(xtabs(~N+P+K, data=cornYield2))
 #'
 #' xyplot(yield~N+P+K,
 #'        groups=as.integer(limestone==1 | (N+P+K)==0),
-#'        data=kornYield2, type=c("p", "a"),
+#'        data=cornYield2, type=c("p", "a"),
 #'        auto.key=TRUE,
 #'        ylab=expression(Yield~(ton~ha^{-1})),
 #'        xlab="Nutrient content")
