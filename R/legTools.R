@@ -75,6 +75,7 @@ NULL
 #'     ed.). Piracicaba, São Paulo: FEALQ. (page 76)
 #'
 #' @examples
+#'
 #' library(lattice)
 #' data(potatoYield)
 #'
@@ -115,6 +116,7 @@ NULL
 #'     ed.). Piracicaba, São Paulo: FEALQ. (page 91)
 #'
 #' @examples
+#'
 #' library(lattice)
 #' data(plowing)
 #'
@@ -466,35 +468,6 @@ NULL
 #'        ylab="Weight gain (kg)",
 #'        xlab="Age at castration (days)")
 #'
-#' m0 <- lm(wg~litter+size+age, data=wgpigs2)
-#' par(mfrow=c(2,2)); plot(m0); layout(1)
-#' anova(m0)
-#'
-#' summary(m0)
-#'
-#' library(multcomp)
-#' summary(glht(m0, linfct=mcp(age="Dunnet")),
-#'         test=adjusted(type="single-step"))
-#'
-#' m1 <- glm(wg~litter+size+age, data=wgpigs2, family=Gamma)
-#' m2 <- glm(wg~litter+size+age, data=wgpigs2,
-#'           family=Gamma(link="log"))
-#' m3 <- glm(wg~litter+size+age, data=wgpigs2,
-#'           family=Gamma(link="identity"))
-#'
-#' rbind(logLik(m0),
-#'       logLik(m1),
-#'       logLik(m2),
-#'       logLik(m3))
-#'
-#' par(mfrow=c(2,2)); plot(m1); layout(1)
-#' anova(m1, test="F")
-#' anova(m2, test="F")
-#' anova(m3, test="F")
-#'
-#' summary(glht(m3, linfct=mcp(age="Dunnet")),
-#'         test=adjusted(type="single-step"))
-#'
 NULL
 
 #' @name kornYield
@@ -543,35 +516,6 @@ NULL
 #'        ylab=expression(Yield~(ton~ha^{-1})),
 #'        xlab="Nutrient level")
 #'
-#' m0 <- lm(yield~block+(N+P+K)^3, data=kornYield)
-#' par(mfrow=c(2,2)); plot(m0); layout(1)
-#' anova(m0)
-#'
-#' m1 <- update(m0, .~block+N+K)
-#' par(mfrow=c(2,2)); plot(m1); layout(1)
-#'
-#' anova(m0, m1)
-#' anova(m1)
-#'
-#' summary(m1)
-#'
-#' pred <- expand.grid(block="1",
-#'                     N=seq(-1, 1, by=0.1),
-#'                     K=seq(-1, 1, by=0.1))
-#' pred$mu <- predict(m1, newdata=pred)
-#'
-#' wireframe(mu~N+K, data=pred,
-#'           scales=list(arrows=FALSE),
-#'           zlab=list(expression(Yield~(ton~ha^{-1})), rot=90),
-#'           drape=TRUE, cuts=20,
-#'           col.regions=colorRampPalette(
-#'               color=brewer.pal(n=11, name="Spectral"))(21))
-#'
-#' levelplot(mu~N+K, data=pred, aspect=1,
-#'           main=expression(Yield~(ton~ha^{-1})),
-#'           col.regions=colorRampPalette(
-#'               color=brewer.pal(n=11, name="Spectral")))
-#'
 NULL
 
 #' @name vinasseFert
@@ -617,18 +561,6 @@ NULL
 #'        data=vinasseFert, type=c("p", "a"),
 #'        ylab="y",
 #'        xlab="Vinasse level")
-#'
-#' m0 <- lm(y~block+(vinasse+mineral)^2, data=vinasseFert)
-#' par(mfrow=c(2,2)); plot(m0); layout(1)
-#' anova(m0)
-#'
-#' m1 <- update(m0, .~block+vinasse)
-#' par(mfrow=c(2,2)); plot(m1); layout(1)
-#'
-#' anova(m0, m1)
-#' anova(m1)
-#'
-#' summary(m1)
 #'
 NULL
 
@@ -676,23 +608,6 @@ NULL
 #'        ylab="y",
 #'        xlab="Filter cake level")
 #'
-#' m0 <- lm(y~block+(cake+mineral)^2, data=filterCake)
-#' par(mfrow=c(2,2)); plot(m0); layout(1)
-#' anova(m0)
-#'
-#' summary(m0)
-#'
-#' filterCake$Mineral <- factor(filterCake$mineral,
-#'                              labels=c("absent", "present"))
-#'
-#' m1 <- aov(y~block+Mineral/cake, data=filterCake)
-#' anova(m1)
-#'
-#' ## Split SS to see effect of cake in each level of mineral.
-#' summary(m1, split=list("Mineral:cake"=list("absent"=1, "present"=2)))
-#'
-#' summary.lm(m1)
-#'
 #'
 NULL
 
@@ -730,7 +645,6 @@ NULL
 #'
 #' library(lattice)
 #' library(latticeExtra)
-#' library(multcomp)
 #'
 #' data(sugarcaneYield4)
 #' str(sugarcaneYield4)
@@ -742,55 +656,6 @@ NULL
 #'        data=sugarcaneYield4, type=c("p", "a"),
 #'        ylab=expression(Yield~(ton~ha^{-1})),
 #'        xlab="Nitrogen level level")
-#'
-#' ## Sums in each cell combination.
-#' addmargins(with(sugarcaneYield4, tapply(yield, list(P, N), FUN=sum)))
-#' addmargins(with(sugarcaneYield4, tapply(yield, list(K, N), FUN=sum)))
-#' addmargins(with(sugarcaneYield4, tapply(yield, list(K, P), FUN=sum)))
-#'
-#' sugarcaneYield4 <- transform(sugarcaneYield4,
-#'                              blockr=interaction(block, rept),
-#'                              nitro=factor(N),
-#'                              phosp=factor(P),
-#'                              potas=factor(K))
-#' str(sugarcaneYield4)
-#'
-#' m0 <- lm(yield~blockr+(nitro+phosp+potas)^3, data=sugarcaneYield4)
-#' par(mfrow=c(2,2)); plot(m0); layout(1)
-#' anova(m0)
-#'
-#' m1 <- update(m0, .~blockr+(nitro+phosp)^2)
-#' par(mfrow=c(2,2)); plot(m1); layout(1)
-#'
-#' anova(m0, m1)
-#' anova(m1)
-#'
-#' m2 <- aov(yield~blockr+nitro/phosp, data=sugarcaneYield4)
-#' anova(m2)
-#'
-#' PinN <- sapply(paste0("nitro", levels(sugarcaneYield4$nitro)),
-#'                FUN=grep, x=names(coef(m2))[m2$assign==3L],
-#'                simplify=FALSE)
-#'
-#' summary(m2, split=list("nitro:phosp"=PinN))
-#'
-#' X <- model.matrix(m1)
-#' X
-#'
-#' aggregate(X~nitro+phosp, data=sugarcaneYield4, FUN=mean)
-#'
-#' ## It is better use multcomp::LSmatrix().
-#' L <- aggregate(X~nitro+phosp, data=sugarcaneYield4, FUN=mean)
-#' rownames(L) <- with(L, paste0("N", nitro, ":P", phosp))
-#' L <- as.matrix(L[, colnames(X)])
-#' str(L)
-#'
-#' ## Least squares means for N:P combinations.
-#' L%*%coef(m1)
-#'
-#' g1 <- glht(m1, linfct=L)
-#'
-#' confint(g1, calpha=univariate_calpha())
 #'
 NULL
 
