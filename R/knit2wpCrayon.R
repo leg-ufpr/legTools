@@ -65,23 +65,39 @@ knit2wpCrayon <- function(input, title="A post from knitr", ...,
         stop("`markdown` needed for this function to work. Please install it.",
              call.=FALSE)
     }
-        if (!requireNamespace("RWordPress", quietly=TRUE)){
+    if (!requireNamespace("RWordPress", quietly=TRUE)){
         stop("`RWordPress` needed for this function to work. Please install it.",
              call.=FALSE)
     }
+    ##
+    ##-------------------------------------------
+    ## knitr:::native_encode().
+    ##
+    native_encode <- function (x, to = ""){
+        idx = Encoding(x) == "UTF-8"
+        x2 = iconv(x, if (any(idx)) "UTF-8" else "", to)
+        if (!any(is.na(x2))) 
+            return(x2)
+        warning("some characters may not work under the current locale")
+        x
+    }
+    ##
+    ##-------------------------------------------
+    ## Modifed body of the knit2wp().
+    ##
     out <- knitr::knit(input, encoding=encoding)
     on.exit(unlink(out))
     con <- file(out, encoding=encoding)
     on.exit(close(con), add=TRUE)
-    content <- knitr:::native_encode(readLines(con, warn=FALSE))
+    content <- native_encode(readLines(con, warn=FALSE))
     content <- paste(content, collapse="\n")
     content <- markdown::markdownToHTML(text=content, fragment.only=TRUE)
     content <- gsub(
         pattern="<pre><code class=\"([[:alpha:]]+)\">(.+?)</code></pre>",
         replacement="<pre class=\"lang:\\1 decode:true\">\\2</pre>",
         x=content)
-    content=knitr:::native_encode(content, "UTF-8")
-    title=knitr:::native_encode(title, "UTF-8")
+    content=native_encode(content, "UTF-8")
+    title=native_encode(title, "UTF-8")
     if (write){
         writeLines(text=content,
                    con=gsub(x=out, pattern="\\.md$", replacement=".html"))
@@ -96,3 +112,7 @@ knit2wpCrayon <- function(input, title="A post from knitr", ...,
         print(do.call(action, args=WPargs))
     }
 }
+
+
+library(knitr)
+knitr:::native_encode
