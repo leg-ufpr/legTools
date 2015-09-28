@@ -1,3 +1,4 @@
 job_R:
   script:
+    - Rscript -e 'getwd(); .libPaths(); sessionInfo()'
     - Rscript -e 'library(devtools); check()'
