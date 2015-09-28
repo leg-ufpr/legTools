@@ -1,0 +1,6 @@
+job_R:
+  script:
+    - Rscript -e 'library(devtools); load_all()'
+    - Rscript -e 'library(devtools); document()'
+    - Rscript -e 'library(devtools); check_doc()'
+    - Rscript -e 'library(devtools); check()'
