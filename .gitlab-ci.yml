@@ -1,4 +1,5 @@
 job_R:
   script:
+    - echo $HOME
     - Rscript -e 'getwd(); .libPaths(); sessionInfo()'
     - Rscript -e 'library(devtools); check()'
