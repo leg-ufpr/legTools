@@ -1,4 +1,6 @@
 README.md
+README.Rmd
+VERSION
 Rplots.pdf
 contributing.md
 buildPkg.R
