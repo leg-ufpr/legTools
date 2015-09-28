@@ -33,8 +33,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 20 records and 2 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 62)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 62)
 #'
 #' @examples
 #'
@@ -71,8 +71,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 32 records and 3 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 76)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 76)
 #'
 #' @examples
 #'
@@ -112,8 +112,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 24 records and 3 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 91)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 91)
 #'
 #' @examples
 #'
@@ -235,8 +235,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 24 records and 3 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 93)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 93)
 #'
 #' @examples
 #'
@@ -274,8 +274,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 28 records and 3 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 92)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 92)
 #'
 #' @examples
 #'
@@ -316,8 +316,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 28 records and 3 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 96)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 96)
 #'
 #' @examples
 #'
@@ -384,8 +384,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 28 records and 3 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 99)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 99)
 #'
 #' @examples
 #'
@@ -454,8 +454,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 16 records and 4 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 110)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 110)
 #'
 #' @examples
 #'
@@ -494,8 +494,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 32 records and 4 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 115)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 115)
 #'
 #' @examples
 #'
@@ -545,8 +545,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 16 records and 4 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 119)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 119)
 #'
 #' @examples
 #'
@@ -591,8 +591,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 16 records and 4 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 120)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 120)
 #'
 #' @examples
 #'
@@ -638,8 +638,8 @@ NULL
 #'
 #' @format a \code{data.frame} with 54 records and 6 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 126)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 126)
 #'
 #' @examples
 #'
@@ -679,12 +679,12 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @usage data(sugarcaneYield4)
+#' @usage data(mangoAcidity)
 #'
 #' @format a \code{data.frame} with 54 records and 6 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 132)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 132)
 #'
 #' Simão, S. (1960). Estudo da planta e dos frutos da mangueira
 #'     (\emph{Manginifera indica} L.). Piracicaba, 1960. Thesis.
@@ -692,7 +692,6 @@ NULL
 #' @examples
 #'
 #' library(lattice)
-#' library(latticeExtra)
 #'
 #' data(mangoAcidity)
 #' str(mangoAcidity)
@@ -728,7 +727,7 @@ NULL
 #'   \item \code{acid} mean of corn yield in 16 locations (ton/ha).
 #' }
 #'
-#' @details The experiment was caried out in 16 different locations but
+#' @details The experiment was carried out in 16 different locations but
 #'     only the mean by cell combinations were available in the text
 #'     book.
 #'
@@ -736,12 +735,12 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @usage data(sugarcaneYield4)
+#' @usage data(cornYield2)
 #'
 #' @format a \code{data.frame} with 9 records and 5 variables.
 #'
-#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
-#'     ed.). Piracicaba, São Paulo: FEALQ. (page 132)
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 132)
 #'
 #' Simão, S. (1960). Estudo da planta e dos frutos da mangueira
 #'     (\emph{Manginifera indica} L.). Piracicaba, 1960. Thesis.
