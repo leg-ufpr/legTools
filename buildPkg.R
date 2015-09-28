@@ -49,16 +49,16 @@ pkg <- paste0("../legTools_", packageVersion("legTools"), ".tar.gz")
 install.packages(pkg, repos = NULL)
 
 ## Test using devtools::install_git().
-libTest <- "~/R/"
+libTest <- path.expand("~/R-test/")
 if (file.exists(libTest)){
     file.remove(libTest)
 }
-dir.create(path=libTest)
+dir.create(path = libTest)
 
-.libPaths(new=libTest); .libPaths()
+.libPaths(new = c(libTest, .libPaths())); .libPaths()
 
-install_git(url="http://git.leg.ufpr.br/leg/legTools.git",
-            branch="issue#9")
+install_git(url = "http://git.leg.ufpr.br/leg/legTools.git",
+            branch = "devel")
 
 library(legTools)
 packageVersion("legTools")
