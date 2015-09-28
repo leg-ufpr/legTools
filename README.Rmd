@@ -1,4 +1,4 @@
-# legTools 0.2.0
+# legTools `r readLines("VERSION")`
 
 [![build status](http://git.leg.ufpr.br/ci/projects/1/status.png?ref=master)](http://git.leg.ufpr.br/ci/projects/1?ref=master)
 Build status for the stable version (`master` branch)
@@ -24,30 +24,35 @@ Use the `devtools` package (available from
 [CRAN](http://cran-r.c3sl.ufpr.br/web/packages/devtools/index.html)) to
 install automatically from this GitLab repository:
 
-
-```r
+```{r, eval=FALSE}
 library(devtools)
 install_git("http://git.leg.ufpr.br/leg/legTools.git")
 ```
 
+```{r, echo=FALSE, include=FALSE}
+## Get VERSION and create file names
+ver <- readLines("VERSION")
+pkg.name <- "legTools_"
+pkg.source <- paste0(pkg.name, ver, ".tar.gz")
+pkg.win <- paste0(pkg.name, ver, ".zip")
+```
 
-
-Alternatively, download the package tarball: [legTools_0.2.0.tar.gz][]
+Alternatively, download the package tarball: [`r pkg.source`][]
 and run from a UNIX terminal (make sure you are on the container file
 directory):
 
-
-```
-R CMD INSTALL -l /path/to/your/R/library legTools_0.2.0.tar.gz
+```{r, echo=FALSE, comment=NA}
+cmd <- paste("R CMD INSTALL -l /path/to/your/R/library", pkg.source)
+cat(cmd, sep = "\n")
 ```
 
 Or, inside an `R` session:
 
-
-```
-install.packages("legTools_0.2.0.tar.gz", repos = NULL,
-                 lib.loc = "/path/to/your/R/library",
-                 dependencies = TRUE)
+```{r, echo=FALSE, comment=NA}
+inst <- paste0("install.packages(", "\"", pkg.source, "\"", ", repos = NULL,\n",
+               "                 lib.loc = \"/path/to/your/R/library\",\n",
+               "                 dependencies = TRUE)")
+cat(inst, sep = "\n")
 ```
 
 Note that `-l /path/to/your/R/library` in the former and `lib.loc =
@@ -57,14 +62,14 @@ library.
 
 ### Windows
 
-Download Windows binary version: [legTools_0.2.0.zip][] (**do not unzip
+Download Windows binary version: [`r pkg.win`][] (**do not unzip
 it under Windows**), put the file in your working directory, and from
 inside `R`:
 
-
-```
-install.packages("legTools_0.2.0.zip", repos = NULL,
-                 dependencies = TRUE)
+```{r, echo=FALSE, comment=NA}
+instw <- paste0("install.packages(", "\"", pkg.win, "\"", ", repos = NULL,\n",
+                "                 dependencies = TRUE)")
+cat(instw, sep = "\n")
 ```
 
 ### Development version
