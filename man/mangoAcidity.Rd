@@ -6,14 +6,14 @@
 \title{Acidity of mango fruits by varieties, years and months}
 \format{a \code{data.frame} with 54 records and 6 variables.}
 \source{
-Frederico, P. (2009). Curso de Estatística Experimental (15th
-    ed.). Piracicaba, São Paulo: FEALQ. (page 132)
+Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+    (15th ed.). Piracicaba, São Paulo: FEALQ. (page 132)
 
 Simão, S. (1960). Estudo da planta e dos frutos da mangueira
     (\emph{Manginifera indica} L.). Piracicaba, 1960. Thesis.
 }
 \usage{
-data(sugarcaneYield4)
+data(mangoAcidity)
 }
 \description{
 These data are from an observational study along 3 years
@@ -30,7 +30,6 @@ These data are from an observational study along 3 years
 }
 \examples{
 library(lattice)
-library(latticeExtra)
 
 data(mangoAcidity)
 str(mangoAcidity)
