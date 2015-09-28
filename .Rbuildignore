@@ -6,5 +6,6 @@ buildPkg.R
 .gitignore
 .Rprofile
 ^\.travis\.yml$
+^\.gitlab-ci.yml$
 ^\.git$
 ^data-raw$
