@@ -3,4 +3,4 @@ job_R:
     - echo $HOME
     - Rscript -e 'getwd(); .libPaths(); sessionInfo()'
     - Rscript -e 'library(devtools); check()'
-    - Rscript -e 'library(devtools); install(local = FALSE, lib = path.expand("~/R-tests/legTools"))'
+    - Rscript -e 'library(devtools); .libPaths(new = path.expand("~/R-tests/legTools")); install(local = FALSE)'
