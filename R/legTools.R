@@ -764,3 +764,55 @@ NULL
 #'        xlab="Nutrient content")
 #'
 NULL
+
+#' @name coffeeFert
+#'
+#' @title Number of dry branches in coffee trees as function of NPK
+#'
+#' @description These data are from a \eqn{2^3} factorial experiment
+#'     studing the effect of NPK fertilizaton on the number of dry
+#'     branches in coffee trees.
+#'
+#' \itemize{
+#'   \item \code{N} content of nitrogen in the fertilizer (low/high).
+#'   \item \code{P} content of phosphorus in the fertilizer (low/high).
+#'   \item \code{K} content of potassium in the fertilizer (low/high).
+#'   \item \code{block} an unordered factor representing the blocks
+#'     used.
+#'   \item \code{branches} an integer variable, the number of dry
+#'     branches in a coffee the.
+#' }
+#'
+#' @details The experiment was carried out in a randomized block design
+#'     with 6 blocks. In the book, the data is presented at squared root
+#'     scale.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(coffeeFert)
+#'
+#' @format a \code{data.frame} with 48 records and 5 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 137)
+#'
+#' Malavolta, E.; Pimentel Gomes, F.; Coury, T. (1958). Estudos sobre a
+#'     alimentação mineral do cafeeiro (\emph{Coffea arabica} L.,
+#'     variedade Bourbon Vermelho). Piracicaba.
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(coffeeFert)
+#' str(coffeeFert)
+#'
+#' xyplot(branches~N|P, groups=K,
+#'        data=coffeeFert, type=c("p", "a"),
+#'        ylab=expression(Branches~(plant^{-1})),
+#'        xlab="Nutrient level")
+#'
+NULL

@@ -6,8 +6,8 @@
 \title{Corn yield as function of fertilization with NPK}
 \format{a \code{data.frame} with 32 records and 4 variables.}
 \source{
-Frederico, P. (2009). Curso de Estatística Experimental (15th
-    ed.). Piracicaba, São Paulo: FEALQ. (page 115)
+Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+    (15th ed.). Piracicaba, São Paulo: FEALQ. (page 115)
 }
 \usage{
 data(cornYield)

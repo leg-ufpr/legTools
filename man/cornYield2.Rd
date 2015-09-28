@@ -6,14 +6,14 @@
 \title{Axial factorial NPK experiment with added treatments}
 \format{a \code{data.frame} with 9 records and 5 variables.}
 \source{
-Frederico, P. (2009). Curso de Estatística Experimental (15th
-    ed.). Piracicaba, São Paulo: FEALQ. (page 132)
+Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+    (15th ed.). Piracicaba, São Paulo: FEALQ. (page 132)
 
 Simão, S. (1960). Estudo da planta e dos frutos da mangueira
     (\emph{Manginifera indica} L.). Piracicaba, 1960. Thesis.
 }
 \usage{
-data(sugarcaneYield4)
+data(cornYield2)
 }
 \description{
 These data are from an axial 3 factorial experiment
@@ -30,7 +30,7 @@ These data are from an axial 3 factorial experiment
 }
 }
 \details{
-The experiment was caried out in 16 different locations but
+The experiment was carried out in 16 different locations but
     only the mean by cell combinations were available in the text
     book.
 }
