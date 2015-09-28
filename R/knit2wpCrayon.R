@@ -76,7 +76,7 @@ knit2wpCrayon <- function(input, title="A post from knitr", ...,
     native_encode <- function (x, to = ""){
         idx = Encoding(x) == "UTF-8"
         x2 = iconv(x, if (any(idx)) "UTF-8" else "", to)
-        if (!any(is.na(x2))) 
+        if (!any(is.na(x2)))
             return(x2)
         warning("some characters may not work under the current locale")
         x
@@ -112,7 +112,3 @@ knit2wpCrayon <- function(input, title="A post from knitr", ...,
         print(do.call(action, args=WPargs))
     }
 }
-
-
-library(knitr)
-knitr:::native_encode
