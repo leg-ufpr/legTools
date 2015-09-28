@@ -1,5 +1,7 @@
 # legTools 0.1.2
 
+[![build status](http://git.leg.ufpr.br/ci/projects/1/status.png?ref=devel)](http://git.leg.ufpr.br/ci/projects/1?ref=devel)
+
 An R package containing convenience functions, small GUI to teach
 statistics and some datasets.
 
