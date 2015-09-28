@@ -10,15 +10,15 @@ runAllChunks(Rmd, envir = globalenv())
 \item{Rmd}{the name of the Rmd file.}
 
 \item{envir}{the environment in which the chunks will be
-evaluated. By default it is the GlobalEnv.}
+    evaluated. By default it is the GlobalEnv.}
 }
 \value{
 Objects created in the chunks from the Rmd file.
 }
 \description{
 This function was developed to run all chunks in a knitr
-Rmd (R markdown) file at once. Mainly for exploring and debugging
-purposes.
+    Rmd (R markdown) file at once. Mainly for exploring and debugging
+    purposes.
 }
 \author{
 Fernando Mayer, \email{fernando.mayer@ufpr.br}

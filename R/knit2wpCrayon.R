@@ -25,7 +25,6 @@
 #'
 #' @author Walmes Zeviani, \email{walmes@@ufpr.br}
 #'
-#' @import knitr markdown RWordPress
 #' @export
 #' @examples
 #' \donttest{
@@ -66,17 +65,33 @@ knit2wpCrayon <- function(input, title="A post from knitr", ...,
         stop("`markdown` needed for this function to work. Please install it.",
              call.=FALSE)
     }
-        if (!requireNamespace("RWordPress", quietly=TRUE)){
+    if (!requireNamespace("RWordPress", quietly=TRUE)){
         stop("`RWordPress` needed for this function to work. Please install it.",
              call.=FALSE)
     }
-    out <- knit(input, encoding=encoding)
+    ##
+    ##-------------------------------------------
+    ## knitr:::native_encode().
+    ##
+    native_encode <- function (x, to = ""){
+        idx = Encoding(x) == "UTF-8"
+        x2 = iconv(x, if (any(idx)) "UTF-8" else "", to)
+        if (!any(is.na(x2)))
+            return(x2)
+        warning("some characters may not work under the current locale")
+        x
+    }
+    ##
+    ##-------------------------------------------
+    ## Modifed body of the knit2wp().
+    ##
+    out <- knitr::knit(input, encoding=encoding)
     on.exit(unlink(out))
     con <- file(out, encoding=encoding)
     on.exit(close(con), add=TRUE)
     content <- native_encode(readLines(con, warn=FALSE))
     content <- paste(content, collapse="\n")
-    content <- markdownToHTML(text=content, fragment.only=TRUE)
+    content <- markdown::markdownToHTML(text=content, fragment.only=TRUE)
     content <- gsub(
         pattern="<pre><code class=\"([[:alpha:]]+)\">(.+?)</code></pre>",
         replacement="<pre class=\"lang:\\1 decode:true\">\\2</pre>",

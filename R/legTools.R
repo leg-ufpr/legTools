@@ -7,7 +7,7 @@
 ##' @name legTools
 NULL
 
-#' @name wgpigs
+#' @name wgPigs
 #'
 #' @title Feeding type in pig weight gain
 #'
@@ -29,7 +29,7 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @usage data(wgpigs)
+#' @usage data(wgPigs)
 #'
 #' @format a \code{data.frame} with 20 records and 2 variables.
 #'
@@ -38,16 +38,16 @@ NULL
 #'
 #' @examples
 #'
-#' require(lattice)
-#' data(wgpigs)
+#' library(lattice)
+#' data(wgPigs)
 #'
-#' xyplot(wg~ft, data=wgpigs,
+#' xyplot(wg~ft, data=wgPigs,
 #'        ylab="Weight gain (kg)",
 #'        xlab="Feeding type")
 #'
 NULL
 
-#' @name potatoyield
+#' @name potatoYield
 #'
 #' @title Potato variety competition experiment
 #'
@@ -67,7 +67,7 @@ NULL
 #'
 #' @keywords datasets
 #'
-#' @usage data(potatoyield)
+#' @usage data(potatoYield)
 #'
 #' @format a \code{data.frame} with 32 records and 3 variables.
 #'
@@ -75,10 +75,11 @@ NULL
 #'     ed.). Piracicaba, São Paulo: FEALQ. (page 76)
 #'
 #' @examples
-#' require(lattice)
-#' data(potatoyield)
 #'
-#' plot(yield~variety, data=potatoyield,
+#' library(lattice)
+#' data(potatoYield)
+#'
+#' plot(yield~variety, data=potatoYield,
 #'      groups=block, type="o",
 #'      ylab=expression(Yield~(t~ha^{-1})),
 #'      xlab="Variety")
@@ -115,8 +116,9 @@ NULL
 #'     ed.). Piracicaba, São Paulo: FEALQ. (page 91)
 #'
 #' @examples
-#' require(lattice)
-#' data(potatoyield)
+#'
+#' library(lattice)
+#' data(plowing)
 #'
 #' xyplot(yield~plow|block, data=plowing, type=c("p", "a"),
 #'        ylab=expression(Yield~(t~ha^{-1})),
@@ -204,5 +206,562 @@ NULL
 #'        aspect="iso", xlim=xlim, ylim=ylim,
 #'        ylab="Sample variance", xlab="Sample mean")+
 #'     layer(panel.abline(a=0, b=1, lty=2))
+#'
+NULL
+
+#' @name cassavaYield
+#'
+#' @title Cassava variety competition experiment
+#'
+#' @description These data are from an experiment done by The Brazilian
+#'     Agricultural Research Corporation in Cassava & Tropical Fruits
+#'     (Centro Nacional de Pesquisa da Mandioca e Fruticultura da
+#'     Embrapa) at Cruz das Almas, Bahia. The experiment was done in a
+#'     randomized complete block design with 4 blocks. Cassava yield
+#'     (t/ha) was recorded in each experimental unit.
+#'
+#' \itemize{
+#'     \item \code{block} a categorical unordered factor with 4 levels.
+#'     \item \code{variety} a categorical unordered factor with 6
+#'     levels.
+#'     \item \code{yield} cassava yield (t/ha).
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(cassavaYield)
+#'
+#' @format a \code{data.frame} with 24 records and 3 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 93)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' data(cassavaYield)
+#'
+#' plot(yield~variety, data=cassavaYield,
+#'      groups=block, type="o",
+#'      ylab=expression(Yield~(t~ha^{-1})),
+#'      xlab="Variety")
+#'
+NULL
+
+#' @name sugarcaneYield
+#'
+#' @title Sugarcane variety experiment
+#'
+#' @description These data are from an experiment done by The West São
+#'     Paulo State Sugar Mills Cooperative. The experiment was done in a
+#'     randomized complete block design with 4 blocks. Sugarcane yield
+#'     (kg/plot) was recorded in each experimental unit.
+#'
+#' \itemize{
+#'     \item \code{block} a categorical unordered factor with 4 levels.
+#'     \item \code{variety} a categorical unordered factor with 7
+#'     levels.
+#'     \item \code{yield} sugarcane yield (kg/plot).
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield)
+#'
+#' @format a \code{data.frame} with 28 records and 3 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 92)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' data(sugarcaneYield)
+#'
+#' plot(yield~variety, data=sugarcaneYield,
+#'      groups=block, type="o",
+#'      ylab=expression(Yield~(kg~plot^{-1})),
+#'      xlab="Variety")
+#'
+NULL
+
+#' @name sugarcaneYield2
+#'
+#' @title Sugarcane variety competition experiment
+#'
+#' @description These data are from an experiment done in a latin square
+#'     design of size 5. Sugarcane yield (kg/plot) was recorded in each
+#'     experimental unit.
+#'
+#' \itemize{
+#'     \item \code{row} the rows of the latin square that controls in
+#'     one dimention. A categorical unordered factor with 5 levels.
+#'     \item \code{col} the columns of the latin square that controls in
+#'     one dimention perpendicular to the previus. A categorical
+#'     unordered factor with 5 levels.
+#'     \item \code{variety} a categorical unordered factor with 5
+#'     levels.
+#'     \item \code{yield} sugarcane yield (kg/plot).
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield2)
+#'
+#' @format a \code{data.frame} with 28 records and 3 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 96)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' xyplot(yield~variety|col,  groups=row, data=sugarcaneYield2,
+#'        ylab=expression(Yield~(kg~plot^{-1})),
+#'        xlab="Variety")
+#'
+#' ## display.brewer.all()
+#'
+#' levelplot(yield~row+col,
+#'           data=sugarcaneYield2, aspect="iso",
+#'           xlab="Row", ylab="Column",
+#'           main=expression(Yield~(kg~plot^{-1})),
+#'           col.regions=colorRampPalette(
+#'               colors=brewer.pal(n=11, name="Spectral")))+
+#'     layer(with(sugarcaneYield2,
+#'                panel.text(x=row, y=col,
+#'                           label=paste(variety, yield))))
+#'
+#' aggregate(yield~row, data=sugarcaneYield2, FUN=mean)
+#' aggregate(yield~col, data=sugarcaneYield2, FUN=mean)
+#' aggregate(yield~variety, data=sugarcaneYield2, FUN=mean)
+#'
+NULL
+
+#' @name sugarcaneYield3
+#'
+#' @title Sugarcane yield as function of fertilization strategy
+#'
+#' @description These data are from an experiment done in a latin square
+#'     design of size 5. Sugarcane yield (kg/plot) was recorded in each
+#'     experimental unit.
+#'
+#' \itemize{
+#'   \item \code{row} the rows of the latin square that controls in
+#'     one dimention. A categorical unordered factor with 6 levels.
+#'   \item \code{col} the columns of the latin square that controls in
+#'     one dimention perpendicular to the previus. A categorical
+#'     unordered factor with 6 levels.
+#'   \item \code{fertil} a categorical unordered factor with 6
+#'     levels that is the fertilization strategy applied. These levels
+#'     are a result of treatment cells in a three incomplete factorial
+#'     arrangrment. See detais for more information.
+#'   \item \code{yield} sugarcane yield (kg/plot).
+#' }
+#'
+#' @details The levels of fertilization are in fact a combination of a
+#'     \eqn{3^2} factorial experiment but not all cells are present, so
+#'     this is a (intentional) incomplete three factorial
+#'     experiment. The factors used were limestone (A: present, a:
+#'     absent), \emph{Crotalaria juncae} (B: present, b: absent) and
+#'     fertilizer (C: present, c: absent). Therefore, the level ABC
+#'     means that all three factors are present. To access the effect of
+#'     each factor and interactions can be applied contrasts.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield3)
+#'
+#' @format a \code{data.frame} with 28 records and 3 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 99)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' xyplot(yield~fertil|col,  groups=row, data=sugarcaneYield3,
+#'        ylab=expression(Yield~(kg~plot^{-1})),
+#'        xlab="Fertilization", scales=list(x=list(rot=90)))
+#'
+#' ## display.brewer.all()
+#'
+#' levelplot(yield~row+col,
+#'           data=sugarcaneYield3, aspect="iso",
+#'           xlab="Row", ylab="Column",
+#'           main=expression(Yield~(kg~plot^{-1})),
+#'           col.regions=colorRampPalette(
+#'               colors=brewer.pal(n=11, name="Spectral")))+
+#'     layer(with(sugarcaneYield3,
+#'                panel.text(x=row, y=col,
+#'                           label=sprintf("%s\n%0.2f", fertil, yield))))
+#'
+#' aggregate(yield~row, data=sugarcaneYield3, FUN=mean)
+#' aggregate(yield~col, data=sugarcaneYield3, FUN=mean)
+#' aggregate(yield~fertil, data=sugarcaneYield3, FUN=mean)
+#'
+#' ## The incomplete factorial structure.
+#' X <- mapply(FUN=grepl, c("A", "B", "C"),
+#'             MoreArgs=list(x=sugarcaneYield3$fertil))*1
+#' sugarcaneYield3 <- cbind(sugarcaneYield3, as.data.frame(X))
+#'
+#' ftable(with(sugarcaneYield3, tapply(yield, list(B, A, C), FUN=mean)))
+#' aggregate(yield~A+B+C, data=sugarcaneYield3, FUN=mean)
+#'
+NULL
+
+#' @name wgPigs2
+#'
+#' @title Age of castration in pig weight gain
+#'
+#' @description This is an artifial dataset corresponding a experiment
+#'     to study the effect of feeding type (factor with 4 categorical
+#'     nominal levels) in pig weight gain. The experiment was a
+#'     randomized complete design with five experimental units per
+#'     treatment level. The experimental unit was a pig. The response
+#'     measured was weight gain from the beggining to the end of the
+#'     experiment.
+#'
+#' \itemize{
+#'   \item \code{litter} a categorical factor with 4 levels that
+#'     represents the rows of the lattin square design and control for
+#'     the differences among litters.
+#'   \item code{size} a categorical ordered variable that represents the
+#'     columns of latin square desing and control for the weight of the
+#'     animals at the beggining of the experiment.
+#'   \item \code{age} age of the animal (days) when castration was
+#'     done. \code{controls} are the animals without castration.
+#'   \item \code{wg} weight gain (kg) after 252 days.
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(wgPigs2)
+#'
+#' @format a \code{data.frame} with 16 records and 4 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 110)
+#'
+#' @examples
+#'
+#' library(lattice)
+#'
+#' data(wgPigs2)
+#' str(wgPigs2)
+#'
+#' xyplot(wg~age, data=wgPigs2, groups=litter,
+#'        ylab="Weight gain (kg)",
+#'        xlab="Age at castration (days)")
+#'
+NULL
+
+#' @name cornYield
+#'
+#' @title Corn yield as function of fertilization with NPK
+#'
+#' @description These data are from an \eqn{2^3} factorial experiment
+#'     studing the effect of Nitrogen (N), Phosporus (P) and Potassium
+#'     (K) on corn yield in a randomized block design.
+#'
+#' \itemize{
+#'   \item \code{block} a factor with 4 levels.
+#'   \item \code{N} low (-1) and high (+1) levels of nitrogen.
+#'   \item \code{P} low (-1) and high (+1) levels of phosporus.
+#'   \item \code{K} low (-1) and high (+1) levels of potassium.
+#'   \item \code{yield} corn yield (ton/ha).
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(cornYield)
+#'
+#' @format a \code{data.frame} with 32 records and 4 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 115)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(cornYield)
+#' str(cornYield)
+#'
+#' xyplot(yield~N|P, groups=K,
+#'        data=cornYield, type=c("p", "a"),
+#'        ylab=expression(Yield~(ton~ha^{-1})),
+#'        xlab="Nutrient level")
+#'
+#' xyplot(yield~N, groups=interaction(P, K),
+#'        data=cornYield, type=c("p", "a"),
+#'        auto.key=list(columns=2),
+#'        ylab=expression(Yield~(ton~ha^{-1})),
+#'        xlab="Nutrient level")
+#'
+NULL
+
+#' @name vinasseFert
+#'
+#' @title Fertilization with vinasse and mineral
+#'
+#' @description These data are from an \eqn{2^2} factorial experiment
+#'     studing the effect of fertilizaton with vinasse (a residual from
+#'     industrial processing of sugar cane) and complete mineral
+#'     fertilization.
+#'
+#' \itemize{
+#'   \item \code{block} a factor with 4 levels.
+#'   \item \code{mineral} low (-1) and high (+1) levels of mineral
+#'     fertilization.
+#'   \item \code{vinasse} low (-1) and high (+1) levels of fetilization
+#'     with vinasse.
+#'   \item \code{y} some response variable. The text book doesn't give
+#'     any information.
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(vinasseFert)
+#'
+#' @format a \code{data.frame} with 16 records and 4 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 119)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(vinasseFert)
+#' str(vinasseFert)
+#'
+#' xyplot(y~vinasse, groups=mineral,
+#'        auto.key=list(title="Mineral", columns=2),
+#'        data=vinasseFert, type=c("p", "a"),
+#'        ylab="y",
+#'        xlab="Vinasse level")
+#'
+NULL
+
+#' @name filterCake
+#'
+#' @title Fertilization with filter cake and mineral
+#'
+#' @description These data are from an \eqn{2^2} factorial experiment
+#'     studing the effect of fertilizaton with filter cake (a residual
+#'     from industrial processing of sugar cane) and traditional mineral
+#'     fertilization.
+#'
+#' \itemize{
+#'   \item \code{block} a factor with 4 levels.
+#'   \item \code{mineral} low (-1) and high (+1) levels of mineral
+#'     fertilization.
+#'   \item \code{cake} low (-1) and high (+1) levels of fetilization
+#'     with filter cake.
+#'   \item \code{y} some response variable. The text book doesn't give
+#'     any information.
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(filterCake)
+#'
+#' @format a \code{data.frame} with 16 records and 4 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 120)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(filterCake)
+#' str(filterCake)
+#'
+#' xyplot(y~cake, groups=mineral,
+#'        auto.key=list(title="Mineral", columns=2),
+#'        data=filterCake, type=c("p", "a"),
+#'        ylab="y",
+#'        xlab="Filter cake level")
+#'
+#'
+NULL
+
+#' @name sugarcaneYield4
+#'
+#' @title Triple factorial NPK fertilization on sugar cane yield
+#'
+#' @description These data are from an \eqn{3^3} factorial experiment
+#'     studing the effect of NPK on the yield of sugar cane.
+#'
+#' \itemize{
+#'   \item \code{block} a local control factor with 3 levels.
+#'   \item \code{rept} factor with 2 levels.
+#'   \item \code{N} integer coded nitrogen levels (0, 1, 2).
+#'   \item \code{P} integer coded phosphorus levels (0, 1, 2).
+#'   \item \code{K} integer coded potassium levels (0, 1, 2).
+#'   \item \code{yield} sugar cane yield (ton/ha).
+#' }
+#'
+#' @details There is a missprint in the book for the 9th entry, which
+#'     has yield 59.0, that is coded as 202 istead of 220.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield4)
+#'
+#' @format a \code{data.frame} with 54 records and 6 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 126)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(sugarcaneYield4)
+#' str(sugarcaneYield4)
+#'
+#' xyplot(yield~N|P, groups=K,
+#'        auto.key=list(title="Potassim level", columns=3),
+#'        strip=strip.custom(var.name="Phosphorus", strip.names=TRUE,
+#'                           strip.levels=TRUE, sep=": "),
+#'        data=sugarcaneYield4, type=c("p", "a"),
+#'        ylab=expression(Yield~(ton~ha^{-1})),
+#'        xlab="Nitrogen level level")
+#'
+NULL
+
+#' @name mangoAcidity
+#'
+#' @title Acidity of mango fruits by varieties, years and months
+#'
+#' @description These data are from an observational study along 3 years
+#'     where acidity in fruits of 6 varieties of mango was determined in
+#'     Novermber, December and January.
+#'
+#' \itemize{
+#'   \item \code{variety} a categorical variable with 6 levels that
+#'     represents mango varieties studied.
+#'   \item \code{year} the year of harvesting.
+#'   \item \code{month} the month of harvesting.
+#'   \item \code{acid} mean of the acidity determined in 3 fruits.
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield4)
+#'
+#' @format a \code{data.frame} with 54 records and 6 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 132)
+#'
+#' Simão, S. (1960). Estudo da planta e dos frutos da mangueira
+#'     (\emph{Manginifera indica} L.). Piracicaba, 1960. Thesis.
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(mangoAcidity)
+#' str(mangoAcidity)
+#'
+#' ## reshape::cast() can also be used.
+#' with(mangoAcidity,
+#'      ftable(tapply(acid,
+#'                    list(variety, year, month),
+#'                    FUN=identity)))
+#'
+#' xyplot(acid~month|variety, groups=year,
+#'        data=mangoAcidity, type=c("p", "a"),
+#'        auto.key=TRUE,
+#'        ylab="Acidity",
+#'        xlab="Month")
+#'
+NULL
+
+#' @name cornYield2
+#'
+#' @title Axial factorial NPK experiment with added treatments
+#'
+#' @description These data are from an axial 3 factorial experiment
+#'     studing NPK in the yield of corn. Tow controls were added, one is
+#'     zer control (no NPK) and the other is central factorial point
+#'     plus presence of limestone.
+#'
+#' \itemize{
+#'   \item \code{N} content of nitrogen in the fertilizer.
+#'   \item \code{P} content of phosphorus in the fertilizer.
+#'   \item \code{K} content of potassium in the fertilizer.
+#'   \item \code{limestone} presence (1) or absence of limestone (0).
+#'   \item \code{acid} mean of corn yield in 16 locations (ton/ha).
+#' }
+#'
+#' @details The experiment was caried out in 16 different locations but
+#'     only the mean by cell combinations were available in the text
+#'     book.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield4)
+#'
+#' @format a \code{data.frame} with 9 records and 5 variables.
+#'
+#' @source Frederico, P. (2009). Curso de Estatística Experimental (15th
+#'     ed.). Piracicaba, São Paulo: FEALQ. (page 132)
+#'
+#' Simão, S. (1960). Estudo da planta e dos frutos da mangueira
+#'     (\emph{Manginifera indica} L.). Piracicaba, 1960. Thesis.
+#'
+#' @examples
+#'
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(cornYield2)
+#' str(cornYield2)
+#'
+#' ## Axial triple factorial with 2 controls.
+#' ftable(xtabs(~N+P+K, data=cornYield2))
+#'
+#' xyplot(yield~N+P+K,
+#'        groups=as.integer(limestone==1 | (N+P+K)==0),
+#'        data=cornYield2, type=c("p", "a"),
+#'        auto.key=TRUE,
+#'        ylab=expression(Yield~(ton~ha^{-1})),
+#'        xlab="Nutrient content")
 #'
 NULL

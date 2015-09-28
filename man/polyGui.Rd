@@ -12,18 +12,19 @@ polyGui(x, y, data, er = 0.05)
 \item{data}{an optional \code{data.frame}.}
 
 \item{er}{stands for extend range. It is used to extend the plotting
-range by a fraction on both sides and directions. Default is
-0.05. See \link[grDevices]{extendrange}.}
+    range by a fraction on both sides and directions. Default is
+    0.05. See \link[grDevices]{extendrange}.}
 }
 \value{
 None is returned by the function.
 }
 \description{
 This function opens an interface to control the
-polynomial degree in linear regression. It shows the observed values
-and the corresponding fitted curve superimposed with confidence bands
-(for the fitted values) and also show the residuals plot. It assumes
-that \code{gWidgets} and \code{gWidgetstcltk} packages are available.
+    polynomial degree in linear regression. It shows the observed
+    values and the corresponding fitted curve superimposed with
+    confidence bands (for the fitted values) and also show the
+    residuals plot. It assumes that \code{gWidgets} and
+    \code{gWidgetstcltk} packages are available.
 }
 \examples{
 \donttest{

@@ -3,22 +3,19 @@
 #' @name polyGui
 #'
 #' @description This function opens an interface to control the
-#' polynomial degree in linear regression. It shows the observed values
-#' and the corresponding fitted curve superimposed with confidence bands
-#' (for the fitted values) and also show the residuals plot. It assumes
-#' that \code{gWidgets} and \code{gWidgetstcltk} packages are available.
+#'     polynomial degree in linear regression. It shows the observed
+#'     values and the corresponding fitted curve superimposed with
+#'     confidence bands (for the fitted values) and also show the
+#'     residuals plot. It assumes that \code{gWidgets} and
+#'     \code{gWidgetstcltk} packages are available.
 #'
 #' @param x,y independent and dependent (numeric) regression variables.
-#'
 #' @param data an optional \code{data.frame}.
-#'
 #' @param er stands for extend range. It is used to extend the plotting
-#' range by a fraction on both sides and directions. Default is
-#' 0.05. See \link[grDevices]{extendrange}.
+#'     range by a fraction on both sides and directions. Default is
+#'     0.05. See \link[grDevices]{extendrange}.
 #'
 #' @return None is returned by the function.
-#'
-#' @import gWidgets gWidgetstcltk
 #'
 #' @author Walmes Zeviani, \email{walmes@@ufpr.br}
 #'
@@ -65,7 +62,7 @@ polyGui <- function(x, y, data, er=0.05){
         mtext(side=3, adj=1, line=2.5, text=lastcoef)
         mtext(side=3, adj=1, line=1.5,
               text=sprintf("R^2 (adj. R^2): %0.2f (%0.2f)",
-                  100*sm$r.squared, 100*sm$adj.r.squared))
+                           100*sm$r.squared, 100*sm$adj.r.squared))
     }
     ##
     ##-------------------------------------------
@@ -87,17 +84,18 @@ polyGui <- function(x, y, data, er=0.05){
     ## Function controled by the GUI.
     ##
     draw.poly <- function(h, ...){
-        svalue(degree) <- min(c(
-            max(c(1L, svalue(degree)+h$action$val)),
+        gWidgets::svalue(degree) <- min(c(
+            max(c(1L, gWidgets::svalue(degree)+h$action$val)),
             maxd))
-        m0 <- lm(y~poly(x, degree=svalue(degree)))
-        switch(svalue(plottype),
+        m0 <- lm(y~poly(x, degree=gWidgets::svalue(degree)))
+        switch(gWidgets::svalue(plottype),
                "Scatter plot"={
-                   cb <- predict(m0, newdata=newdata, interval="confidence")
+                   cb <- predict(m0, newdata=newdata,
+                                 interval="confidence")
                    plot(y~x, xlim=xr, ylim=yr,
                         xlab=xlab, ylab=ylab)
-                   matlines(newdata$x, cb, lty=c(1,2,2), col=1)
-                   annotations(m0)
+                        matlines(newdata$x, cb, lty=c(1,2,2), col=1)
+                        annotations(m0)
                },
                "Residuals"={
                    par(mfrow=c(2,2))
@@ -109,30 +107,30 @@ polyGui <- function(x, y, data, er=0.05){
     ##-------------------------------------------
     ## Building the GUI.
     ##
-    w <- gwindow(title="Polynomial regression", visible=FALSE)
-    g <- ggroup(container=w, horizontal=FALSE)
-    gg_label <- ggroup(container=g)
-    dlabel <- glabel(text="Polynomial degree:",
-                     container=gg_label)
-    degree <- gedit(text=1, width=2, coerce.with=as.integer,
-                    handler=draw.poly, action=list(val=0L),
-                    container=gg_label)
-    gg_buttons <- ggroup(container=g)
-    gminus <- gbutton(text="-",
-                      handler=draw.poly,
-                      action=list(val=-1L),
-                      container=gg_buttons)
-    gplus <- gbutton(text="+",
-                     handler=draw.poly,
-                     action=list(val=1L),
-                     container=gg_buttons)
-    gg_radio <- ggroup(container=g)
-    plottype <- gradio(items=c("Scatter plot", "Residuals"),
-                       horizontal=TRUE,
-                       handler=draw.poly,
-                       action=list(val=0L),
-                       container=gg_radio)
+    w <- gWidgets::gwindow(title="Polynomial regression", visible=FALSE)
+    g <- gWidgets::ggroup(container=w, horizontal=FALSE)
+    gg_label <- gWidgets::ggroup(container=g)
+    dlabel <- gWidgets::glabel(text="Polynomial degree:",
+                               container=gg_label)
+    degree <- gWidgets::gedit(text=1, width=2, coerce.with=as.integer,
+                              handler=draw.poly, action=list(val=0L),
+                              container=gg_label)
+    gg_buttons <- gWidgets::ggroup(container=g)
+    gminus <- gWidgets::gbutton(text="-",
+                                handler=draw.poly,
+                                action=list(val=-1L),
+                                container=gg_buttons)
+    gplus <- gWidgets::gbutton(text="+",
+                               handler=draw.poly,
+                               action=list(val=1L),
+                               container=gg_buttons)
+    gg_radio <- gWidgets::ggroup(container=g)
+    plottype <- gWidgets::gradio(items=c("Scatter plot", "Residuals"),
+                                 horizontal=TRUE,
+                                 handler=draw.poly,
+                                 action=list(val=0L),
+                                 container=gg_radio)
     do.call(what=draw.poly, args=list(h=list(degree=1L)))
-    visible(w) <- TRUE
+    gWidgets::visible(w) <- TRUE
     invisible()
 }
