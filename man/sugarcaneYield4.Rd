@@ -6,8 +6,8 @@
 \title{Triple factorial NPK fertilization on sugar cane yield}
 \format{a \code{data.frame} with 54 records and 6 variables.}
 \source{
-Frederico, P. (2009). Curso de Estatística Experimental (15th
-    ed.). Piracicaba, São Paulo: FEALQ. (page 126)
+Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+    (15th ed.). Piracicaba, São Paulo: FEALQ. (page 126)
 }
 \usage{
 data(sugarcaneYield4)

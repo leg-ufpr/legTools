@@ -6,8 +6,8 @@
 \title{Fertilization with vinasse and mineral}
 \format{a \code{data.frame} with 16 records and 4 variables.}
 \source{
-Frederico, P. (2009). Curso de Estatística Experimental (15th
-    ed.). Piracicaba, São Paulo: FEALQ. (page 119)
+Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+    (15th ed.). Piracicaba, São Paulo: FEALQ. (page 119)
 }
 \usage{
 data(vinasseFert)

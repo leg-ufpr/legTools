@@ -12,3 +12,4 @@ legTools.bmk
 ^\.gitlab-ci.yml$
 ^\.git$
 ^data-raw$
+^.hooks$

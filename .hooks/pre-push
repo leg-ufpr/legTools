@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# To use this script, copy it to .git/hooks.
+
+# Return the content in the public datasets folder.
+# ssh leg@$PATAXO -p$PATAXOP "ls -la ~/public_html/legTools/datasets"
+
+# Tranfering data-raw/*.txt files.
+rsync -avzh --progress data-raw/*.txt -e "ssh -p $PATAXOP" \
+      leg@$PATAXO:~/public_html/legTools/datasets/
+
+# Tranfering vignettes/*.html files.
+# Tranfering manual in pdf, zip and tar.gz source files.
