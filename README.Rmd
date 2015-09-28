@@ -109,10 +109,17 @@ See [LICENSE](./LICENSE)
 
 <!-- links -->
 
+```{r, echo=FALSE, include=FALSE}
+pkg.source.link <- paste0("http://www.leg.ufpr.br/~fernandomayer/legTools/",
+                          pkg.source)
+pkg.win.link <- paste0("http://www.leg.ufpr.br/~fernandomayer/legTools/",
+                       pkg.win)
+```
+
 [GNU General Public License (GPL) v3.0]: http://www.gnu.org/licenses/gpl-3.0.html
 [`roxygen2`]: https://github.com/klutometis/roxygen
 [`devtools`]: https://github.com/hadley/devtools
-[legTools_0.1.2.tar.gz]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools_0.1.2.tar.gz
-[legTools_0.1.2.zip]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools_0.1.2.zip
+[`r pkg.source`]: `r pkg.source.link`
+[`r pkg.win`]: `r pkg.win.link`
 [legTools-manual.pdf]: http://www.leg.ufpr.br/~fernandomayer/legTools/legTools-manual.pdf
 [Gitflow worflow]: http://nvie.com/posts/a-successful-git-branching-model/
