@@ -16,7 +16,7 @@ potatoYield2$sumYield <- c(470, 483, 646, 822, 611, 694, 685, 477,
                            492, 583, 940, 929, 928, 797, 929, 532)/10
 
 addmargins(with(potatoYield2,
-                tapply(SumYield, list(variety, loc), FUN=sum)))
+                tapply(sumYield, list(variety, loc), FUN=sum)))
 
 potatoYield2 <- potatoYield2[with(potatoYield2, order(loc, variety)),]
 

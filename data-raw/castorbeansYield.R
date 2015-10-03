@@ -13,7 +13,7 @@ castorbeansYield$meanYield <-
       1825, 1394, 1407, 1436, 1291, 1622, 1521, 1832, 1595, 1851, 1613,
       1747, 2297, 2233, 2391, 1992, 1644, 1422, 1458, 1567, 1532, 1532,
       1683, 1699, 1467, 2192, 2294, 1920, 1856, 2178, 2026, 2458, 2040,
-      1963)/1000
+      1963)
 
 addmargins(with(castorbeansYield,
                 tapply(meanYield, list(variety, loc), FUN=sum)))
@@ -22,7 +22,7 @@ castorbeansYield <- castorbeansYield[with(castorbeansYield,
                                           order(loc, variety)),]
 
 ## Put MSE as an attibute to the data.frame.
-mse <-  c(29930, 69170, 88210, 35720, 64520)/1000
+mse <-  c(29930, 69170, 88210, 35720, 64520)
 names(mse) <- levels(castorbeansYield$loc)
 attr(castorbeansYield, which="MSE") <- mse
 str(castorbeansYield)
