@@ -1,8 +1,12 @@
 Package: legTools
 Title: Convenience Functions, Small GUI to Teach Statistics and Some Datasets
 Version: 0.2.0
-Authors@R: person("LEG", "Core Team", email = "leg@ufpr.br", role =
-    c("aut", "cre"))
+Authors@R: as.person(c(
+    "LEG Core Team <leg@ufpr.br> [cre]",
+    "Walmes Marques Zeviani <walmes@ufpr.br> [aut]",
+    "Fernando de Pol Mayer <fernando.mayer@ufpr.br> [aut]",
+    "Bruna Davies Wundervald <brunadaviesw@gmail.com> [ctb]"
+    ))
 Description: legTools is a collection of R functions and datasets used for
     academic purposes. These functions mainly include small GUI to teach
     statistics, conveninece functions to visualize data and datasets, nost part
