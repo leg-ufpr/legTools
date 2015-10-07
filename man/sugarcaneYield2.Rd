@@ -18,14 +18,18 @@ These data are from an experiment done in a latin square
     experimental unit.
 
 \itemize{
-    \item \code{row} the rows of the latin square that controls in
-    one dimention. A categorical unordered factor with 5 levels.
-    \item \code{col} the columns of the latin square that controls in
-    one dimention perpendicular to the previus. A categorical
-    unordered factor with 5 levels.
-    \item \code{variety} a categorical unordered factor with 5
-    levels.
-    \item \code{yield} sugarcane yield (kg/plot).
+
+\item \code{row} the rows of the latin square that controls in one
+    dimention. A categorical unordered factor with 5 levels.
+
+\item \code{col} the columns of the latin square that controls in one
+    dimention perpendicular to the previus. A categorical unordered
+    factor with 5 levels.
+
+\item \code{variety} a categorical unordered factor with 5 levels.
+
+\item \code{yield} sugarcane yield (kg/plot).
+
 }
 }
 \examples{

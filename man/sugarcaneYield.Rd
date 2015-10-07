@@ -19,10 +19,13 @@ These data are from an experiment done by The West São
     (kg/plot) was recorded in each experimental unit.
 
 \itemize{
-    \item \code{block} a categorical unordered factor with 4 levels.
-    \item \code{variety} a categorical unordered factor with 7
-    levels.
-    \item \code{yield} sugarcane yield (kg/plot).
+
+\item \code{block} a categorical unordered factor with 4 levels.
+
+\item \code{variety} a categorical unordered factor with 7 levels.
+
+\item \code{yield} sugarcane yield (kg/plot).
+
 }
 }
 \examples{

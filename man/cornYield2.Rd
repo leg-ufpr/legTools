@@ -22,11 +22,17 @@ These data are from an axial 3 factorial experiment
     plus presence of limestone.
 
 \itemize{
-  \item \code{N} content of nitrogen in the fertilizer.
-  \item \code{P} content of phosphorus in the fertilizer.
-  \item \code{K} content of potassium in the fertilizer.
-  \item \code{limestone} presence (1) or absence of limestone (0).
-  \item \code{acid} mean of corn yield in 16 locations (ton/ha).
+
+\item \code{N} content of nitrogen in the fertilizer.
+
+\item \code{P} content of phosphorus in the fertilizer.
+
+\item \code{K} content of potassium in the fertilizer.
+
+\item \code{limestone} presence (1) or absence of limestone (0).
+
+\item \code{acid} mean of corn yield in 16 locations (ton/ha).
+
 }
 }
 \details{

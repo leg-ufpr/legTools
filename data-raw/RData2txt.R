@@ -3,6 +3,7 @@
 ## the package.
 ##======================================================================
 
+setwd("~/GitLab/legTools/data-raw")
 f <- list.files(path="../data", pattern="*.RData")
 
 sapply(f,

@@ -3,14 +3,14 @@
 \docType{data}
 \name{defoliation}
 \alias{defoliation}
-\title{Bolls in cotton as function of artifitial defoliation}
+\title{Bolls in cotton as function of artificial defoliation}
 \format{a \code{data.frame} with 125 records and 4 variables.}
 \usage{
 data(defoliation)
 }
 \description{
 This dataset contais the result of a real experiment to
-    evaluate the effect of artifitial defoliation in combination with
+    evaluate the effect of artificial defoliation in combination with
     phenological stage of occurence on the production of cotton
     represented by the number of bolls produced at the end of the
     crop cycle. The experiment is a \eqn{5\times 5} factorial with 5
@@ -21,15 +21,21 @@ This dataset contais the result of a real experiment to
     variance less than the sample mean).
 
 \itemize{
-\item \code{phenol} a categorical ordered factor with 5 levels
-    that represent the phenological stages of the cotton plant in
-    which defoliation was applied.
+
+\item \code{phenol} a categorical ordered factor with 5 levels that
+    represent the phenological stages of the cotton plant in which
+    defoliation was applied.
+
 \item \code{defol} a numeric factor with 5 levels that represents the
     artifical level of defoliation (percent in leaf area removed with
     scissors) applied for all leaves in the plant.
-\item \code{rept} index for each experimenal unit in each treatment cell.
+
+\item \code{rept} index for each experimenal unit in each treatment
+    cell.
+
 \item \code{bolls} the number of bolls produced (count variable)
     evaluated at harvest.
+
 }
 }
 \details{

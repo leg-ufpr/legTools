@@ -18,11 +18,17 @@ These data are from an \eqn{2^3} factorial experiment
     (K) on corn yield in a randomized block design.
 
 \itemize{
-  \item \code{block} a factor with 4 levels.
-  \item \code{N} low (-1) and high (+1) levels of nitrogen.
-  \item \code{P} low (-1) and high (+1) levels of phosporus.
-  \item \code{K} low (-1) and high (+1) levels of potassium.
-  \item \code{yield} corn yield (ton/ha).
+
+\item \code{block} a factor with 4 levels.
+
+\item \code{N} low (-1) and high (+1) levels of nitrogen.
+
+\item \code{P} low (-1) and high (+1) levels of phosporus.
+
+\item \code{K} low (-1) and high (+1) levels of potassium.
+
+\item \code{yield} corn yield (ton/ha).
+
 }
 }
 \examples{

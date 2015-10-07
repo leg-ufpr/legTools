@@ -22,13 +22,19 @@ These data are from a \eqn{2^3} factorial experiment
     branches in coffee trees.
 
 \itemize{
-  \item \code{N} content of nitrogen in the fertilizer (low/high).
-  \item \code{P} content of phosphorus in the fertilizer (low/high).
-  \item \code{K} content of potassium in the fertilizer (low/high).
-  \item \code{block} an unordered factor representing the blocks
+
+\item \code{N} content of nitrogen in the fertilizer (low/high).
+
+\item \code{P} content of phosphorus in the fertilizer (low/high).
+
+\item \code{K} content of potassium in the fertilizer (low/high).
+
+\item \code{block} an unordered factor representing the blocks
     used.
-  \item \code{branches} an integer variable, the number of dry
+
+\item \code{branches} an integer variable, the number of dry
     branches in a coffee the.
+
 }
 }
 \details{

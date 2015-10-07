@@ -22,9 +22,13 @@ These data are from an experiment done by the engineer
     units for each factor level in each block.
 
 \itemize{
-    \item \code{block} a categorical unordered factor with 6 levels.
-    \item \code{plow} a categorical unordered factor with 2 levels.
-    \item \code{yield} corn yield (kg in 200 m\eqn{^2} of area).
+
+\item \code{block} a categorical unordered factor with 6 levels.
+
+\item \code{plow} a categorical unordered factor with 2 levels.
+
+\item \code{yield} corn yield (kg in 200 m\eqn{^2} of area).
+
 }
 }
 \examples{

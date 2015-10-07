@@ -11,18 +11,20 @@ NULL
 #'
 #' @title Feeding type in pig weight gain
 #'
-#' @description This is an artifial dataset corresponding a experiment
-#'     to study the effect of feeding type (factor with 4 categorical
-#'     nominal levels) in pig weight gain. The experiment was a
-#'     randomized complete design with five experimental units per
+#' @description This is an artificial data set corresponding a
+#'     experiment to study the effect of feeding type (factor with 4
+#'     categorical nominal levels) in pig weight gain. The experiment
+#'     was a randomized complete design with five experimental units per
 #'     treatment level. The experimental unit was a pig. The response
-#'     measured was weight gain from the beggining to the end of the
+#'     measured was weight gain from the beginning to the end of the
 #'     experiment.
 #'
 #' \itemize{
-#'     \item \code{ft} feeding type, a categorical factor with 4
-#'     levels.
-#'     \item \code{wg} weight gain (kg).
+#'
+#' \item \code{ft} feeding type, a categorical factor with 4 levels.
+#'
+#' \item \code{wg} weight gain (kg).
+#'
 #' }
 #'
 #' @docType data
@@ -57,10 +59,13 @@ NULL
 #'     (t/ha) was recorded in each experimental unit.
 #'
 #' \itemize{
-#'     \item \code{block} a categorical unordered factor with 4 levels.
-#'     \item \code{variety} a categorical unordered factor with 8
-#'     levels.
-#'     \item \code{yield} potato yield (t/ha).
+#'
+#' \item \code{block} a categorical unordered factor with 4 levels.
+#'
+#' \item \code{variety} a categorical unordered factor with 8 levels.
+#'
+#' \item \code{yield} potato yield (t/ha).
+#'
 #' }
 #'
 #' @docType data
@@ -99,9 +104,13 @@ NULL
 #'     units for each factor level in each block.
 #'
 #' \itemize{
-#'     \item \code{block} a categorical unordered factor with 6 levels.
-#'     \item \code{plow} a categorical unordered factor with 2 levels.
-#'     \item \code{yield} corn yield (kg in 200 m\eqn{^2} of area).
+#'
+#' \item \code{block} a categorical unordered factor with 6 levels.
+#'
+#' \item \code{plow} a categorical unordered factor with 2 levels.
+#'
+#' \item \code{yield} corn yield (kg in 200 m\eqn{^2} of area).
+#'
 #' }
 #'
 #' @docType data
@@ -128,10 +137,10 @@ NULL
 
 #' @name defoliation
 #'
-#' @title Bolls in cotton as function of artifitial defoliation
+#' @title Bolls in cotton as function of artificial defoliation
 #'
 #' @description This dataset contais the result of a real experiment to
-#'     evaluate the effect of artifitial defoliation in combination with
+#'     evaluate the effect of artificial defoliation in combination with
 #'     phenological stage of occurence on the production of cotton
 #'     represented by the number of bolls produced at the end of the
 #'     crop cycle. The experiment is a \eqn{5\times 5} factorial with 5
@@ -142,15 +151,21 @@ NULL
 #'     variance less than the sample mean).
 #'
 #' \itemize{
-#' \item \code{phenol} a categorical ordered factor with 5 levels
-#'     that represent the phenological stages of the cotton plant in
-#'     which defoliation was applied.
+#'
+#' \item \code{phenol} a categorical ordered factor with 5 levels that
+#'     represent the phenological stages of the cotton plant in which
+#'     defoliation was applied.
+#'
 #' \item \code{defol} a numeric factor with 5 levels that represents the
 #'     artifical level of defoliation (percent in leaf area removed with
 #'     scissors) applied for all leaves in the plant.
-#' \item \code{rept} index for each experimenal unit in each treatment cell.
+#'
+#' \item \code{rept} index for each experimenal unit in each treatment
+#'     cell.
+#'
 #' \item \code{bolls} the number of bolls produced (count variable)
 #'     evaluated at harvest.
+#'
 #' }
 #'
 #' @details The experiment was done in a greenhouse at Universidade
@@ -221,10 +236,13 @@ NULL
 #'     (t/ha) was recorded in each experimental unit.
 #'
 #' \itemize{
-#'     \item \code{block} a categorical unordered factor with 4 levels.
-#'     \item \code{variety} a categorical unordered factor with 6
-#'     levels.
-#'     \item \code{yield} cassava yield (t/ha).
+#'
+#' \item \code{block} a categorical unordered factor with 4 levels.
+#'
+#' \item \code{variety} a categorical unordered factor with 6 levels.
+#'
+#' \item \code{yield} cassava yield (t/ha).
+#'
 #' }
 #'
 #' @docType data
@@ -260,10 +278,13 @@ NULL
 #'     (kg/plot) was recorded in each experimental unit.
 #'
 #' \itemize{
-#'     \item \code{block} a categorical unordered factor with 4 levels.
-#'     \item \code{variety} a categorical unordered factor with 7
-#'     levels.
-#'     \item \code{yield} sugarcane yield (kg/plot).
+#'
+#' \item \code{block} a categorical unordered factor with 4 levels.
+#'
+#' \item \code{variety} a categorical unordered factor with 7 levels.
+#'
+#' \item \code{yield} sugarcane yield (kg/plot).
+#'
 #' }
 #'
 #' @docType data
@@ -298,14 +319,18 @@ NULL
 #'     experimental unit.
 #'
 #' \itemize{
-#'     \item \code{row} the rows of the latin square that controls in
-#'     one dimention. A categorical unordered factor with 5 levels.
-#'     \item \code{col} the columns of the latin square that controls in
-#'     one dimention perpendicular to the previus. A categorical
-#'     unordered factor with 5 levels.
-#'     \item \code{variety} a categorical unordered factor with 5
-#'     levels.
-#'     \item \code{yield} sugarcane yield (kg/plot).
+#'
+#' \item \code{row} the rows of the latin square that controls in one
+#'     dimention. A categorical unordered factor with 5 levels.
+#'
+#' \item \code{col} the columns of the latin square that controls in one
+#'     dimention perpendicular to the previus. A categorical unordered
+#'     factor with 5 levels.
+#'
+#' \item \code{variety} a categorical unordered factor with 5 levels.
+#'
+#' \item \code{yield} sugarcane yield (kg/plot).
+#'
 #' }
 #'
 #' @docType data
@@ -355,16 +380,21 @@ NULL
 #'     experimental unit.
 #'
 #' \itemize{
-#'   \item \code{row} the rows of the latin square that controls in
-#'     one dimention. A categorical unordered factor with 6 levels.
-#'   \item \code{col} the columns of the latin square that controls in
-#'     one dimention perpendicular to the previus. A categorical
-#'     unordered factor with 6 levels.
-#'   \item \code{fertil} a categorical unordered factor with 6
-#'     levels that is the fertilization strategy applied. These levels
-#'     are a result of treatment cells in a three incomplete factorial
+#'
+#' \item \code{row} the rows of the latin square that controls in one
+#'     dimention. A categorical unordered factor with 6 levels.
+#'
+#' \item \code{col} the columns of the latin square that controls in one
+#'     dimention perpendicular to the previus. A categorical unordered
+#'     factor with 6 levels.
+#'
+#' \item \code{fertil} a categorical unordered factor with 6 levels that
+#'     is the fertilization strategy applied. These levels are a result
+#'     of treatment cells in a three incomplete factorial
 #'     arrangrment. See detais for more information.
-#'   \item \code{yield} sugarcane yield (kg/plot).
+#'
+#' \item \code{yield} sugarcane yield (kg/plot).
+#'
 #' }
 #'
 #' @details The levels of fertilization are in fact a combination of a
@@ -406,7 +436,8 @@ NULL
 #'               colors=brewer.pal(n=11, name="Spectral")))+
 #'     layer(with(sugarcaneYield3,
 #'                panel.text(x=row, y=col,
-#'                           label=sprintf("%s\n%0.2f", fertil, yield))))
+#'                           label=sprintf("%s\n%0.2f",
+#'                                         fertil, yield))))
 #'
 #' aggregate(yield~row, data=sugarcaneYield3, FUN=mean)
 #' aggregate(yield~col, data=sugarcaneYield3, FUN=mean)
@@ -435,15 +466,20 @@ NULL
 #'     experiment.
 #'
 #' \itemize{
-#'   \item \code{litter} a categorical factor with 4 levels that
+#'
+#' \item \code{litter} a categorical factor with 4 levels that
 #'     represents the rows of the lattin square design and control for
 #'     the differences among litters.
-#'   \item code{size} a categorical ordered variable that represents the
+#'
+#' \item code{size} a categorical ordered variable that represents the
 #'     columns of latin square desing and control for the weight of the
 #'     animals at the beggining of the experiment.
-#'   \item \code{age} age of the animal (days) when castration was
+#'
+#' \item \code{age} age of the animal (days) when castration was
 #'     done. \code{controls} are the animals without castration.
-#'   \item \code{wg} weight gain (kg) after 252 days.
+#'
+#' \item \code{wg} weight gain (kg) after 252 days.
+#'
 #' }
 #'
 #' @docType data
@@ -479,11 +515,17 @@ NULL
 #'     (K) on corn yield in a randomized block design.
 #'
 #' \itemize{
-#'   \item \code{block} a factor with 4 levels.
-#'   \item \code{N} low (-1) and high (+1) levels of nitrogen.
-#'   \item \code{P} low (-1) and high (+1) levels of phosporus.
-#'   \item \code{K} low (-1) and high (+1) levels of potassium.
-#'   \item \code{yield} corn yield (ton/ha).
+#'
+#' \item \code{block} a factor with 4 levels.
+#'
+#' \item \code{N} low (-1) and high (+1) levels of nitrogen.
+#'
+#' \item \code{P} low (-1) and high (+1) levels of phosporus.
+#'
+#' \item \code{K} low (-1) and high (+1) levels of potassium.
+#'
+#' \item \code{yield} corn yield (ton/ha).
+#'
 #' }
 #'
 #' @docType data
@@ -528,13 +570,18 @@ NULL
 #'     fertilization.
 #'
 #' \itemize{
-#'   \item \code{block} a factor with 4 levels.
-#'   \item \code{mineral} low (-1) and high (+1) levels of mineral
+#'
+#' \item \code{block} a factor with 4 levels.
+#'
+#' \item \code{mineral} low (-1) and high (+1) levels of mineral
 #'     fertilization.
-#'   \item \code{vinasse} low (-1) and high (+1) levels of fetilization
-#'     with vinasse.
-#'   \item \code{y} some response variable. The text book doesn't give
-#'     any information.
+#'
+#' \item \code{vinasse} low (-1) and high (+1) levels of fetilization
+#'    with vinasse.
+#'
+#' \item \code{y} some response variable. The text book doesn't give any
+#'     information.
+#'
 #' }
 #'
 #' @docType data
@@ -574,13 +621,18 @@ NULL
 #'     fertilization.
 #'
 #' \itemize{
-#'   \item \code{block} a factor with 4 levels.
-#'   \item \code{mineral} low (-1) and high (+1) levels of mineral
+#'
+#' \item \code{block} a factor with 4 levels.
+#'
+#' \item \code{mineral} low (-1) and high (+1) levels of mineral
 #'     fertilization.
-#'   \item \code{cake} low (-1) and high (+1) levels of fetilization
-#'     with filter cake.
-#'   \item \code{y} some response variable. The text book doesn't give
-#'     any information.
+#'
+#' \item \code{cake} low (-1) and high (+1) levels of fetilization with
+#'     filter cake.
+#'
+#' \item \code{y} some response variable. The text book doesn't give any
+#'     information.
+#'
 #' }
 #'
 #' @docType data
@@ -619,12 +671,19 @@ NULL
 #'     studing the effect of NPK on the yield of sugar cane.
 #'
 #' \itemize{
+#'
 #'   \item \code{block} a local control factor with 3 levels.
+#'
 #'   \item \code{rept} factor with 2 levels.
+#'
 #'   \item \code{N} integer coded nitrogen levels (0, 1, 2).
+#'
 #'   \item \code{P} integer coded phosphorus levels (0, 1, 2).
+#'
 #'   \item \code{K} integer coded potassium levels (0, 1, 2).
+#'
 #'   \item \code{yield} sugar cane yield (ton/ha).
+#'
 #' }
 #'
 #' @details There is a missprint in the book for the 9th entry, which
@@ -668,11 +727,16 @@ NULL
 #'     Novermber, December and January.
 #'
 #' \itemize{
-#'   \item \code{variety} a categorical variable with 6 levels that
+#'
+#' \item \code{variety} a categorical variable with 6 levels that
 #'     represents mango varieties studied.
-#'   \item \code{year} the year of harvesting.
-#'   \item \code{month} the month of harvesting.
-#'   \item \code{acid} mean of the acidity determined in 3 fruits.
+#'
+#' \item \code{year} the year of harvesting.
+#'
+#' \item \code{month} the month of harvesting.
+#'
+#' \item \code{acid} mean of the acidity determined in 3 fruits.
+#'
 #' }
 #'
 #' @docType data
@@ -720,11 +784,17 @@ NULL
 #'     plus presence of limestone.
 #'
 #' \itemize{
-#'   \item \code{N} content of nitrogen in the fertilizer.
-#'   \item \code{P} content of phosphorus in the fertilizer.
-#'   \item \code{K} content of potassium in the fertilizer.
-#'   \item \code{limestone} presence (1) or absence of limestone (0).
-#'   \item \code{acid} mean of corn yield in 16 locations (ton/ha).
+#'
+#' \item \code{N} content of nitrogen in the fertilizer.
+#'
+#' \item \code{P} content of phosphorus in the fertilizer.
+#'
+#' \item \code{K} content of potassium in the fertilizer.
+#'
+#' \item \code{limestone} presence (1) or absence of limestone (0).
+#'
+#' \item \code{acid} mean of corn yield in 16 locations (ton/ha).
+#'
 #' }
 #'
 #' @details The experiment was carried out in 16 different locations but
@@ -774,13 +844,19 @@ NULL
 #'     branches in coffee trees.
 #'
 #' \itemize{
-#'   \item \code{N} content of nitrogen in the fertilizer (low/high).
-#'   \item \code{P} content of phosphorus in the fertilizer (low/high).
-#'   \item \code{K} content of potassium in the fertilizer (low/high).
-#'   \item \code{block} an unordered factor representing the blocks
+#'
+#' \item \code{N} content of nitrogen in the fertilizer (low/high).
+#'
+#' \item \code{P} content of phosphorus in the fertilizer (low/high).
+#'
+#' \item \code{K} content of potassium in the fertilizer (low/high).
+#'
+#' \item \code{block} an unordered factor representing the blocks
 #'     used.
-#'   \item \code{branches} an integer variable, the number of dry
+#'
+#' \item \code{branches} an integer variable, the number of dry
 #'     branches in a coffee the.
+#'
 #' }
 #'
 #' @details The experiment was carried out in a randomized block design
@@ -816,3 +892,307 @@ NULL
 #'        xlab="Nutrient level")
 #'
 NULL
+
+#' @name cottonFert
+#'
+#' @title A set of experiments in different locations studing NK on
+#'     cotton
+#'
+#' @description These data is a set of experiments carried out in
+#'     different locations studing NK fertilization in cotton. All the 5
+#'     experiments are a complete randomized design with 4 replications
+#'     and 5 levels of fertilization based on N and K levels and a
+#'     control.
+#'
+#' \itemize{
+#'
+#' \item \code{trt} unordered factor, treatment that consist of 4 cells
+#'     from a 2^2 factorial design (\eqn{N\times K}) and a control.
+#'
+#' \item \code{rept} integer, indexes experimental units.
+#'
+#' \item \code{loc} an unordered factor representing the locations where
+#'     the experiment was carried out.
+#'
+#' \item \code{y} numeric, the response variable of the experiment. The
+#'     text book didn't give details.
+#'
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(cottonFert)
+#'
+#' @format a \code{data.frame} with 100 records and 4 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 142)
+#'
+#' @examples
+#'
+#' library(lattice)
+#'
+#' data(cottonFert)
+#' str(cottonFert)
+#'
+#' xyplot(y~trt|loc,
+#'        data=cottonFert, type=c("p", "a"),
+#'        ylab="y", xlab="Treatment")
+#'
+#' xyplot(log(y)~trt|loc,
+#'        data=cottonFert, type=c("p", "a"),
+#'        ylab="y", xlab="Treatment")
+#'
+NULL
+
+#' @name potatoYield2
+#'
+#' @title Potato variety competition experiments in several locations
+#'
+#' @description These data are from a set of experiments done by the
+#'     engineer Oscar A. Garay at Balcare, Argentina. These experiments
+#'     were done in a randomized complete block design with 4 blocks and
+#'     at 7 locations on the potato production region at the Buenos
+#'     Aires province.
+#'
+#' \itemize{
+#'
+#' \item \code{variety} a categorical unordered factor with 8 levels,
+#'     varieties of potato.
+#'
+#' \item \code{loc} a categorical unordered factor with 7 levels, the
+#'     locations that represent farms or experimental stations.
+#'
+#' \item \code{sumYield} is the sum of yield for a variety in each
+#'     experiment. Then, this sum values across 4 blocks in each
+#'     experiment. To get the mean yield you should divide by 4. Yield
+#'     is t/ha.
+#'
+#' }
+#'
+#' @details The data in the book was not complete because doesn't report
+#'     individual plot values but, instead, the sum for a variety in
+#'     each experiment. To do a joint or global analysis, with all
+#'     locations, varieties and blocks, its necessary all individual
+#'     plot values. The book report the Mean Square Error estimates for
+#'     each experiment as an attribute of the object,
+#'     \code{attr(potatoYield2, "MSE")} and they comes from the ANOVA
+#'     table in which the model is \code{~block+variety} for each
+#'     location. The data set \link[legTools]{potatoYield} correspond
+#'     the location 3. With these MSE is possible use them in a such a
+#'     way that a partial ANOVA table can be obtained to test the effect
+#'     of location, variety and its interaction.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(potatoYield2)
+#'
+#' @format a \code{data.frame} with 56 records and 3 variables. There is
+#'     an attribute named \code{MSE}, a named vector containing the Mean
+#'     Squares Errors estimates for each experiment.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 147)
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(potatoYield2)
+#' str(potatoYield2)
+#'
+#' xyplot(sumYield/4~variety, data=potatoYield2,
+#'        groups=loc, type="o",
+#'        ylab=expression(Yield~(t~ha^{-1})),
+#'        xlab="Variety")
+#'
+NULL
+
+#' @name castorbeansYield
+#'
+#' @title Castor beans variety competition experiments in some locations
+#'
+#' @description These data are from a set of experiments evaluating
+#'     varieties of castor beans in terms of yield (kg/ha) for some
+#'     locations (counties).
+#'
+#' \itemize{
+#'
+#' \item \code{variety} a categorical unordered factor with 8 levels,
+#'     varieties and lines of castor beans.
+#'
+#' \item \code{loc} a categorical unordered factor with 5 levels, the
+#'     locations (counties) experimental stations.
+#'
+#' \item \code{meanYield} is the mean of yield for a variety in each
+#'     location. So, this the mean across all plots of the same variety
+#'     in each experiment.
+#'
+#' }
+#'
+#' @details The data in the book was not complete because doesn't report
+#'     individual plot values but the mean for a variety in each single
+#'     experiment. Neither mention which experimental design was used in
+#'     each station. The book report the Mean Square Error estimates for
+#'     each experiment. These values as provided as an attribute of the
+#'     object, \code{attr(peanut, "MSE")} and they comes from the ANOVA
+#'     table corresponding to an appropriate model for each
+#'     location. With these MSE is possible use them in a such a way
+#'     that a partial ANOVA table can be obtained to test the effect of
+#'     location, variety and its interaction.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(castorbeansYield)
+#'
+#' @format a \code{data.frame} with 45 records and 3 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 149)
+#'
+#' Souza, O. Ferreira de.; Canecchio, F. V. (1952). Melhoramento de
+#'     mamoeira, VII. Bragantia 12:301-307.
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(castorbeansYield)
+#' str(castorbeansYield)
+#'
+#' xyplot(meanYield~variety, data=castorbeansYield,
+#'        groups=loc, type="o",
+#'        ylab=expression(Yield~(t~ha^{-1})),
+#'        xlab="Variety")
+#'
+NULL
+
+#' @name peanutYield
+#'
+#' @title Peanut variety competition experiments in some locations and
+#'     years
+#'
+#' @description These data are from a set of experiments evaluating
+#'     varieties of peanut in terms of yield (kg/ha) for some locations
+#'     and years.
+#'
+#' \itemize{
+#'
+#' \item \code{variety} a categorical unordered factor with 4 levels,
+#'     peanut varieties.
+#'
+#' \item \code{loc} a categorical unordered factor with 3 levels, the
+#'     locations (counties) of the experimental stations.
+#'
+#' \item \code{year} a categorical factor, the crop year.
+#'
+#' \item \code{meanYield} is the adjusted mean of yield for a variety in
+#'     each location and year.
+#'
+#' }
+#'
+#' @details The data in the book was not complete because doesn't report
+#'     individual plot values but the adjusted mean for a variety in
+#'     each single experiment. Neither mention which experimental design
+#'     was used in each station. The book report the Mean Square Error
+#'     estimates for each experiment. These values as provided as an
+#'     attribute of the object, \code{attr(peanut, "MSE")} and they
+#'     comes from the ANOVA table corresponding to an appropriate model
+#'     for each location. With these MSE is possible use them in a such
+#'     a way that a partial ANOVA table can be obtained to test the
+#'     effect of location, variety and its interaction.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(peanutYield)
+#'
+#' @format a \code{data.frame} with 36 records and 4 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 150)
+#'
+#' Souza, O. Ferreira de.; Abramides, Eduardo. (1952). Ensaios de
+#'     variedades de amendoim. Bragantia 12:349-358.
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(peanutYield)
+#' str(peanutYield)
+#'
+#' xyplot(meanYield~variety|year, data=peanutYield,
+#'        groups=loc, type="o",
+#'        ylab=expression(Yield~(t~ha^{-1})),
+#'        xlab="Variety")
+#'
+NULL
+
+#' @name peanutYield2
+#'
+#' @title Peanut variety competition experiments in some locations
+#'
+#' @description These data are from a set of experiments evaluating
+#'     varieties of peanut in terms of yield (kg/ha) for some locations
+#'     in different years.
+#'
+#' \itemize{
+#'
+#' \item \code{variety} a categorical unordered factor with 4 levels,
+#'     peanut varieties.
+#'
+#' \item \code{loc} a categorical unordered factor with 4 levels, the
+#'     location:year of the experiment.
+#'
+#' \item \code{meanYield} is mean of yield for a variety in each
+#'     location:year.
+#'
+#' }
+#'
+#' @details The data in the book was not complete because doesn't report
+#'     individual plot values but the adjusted mean for a variety in
+#'     each single experiment. Neither mention which experimental design
+#'     was used in each station. The book report the Mean Square Error
+#'     estimates for each experiment. These values as provided as an
+#'     attribute of the object, \code{attr(peanut, "MSE")} and they
+#'     comes from the ANOVA table corresponding to an appropriate model
+#'     for each location. With these MSE is possible use them in a such
+#'     a way that a partial ANOVA table can be obtained to test the
+#'     effect of location, variety and its interaction.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(peanutYield2)
+#'
+#' @format a \code{data.frame} with 16 records and 3 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 150)
+#'
+#' Souza, O. Ferreira de.; Abramides, Eduardo. (1952). Ensaios de
+#'     variedades de amendoim. Bragantia 12:349-358.
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(peanutYield2)
+#' str(peanutYield2)
+#'
+#' xyplot(meanYield~variety, data=peanutYield2,
+#'        groups=loc, type="o",
+#'        ylab=expression(Yield~(t~ha^{-1})),
+#'        xlab="Variety")
+#'
+NULL
+

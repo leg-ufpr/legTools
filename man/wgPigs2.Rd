@@ -22,15 +22,20 @@ This is an artifial dataset corresponding a experiment
     experiment.
 
 \itemize{
-  \item \code{litter} a categorical factor with 4 levels that
+
+\item \code{litter} a categorical factor with 4 levels that
     represents the rows of the lattin square design and control for
     the differences among litters.
-  \item code{size} a categorical ordered variable that represents the
+
+\item code{size} a categorical ordered variable that represents the
     columns of latin square desing and control for the weight of the
     animals at the beggining of the experiment.
-  \item \code{age} age of the animal (days) when castration was
+
+\item \code{age} age of the animal (days) when castration was
     done. \code{controls} are the animals without castration.
-  \item \code{wg} weight gain (kg) after 252 days.
+
+\item \code{wg} weight gain (kg) after 252 days.
+
 }
 }
 \examples{

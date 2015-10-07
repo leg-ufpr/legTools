@@ -21,11 +21,16 @@ These data are from an observational study along 3 years
     Novermber, December and January.
 
 \itemize{
-  \item \code{variety} a categorical variable with 6 levels that
+
+\item \code{variety} a categorical variable with 6 levels that
     represents mango varieties studied.
-  \item \code{year} the year of harvesting.
-  \item \code{month} the month of harvesting.
-  \item \code{acid} mean of the acidity determined in 3 fruits.
+
+\item \code{year} the year of harvesting.
+
+\item \code{month} the month of harvesting.
+
+\item \code{acid} mean of the acidity determined in 3 fruits.
+
 }
 }
 \examples{

@@ -19,13 +19,18 @@ These data are from an \eqn{2^2} factorial experiment
     fertilization.
 
 \itemize{
-  \item \code{block} a factor with 4 levels.
-  \item \code{mineral} low (-1) and high (+1) levels of mineral
+
+\item \code{block} a factor with 4 levels.
+
+\item \code{mineral} low (-1) and high (+1) levels of mineral
     fertilization.
-  \item \code{cake} low (-1) and high (+1) levels of fetilization
-    with filter cake.
-  \item \code{y} some response variable. The text book doesn't give
-    any information.
+
+\item \code{cake} low (-1) and high (+1) levels of fetilization with
+    filter cake.
+
+\item \code{y} some response variable. The text book doesn't give any
+    information.
+
 }
 }
 \examples{
