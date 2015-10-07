@@ -17,12 +17,19 @@ These data are from an \eqn{3^3} factorial experiment
     studing the effect of NPK on the yield of sugar cane.
 
 \itemize{
+
   \item \code{block} a local control factor with 3 levels.
+
   \item \code{rept} factor with 2 levels.
+
   \item \code{N} integer coded nitrogen levels (0, 1, 2).
+
   \item \code{P} integer coded phosphorus levels (0, 1, 2).
+
   \item \code{K} integer coded potassium levels (0, 1, 2).
+
   \item \code{yield} sugar cane yield (ton/ha).
+
 }
 }
 \details{

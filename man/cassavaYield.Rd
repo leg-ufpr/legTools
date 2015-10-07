@@ -21,10 +21,13 @@ These data are from an experiment done by The Brazilian
     (t/ha) was recorded in each experimental unit.
 
 \itemize{
-    \item \code{block} a categorical unordered factor with 4 levels.
-    \item \code{variety} a categorical unordered factor with 6
-    levels.
-    \item \code{yield} cassava yield (t/ha).
+
+\item \code{block} a categorical unordered factor with 4 levels.
+
+\item \code{variety} a categorical unordered factor with 6 levels.
+
+\item \code{yield} cassava yield (t/ha).
+
 }
 }
 \examples{

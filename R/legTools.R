@@ -1005,10 +1005,10 @@ NULL
 #' data(potatoYield2)
 #' str(potatoYield2)
 #'
-#' lot(sumYield/4~variety, data=potatoYield2,
-#'     groups=loc, type="o",
-#'     ylab=expression(Yield~(t~ha^{-1})),
-#'     xlab="Variety")
+#' xyplot(sumYield/4~variety, data=potatoYield2,
+#'        groups=loc, type="o",
+#'        ylab=expression(Yield~(t~ha^{-1})),
+#'        xlab="Variety")
 #'
 NULL
 

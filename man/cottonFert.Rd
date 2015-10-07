@@ -3,7 +3,8 @@
 \docType{data}
 \name{cottonFert}
 \alias{cottonFert}
-\title{A set of experiments in different locations studing NK on cotton}
+\title{A set of experiments in different locations studing NK on
+    cotton}
 \format{a \code{data.frame} with 100 records and 4 variables.}
 \source{
 Pimentel Gomes, F. (2009). Curso de Estatística Experimental
@@ -20,14 +21,18 @@ These data is a set of experiments carried out in
     control.
 
 \itemize{
-  \item \code{trt} unordered factor, treatment that consist of 4
-    cells from a 2^2 factorial design (\eqn{N\times K}) and a
-    control.
-  \item \code{rept} integer, indexes experimental units.
-  \item \code{loc} an unordered factor representing the locations
-    where the experiment was carried out.
-  \item \code{y} numeric, the response variable of the
-    experiment. The text book didn't give details.
+
+\item \code{trt} unordered factor, treatment that consist of 4 cells
+    from a 2^2 factorial design (\eqn{N\times K}) and a control.
+
+\item \code{rept} integer, indexes experimental units.
+
+\item \code{loc} an unordered factor representing the locations where
+    the experiment was carried out.
+
+\item \code{y} numeric, the response variable of the experiment. The
+    text book didn't give details.
+
 }
 }
 \examples{

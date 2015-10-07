@@ -18,16 +18,21 @@ These data are from an experiment done in a latin square
     experimental unit.
 
 \itemize{
-  \item \code{row} the rows of the latin square that controls in
-    one dimention. A categorical unordered factor with 6 levels.
-  \item \code{col} the columns of the latin square that controls in
-    one dimention perpendicular to the previus. A categorical
-    unordered factor with 6 levels.
-  \item \code{fertil} a categorical unordered factor with 6
-    levels that is the fertilization strategy applied. These levels
-    are a result of treatment cells in a three incomplete factorial
+
+\item \code{row} the rows of the latin square that controls in one
+    dimention. A categorical unordered factor with 6 levels.
+
+\item \code{col} the columns of the latin square that controls in one
+    dimention perpendicular to the previus. A categorical unordered
+    factor with 6 levels.
+
+\item \code{fertil} a categorical unordered factor with 6 levels that
+    is the fertilization strategy applied. These levels are a result
+    of treatment cells in a three incomplete factorial
     arrangrment. See detais for more information.
-  \item \code{yield} sugarcane yield (kg/plot).
+
+\item \code{yield} sugarcane yield (kg/plot).
+
 }
 }
 \details{
@@ -58,7 +63,8 @@ levelplot(yield~row+col,
               colors=brewer.pal(n=11, name="Spectral")))+
     layer(with(sugarcaneYield3,
                panel.text(x=row, y=col,
-                          label=sprintf("\%s\\n\%0.2f", fertil, yield))))
+                          label=sprintf("\%s\\n\%0.2f",
+                                        fertil, yield))))
 
 aggregate(yield~row, data=sugarcaneYield3, FUN=mean)
 aggregate(yield~col, data=sugarcaneYield3, FUN=mean)
