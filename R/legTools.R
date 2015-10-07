@@ -11,18 +11,20 @@ NULL
 #'
 #' @title Feeding type in pig weight gain
 #'
-#' @description This is an artifial dataset corresponding a experiment
-#'     to study the effect of feeding type (factor with 4 categorical
-#'     nominal levels) in pig weight gain. The experiment was a
-#'     randomized complete design with five experimental units per
+#' @description This is an artificial data set corresponding a
+#'     experiment to study the effect of feeding type (factor with 4
+#'     categorical nominal levels) in pig weight gain. The experiment
+#'     was a randomized complete design with five experimental units per
 #'     treatment level. The experimental unit was a pig. The response
-#'     measured was weight gain from the beggining to the end of the
+#'     measured was weight gain from the beginning to the end of the
 #'     experiment.
 #'
 #' \itemize{
-#'     \item \code{ft} feeding type, a categorical factor with 4
-#'     levels.
-#'     \item \code{wg} weight gain (kg).
+#'
+#' \item \code{ft} feeding type, a categorical factor with 4 levels.
+#'
+#' \item \code{wg} weight gain (kg).
+#'
 #' }
 #'
 #' @docType data
@@ -57,10 +59,13 @@ NULL
 #'     (t/ha) was recorded in each experimental unit.
 #'
 #' \itemize{
-#'     \item \code{block} a categorical unordered factor with 4 levels.
-#'     \item \code{variety} a categorical unordered factor with 8
-#'     levels.
-#'     \item \code{yield} potato yield (t/ha).
+#'
+#' \item \code{block} a categorical unordered factor with 4 levels.
+#'
+#' \item \code{variety} a categorical unordered factor with 8 levels.
+#'
+#' \item \code{yield} potato yield (t/ha).
+#'
 #' }
 #'
 #' @docType data
@@ -99,9 +104,13 @@ NULL
 #'     units for each factor level in each block.
 #'
 #' \itemize{
-#'     \item \code{block} a categorical unordered factor with 6 levels.
-#'     \item \code{plow} a categorical unordered factor with 2 levels.
-#'     \item \code{yield} corn yield (kg in 200 m\eqn{^2} of area).
+#'
+#' \item \code{block} a categorical unordered factor with 6 levels.
+#'
+#' \item \code{plow} a categorical unordered factor with 2 levels.
+#'
+#' \item \code{yield} corn yield (kg in 200 m\eqn{^2} of area).
+#'
 #' }
 #'
 #' @docType data
@@ -128,10 +137,10 @@ NULL
 
 #' @name defoliation
 #'
-#' @title Bolls in cotton as function of artifitial defoliation
+#' @title Bolls in cotton as function of artificial defoliation
 #'
 #' @description This dataset contais the result of a real experiment to
-#'     evaluate the effect of artifitial defoliation in combination with
+#'     evaluate the effect of artificial defoliation in combination with
 #'     phenological stage of occurence on the production of cotton
 #'     represented by the number of bolls produced at the end of the
 #'     crop cycle. The experiment is a \eqn{5\times 5} factorial with 5
@@ -142,15 +151,21 @@ NULL
 #'     variance less than the sample mean).
 #'
 #' \itemize{
-#' \item \code{phenol} a categorical ordered factor with 5 levels
-#'     that represent the phenological stages of the cotton plant in
-#'     which defoliation was applied.
+#'
+#' \item \code{phenol} a categorical ordered factor with 5 levels that
+#'     represent the phenological stages of the cotton plant in which
+#'     defoliation was applied.
+#'
 #' \item \code{defol} a numeric factor with 5 levels that represents the
 #'     artifical level of defoliation (percent in leaf area removed with
 #'     scissors) applied for all leaves in the plant.
-#' \item \code{rept} index for each experimenal unit in each treatment cell.
+#'
+#' \item \code{rept} index for each experimenal unit in each treatment
+#'     cell.
+#'
 #' \item \code{bolls} the number of bolls produced (count variable)
 #'     evaluated at harvest.
+#'
 #' }
 #'
 #' @details The experiment was done in a greenhouse at Universidade
@@ -221,10 +236,13 @@ NULL
 #'     (t/ha) was recorded in each experimental unit.
 #'
 #' \itemize{
-#'     \item \code{block} a categorical unordered factor with 4 levels.
-#'     \item \code{variety} a categorical unordered factor with 6
-#'     levels.
-#'     \item \code{yield} cassava yield (t/ha).
+#'
+#' \item \code{block} a categorical unordered factor with 4 levels.
+#'
+#' \item \code{variety} a categorical unordered factor with 6 levels.
+#'
+#' \item \code{yield} cassava yield (t/ha).
+#'
 #' }
 #'
 #' @docType data
@@ -260,10 +278,13 @@ NULL
 #'     (kg/plot) was recorded in each experimental unit.
 #'
 #' \itemize{
-#'     \item \code{block} a categorical unordered factor with 4 levels.
-#'     \item \code{variety} a categorical unordered factor with 7
-#'     levels.
-#'     \item \code{yield} sugarcane yield (kg/plot).
+#'
+#' \item \code{block} a categorical unordered factor with 4 levels.
+#'
+#' \item \code{variety} a categorical unordered factor with 7 levels.
+#'
+#' \item \code{yield} sugarcane yield (kg/plot).
+#'
 #' }
 #'
 #' @docType data
@@ -298,14 +319,18 @@ NULL
 #'     experimental unit.
 #'
 #' \itemize{
-#'     \item \code{row} the rows of the latin square that controls in
-#'     one dimention. A categorical unordered factor with 5 levels.
-#'     \item \code{col} the columns of the latin square that controls in
-#'     one dimention perpendicular to the previus. A categorical
-#'     unordered factor with 5 levels.
-#'     \item \code{variety} a categorical unordered factor with 5
-#'     levels.
-#'     \item \code{yield} sugarcane yield (kg/plot).
+#'
+#' \item \code{row} the rows of the latin square that controls in one
+#'     dimention. A categorical unordered factor with 5 levels.
+#'
+#' \item \code{col} the columns of the latin square that controls in one
+#'     dimention perpendicular to the previus. A categorical unordered
+#'     factor with 5 levels.
+#'
+#' \item \code{variety} a categorical unordered factor with 5 levels.
+#'
+#' \item \code{yield} sugarcane yield (kg/plot).
+#'
 #' }
 #'
 #' @docType data
@@ -355,16 +380,21 @@ NULL
 #'     experimental unit.
 #'
 #' \itemize{
-#'   \item \code{row} the rows of the latin square that controls in
-#'     one dimention. A categorical unordered factor with 6 levels.
-#'   \item \code{col} the columns of the latin square that controls in
-#'     one dimention perpendicular to the previus. A categorical
-#'     unordered factor with 6 levels.
-#'   \item \code{fertil} a categorical unordered factor with 6
-#'     levels that is the fertilization strategy applied. These levels
-#'     are a result of treatment cells in a three incomplete factorial
+#'
+#' \item \code{row} the rows of the latin square that controls in one
+#'     dimention. A categorical unordered factor with 6 levels.
+#'
+#' \item \code{col} the columns of the latin square that controls in one
+#'     dimention perpendicular to the previus. A categorical unordered
+#'     factor with 6 levels.
+#'
+#' \item \code{fertil} a categorical unordered factor with 6 levels that
+#'     is the fertilization strategy applied. These levels are a result
+#'     of treatment cells in a three incomplete factorial
 #'     arrangrment. See detais for more information.
-#'   \item \code{yield} sugarcane yield (kg/plot).
+#'
+#' \item \code{yield} sugarcane yield (kg/plot).
+#'
 #' }
 #'
 #' @details The levels of fertilization are in fact a combination of a
@@ -406,7 +436,8 @@ NULL
 #'               colors=brewer.pal(n=11, name="Spectral")))+
 #'     layer(with(sugarcaneYield3,
 #'                panel.text(x=row, y=col,
-#'                           label=sprintf("%s\n%0.2f", fertil, yield))))
+#'                           label=sprintf("%s\n%0.2f",
+#'                                         fertil, yield))))
 #'
 #' aggregate(yield~row, data=sugarcaneYield3, FUN=mean)
 #' aggregate(yield~col, data=sugarcaneYield3, FUN=mean)
@@ -435,15 +466,20 @@ NULL
 #'     experiment.
 #'
 #' \itemize{
-#'   \item \code{litter} a categorical factor with 4 levels that
+#'
+#' \item \code{litter} a categorical factor with 4 levels that
 #'     represents the rows of the lattin square design and control for
 #'     the differences among litters.
-#'   \item code{size} a categorical ordered variable that represents the
+#'
+#' \item code{size} a categorical ordered variable that represents the
 #'     columns of latin square desing and control for the weight of the
 #'     animals at the beggining of the experiment.
-#'   \item \code{age} age of the animal (days) when castration was
+#'
+#' \item \code{age} age of the animal (days) when castration was
 #'     done. \code{controls} are the animals without castration.
-#'   \item \code{wg} weight gain (kg) after 252 days.
+#'
+#' \item \code{wg} weight gain (kg) after 252 days.
+#'
 #' }
 #'
 #' @docType data
@@ -479,11 +515,17 @@ NULL
 #'     (K) on corn yield in a randomized block design.
 #'
 #' \itemize{
-#'   \item \code{block} a factor with 4 levels.
-#'   \item \code{N} low (-1) and high (+1) levels of nitrogen.
-#'   \item \code{P} low (-1) and high (+1) levels of phosporus.
-#'   \item \code{K} low (-1) and high (+1) levels of potassium.
-#'   \item \code{yield} corn yield (ton/ha).
+#'
+#' \item \code{block} a factor with 4 levels.
+#'
+#' \item \code{N} low (-1) and high (+1) levels of nitrogen.
+#'
+#' \item \code{P} low (-1) and high (+1) levels of phosporus.
+#'
+#' \item \code{K} low (-1) and high (+1) levels of potassium.
+#'
+#' \item \code{yield} corn yield (ton/ha).
+#'
 #' }
 #'
 #' @docType data
@@ -528,13 +570,18 @@ NULL
 #'     fertilization.
 #'
 #' \itemize{
-#'   \item \code{block} a factor with 4 levels.
-#'   \item \code{mineral} low (-1) and high (+1) levels of mineral
+#'
+#' \item \code{block} a factor with 4 levels.
+#'
+#' \item \code{mineral} low (-1) and high (+1) levels of mineral
 #'     fertilization.
-#'   \item \code{vinasse} low (-1) and high (+1) levels of fetilization
-#'     with vinasse.
-#'   \item \code{y} some response variable. The text book doesn't give
-#'     any information.
+#'
+#' \item \code{vinasse} low (-1) and high (+1) levels of fetilization
+#'    with vinasse.
+#'
+#' \item \code{y} some response variable. The text book doesn't give any
+#'     information.
+#'
 #' }
 #'
 #' @docType data
@@ -574,13 +621,18 @@ NULL
 #'     fertilization.
 #'
 #' \itemize{
-#'   \item \code{block} a factor with 4 levels.
-#'   \item \code{mineral} low (-1) and high (+1) levels of mineral
+#'
+#' \item \code{block} a factor with 4 levels.
+#'
+#' \item \code{mineral} low (-1) and high (+1) levels of mineral
 #'     fertilization.
-#'   \item \code{cake} low (-1) and high (+1) levels of fetilization
-#'     with filter cake.
-#'   \item \code{y} some response variable. The text book doesn't give
-#'     any information.
+#'
+#' \item \code{cake} low (-1) and high (+1) levels of fetilization with
+#'     filter cake.
+#'
+#' \item \code{y} some response variable. The text book doesn't give any
+#'     information.
+#'
 #' }
 #'
 #' @docType data
@@ -619,12 +671,19 @@ NULL
 #'     studing the effect of NPK on the yield of sugar cane.
 #'
 #' \itemize{
+#'
 #'   \item \code{block} a local control factor with 3 levels.
+#'
 #'   \item \code{rept} factor with 2 levels.
+#'
 #'   \item \code{N} integer coded nitrogen levels (0, 1, 2).
+#'
 #'   \item \code{P} integer coded phosphorus levels (0, 1, 2).
+#'
 #'   \item \code{K} integer coded potassium levels (0, 1, 2).
+#'
 #'   \item \code{yield} sugar cane yield (ton/ha).
+#'
 #' }
 #'
 #' @details There is a missprint in the book for the 9th entry, which
@@ -668,11 +727,16 @@ NULL
 #'     Novermber, December and January.
 #'
 #' \itemize{
-#'   \item \code{variety} a categorical variable with 6 levels that
+#'
+#' \item \code{variety} a categorical variable with 6 levels that
 #'     represents mango varieties studied.
-#'   \item \code{year} the year of harvesting.
-#'   \item \code{month} the month of harvesting.
-#'   \item \code{acid} mean of the acidity determined in 3 fruits.
+#'
+#' \item \code{year} the year of harvesting.
+#'
+#' \item \code{month} the month of harvesting.
+#'
+#' \item \code{acid} mean of the acidity determined in 3 fruits.
+#'
 #' }
 #'
 #' @docType data
@@ -720,11 +784,17 @@ NULL
 #'     plus presence of limestone.
 #'
 #' \itemize{
-#'   \item \code{N} content of nitrogen in the fertilizer.
-#'   \item \code{P} content of phosphorus in the fertilizer.
-#'   \item \code{K} content of potassium in the fertilizer.
-#'   \item \code{limestone} presence (1) or absence of limestone (0).
-#'   \item \code{acid} mean of corn yield in 16 locations (ton/ha).
+#'
+#' \item \code{N} content of nitrogen in the fertilizer.
+#'
+#' \item \code{P} content of phosphorus in the fertilizer.
+#'
+#' \item \code{K} content of potassium in the fertilizer.
+#'
+#' \item \code{limestone} presence (1) or absence of limestone (0).
+#'
+#' \item \code{acid} mean of corn yield in 16 locations (ton/ha).
+#'
 #' }
 #'
 #' @details The experiment was carried out in 16 different locations but
@@ -774,13 +844,19 @@ NULL
 #'     branches in coffee trees.
 #'
 #' \itemize{
-#'   \item \code{N} content of nitrogen in the fertilizer (low/high).
-#'   \item \code{P} content of phosphorus in the fertilizer (low/high).
-#'   \item \code{K} content of potassium in the fertilizer (low/high).
-#'   \item \code{block} an unordered factor representing the blocks
+#'
+#' \item \code{N} content of nitrogen in the fertilizer (low/high).
+#'
+#' \item \code{P} content of phosphorus in the fertilizer (low/high).
+#'
+#' \item \code{K} content of potassium in the fertilizer (low/high).
+#'
+#' \item \code{block} an unordered factor representing the blocks
 #'     used.
-#'   \item \code{branches} an integer variable, the number of dry
+#'
+#' \item \code{branches} an integer variable, the number of dry
 #'     branches in a coffee the.
+#'
 #' }
 #'
 #' @details The experiment was carried out in a randomized block design
@@ -819,7 +895,8 @@ NULL
 
 #' @name cottonFert
 #'
-#' @title A set of experiments in different locations studing NK on cotton
+#' @title A set of experiments in different locations studing NK on
+#'     cotton
 #'
 #' @description These data is a set of experiments carried out in
 #'     different locations studing NK fertilization in cotton. All the 5
@@ -828,14 +905,18 @@ NULL
 #'     control.
 #'
 #' \itemize{
-#'   \item \code{trt} unordered factor, treatment that consist of 4
-#'     cells from a 2^2 factorial design (\eqn{N\times K}) and a
-#'     control.
-#'   \item \code{rept} integer, indexes experimental units.
-#'   \item \code{loc} an unordered factor representing the locations
-#'     where the experiment was carried out.
-#'   \item \code{y} numeric, the response variable of the
-#'     experiment. The text book didn't give details.
+#'
+#' \item \code{trt} unordered factor, treatment that consist of 4 cells
+#'     from a 2^2 factorial design (\eqn{N\times K}) and a control.
+#'
+#' \item \code{rept} integer, indexes experimental units.
+#'
+#' \item \code{loc} an unordered factor representing the locations where
+#'     the experiment was carried out.
+#'
+#' \item \code{y} numeric, the response variable of the experiment. The
+#'     text book didn't give details.
+#'
 #' }
 #'
 #' @docType data
