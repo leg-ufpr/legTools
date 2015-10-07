@@ -1,5 +1,5 @@
 ##----------------------------------------------------------------------
-## Data generation.
+## Data generation. Pimentel page 156.
 
 peanutYield2 <- expand.grid(
     variety=c("40-Roxo", "54-Roxo", "49-Cateto", "53-Tatu"),
@@ -25,12 +25,15 @@ names(mse) <- levels(peanutYield2$loc)
 attr(peanutYield2, which="MSE") <- mse
 str(peanutYield2)
 
-## save(peanutYield2, file="../data/peanutYield2.RData")
+save(peanutYield2, file="../data/peanutYield2.RData")
 
 ##----------------------------------------------------------------------
 ## Examples.
 
 require(lattice)
+
+data(peanutYield2)
+str(peanutYield2)
 
 xyplot(meanYield~variety, data=peanutYield2,
        groups=loc, type="o",

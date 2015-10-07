@@ -1,5 +1,5 @@
 ##----------------------------------------------------------------------
-## Data generation.
+## Data generation. Pimentel page 149.
 
 peanutYield <- expand.grid(
     variety=c("40-Roxo", "54-Roxo", "49-Cateto", "53-Tatu"),
@@ -27,6 +27,9 @@ str(peanutYield)
 ## Examples.
 
 require(lattice)
+
+data(peanutYield)
+str(peanutYield)
 
 xyplot(meanYield~variety|year, data=peanutYield,
        groups=loc, type="o",

@@ -27,12 +27,15 @@ names(mse) <- levels(castorbeansYield$loc)
 attr(castorbeansYield, which="MSE") <- mse
 str(castorbeansYield)
 
-## save(castorbeansYield, file="../data/castorbeansYield.RData")
+save(castorbeansYield, file="../data/castorbeansYield.RData")
 
 ##----------------------------------------------------------------------
 ## Examples.
 
 require(lattice)
+
+data(castorbeansYield)
+str(castorbeansYield)
 
 xyplot(meanYield~variety, data=castorbeansYield,
        groups=loc, type="o",

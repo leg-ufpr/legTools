@@ -1,5 +1,5 @@
 ##----------------------------------------------------------------------
-## Data generation.
+## Data generation. Pimentel page 147.
 
 potatoYield2 <- expand.grid(
     variety=c("Kennebec", "B 25-50 E", "B 1-52", "Huinkul",
@@ -26,12 +26,15 @@ names(mse) <- paste0("loc:", 1:length(mse))
 attr(potatoYield2, which="MSE") <- mse
 str(potatoYield2)
 
-## save(potatoYield2, file="../data/potatoYield2.RData")
+save(potatoYield2, file="../data/potatoYield2.RData")
 
 ##----------------------------------------------------------------------
 ## Examples.
 
 require(lattice)
+
+data(potatoYield2)
+str(potatoYield2)
 
 xyplot(sumYield/4~variety, data=potatoYield2,
        groups=loc, type="o",
