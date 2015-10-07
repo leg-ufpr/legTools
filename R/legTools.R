@@ -946,3 +946,253 @@ NULL
 #'        ylab="y", xlab="Treatment")
 #'
 NULL
+
+#' @name potatoYield2
+#'
+#' @title Potato variety competition experiments in several locations
+#'
+#' @description These data are from a set of experiments done by the
+#'     engineer Oscar A. Garay at Balcare, Argentina. These experiments
+#'     were done in a randomized complete block design with 4 blocks and
+#'     at 7 locations on the potato production region at the Buenos
+#'     Aires province.
+#'
+#' \itemize{
+#'
+#' \item \code{variety} a categorical unordered factor with 8 levels,
+#'     varieties of potato.
+#'
+#' \item \code{loc} a categorical unordered factor with 7 levels, the
+#'     locations that represent farms or experimental stations.
+#'
+#' \item \code{sumYield} is the sum of yield for a variety in each
+#'     experiment. Then, this sum values across 4 blocks in each
+#'     experiment. To get the mean yield you should divide by 4. Yield
+#'     is t/ha.
+#'
+#' }
+#'
+#' @details The data in the book was not complete because doesn't report
+#'     individual plot values but, instead, the sum for a variety in
+#'     each experiment. To do a joint or global analysis, with all
+#'     locations, varieties and blocks, its necessary all individual
+#'     plot values. The book report the Mean Square Error estimates for
+#'     each experiment as an attribute of the object,
+#'     \code{attr(potatoYield2, "MSE")} and they comes from the ANOVA
+#'     table in which the model is \code{~block+variety} for each
+#'     location. The data set \link[legTools]{potatoYield} correspond
+#'     the location 3. With these MSE is possible use them in a such a
+#'     way that a partial ANOVA table can be obtained to test the effect
+#'     of location, variety and its interaction.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(potatoYield2)
+#'
+#' @format a \code{data.frame} with 56 records and 3 variables. There is
+#'     an attribute named \code{MSE}, a named vector containing the Mean
+#'     Squares Errors estimates for each experiment.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 147)
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(potatoYield2)
+#' str(potatoYield2)
+#'
+#' lot(sumYield/4~variety, data=potatoYield2,
+#'     groups=loc, type="o",
+#'     ylab=expression(Yield~(t~ha^{-1})),
+#'     xlab="Variety")
+#'
+NULL
+
+#' @name castorbeansYield
+#'
+#' @title Castor beans variety competition experiments in some locations
+#'
+#' @description These data are from a set of experiments evaluating
+#'     varieties of castor beans in terms of yield (kg/ha) for some
+#'     locations (counties).
+#'
+#' \itemize{
+#'
+#' \item \code{variety} a categorical unordered factor with 8 levels,
+#'     varieties and lines of castor beans.
+#'
+#' \item \code{loc} a categorical unordered factor with 5 levels, the
+#'     locations (counties) experimental stations.
+#'
+#' \item \code{meanYield} is the mean of yield for a variety in each
+#'     location. So, this the mean across all plots of the same variety
+#'     in each experiment.
+#'
+#' }
+#'
+#' @details The data in the book was not complete because doesn't report
+#'     individual plot values but the mean for a variety in each single
+#'     experiment. Neither mention which experimental design was used in
+#'     each station. The book report the Mean Square Error estimates for
+#'     each experiment. These values as provided as an attribute of the
+#'     object, \code{attr(peanut, "MSE")} and they comes from the ANOVA
+#'     table corresponding to an appropriate model for each
+#'     location. With these MSE is possible use them in a such a way
+#'     that a partial ANOVA table can be obtained to test the effect of
+#'     location, variety and its interaction.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(castorbeansYield)
+#'
+#' @format a \code{data.frame} with 45 records and 3 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 149)
+#'
+#' Souza, O. Ferreira de.; Canecchio, F. V. (1952). Melhoramento de
+#'     mamoeira, VII. Bragantia 12:301-307.
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(castorbeansYield)
+#' str(castorbeansYield)
+#'
+#' xyplot(meanYield~variety, data=castorbeansYield,
+#'        groups=loc, type="o",
+#'        ylab=expression(Yield~(t~ha^{-1})),
+#'        xlab="Variety")
+#'
+NULL
+
+#' @name peanutYield
+#'
+#' @title Peanut variety competition experiments in some locations and
+#'     years
+#'
+#' @description These data are from a set of experiments evaluating
+#'     varieties of peanut in terms of yield (kg/ha) for some locations
+#'     and years.
+#'
+#' \itemize{
+#'
+#' \item \code{variety} a categorical unordered factor with 4 levels,
+#'     peanut varieties.
+#'
+#' \item \code{loc} a categorical unordered factor with 3 levels, the
+#'     locations (counties) of the experimental stations.
+#'
+#' \item \code{year} a categorical factor, the crop year.
+#'
+#' \item \code{meanYield} is the adjusted mean of yield for a variety in
+#'     each location and year.
+#'
+#' }
+#'
+#' @details The data in the book was not complete because doesn't report
+#'     individual plot values but the adjusted mean for a variety in
+#'     each single experiment. Neither mention which experimental design
+#'     was used in each station. The book report the Mean Square Error
+#'     estimates for each experiment. These values as provided as an
+#'     attribute of the object, \code{attr(peanut, "MSE")} and they
+#'     comes from the ANOVA table corresponding to an appropriate model
+#'     for each location. With these MSE is possible use them in a such
+#'     a way that a partial ANOVA table can be obtained to test the
+#'     effect of location, variety and its interaction.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(peanutYield)
+#'
+#' @format a \code{data.frame} with 36 records and 4 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 150)
+#'
+#' Souza, O. Ferreira de.; Abramides, Eduardo. (1952). Ensaios de
+#'     variedades de amendoim. Bragantia 12:349-358.
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(peanutYield)
+#' str(peanutYield)
+#'
+#' xyplot(meanYield~variety|year, data=peanutYield,
+#'        groups=loc, type="o",
+#'        ylab=expression(Yield~(t~ha^{-1})),
+#'        xlab="Variety")
+#'
+NULL
+
+#' @name peanutYield2
+#'
+#' @title Peanut variety competition experiments in some locations
+#'
+#' @description These data are from a set of experiments evaluating
+#'     varieties of peanut in terms of yield (kg/ha) for some locations
+#'     in different years.
+#'
+#' \itemize{
+#'
+#' \item \code{variety} a categorical unordered factor with 4 levels,
+#'     peanut varieties.
+#'
+#' \item \code{loc} a categorical unordered factor with 4 levels, the
+#'     location:year of the experiment.
+#'
+#' \item \code{meanYield} is mean of yield for a variety in each
+#'     location:year.
+#'
+#' }
+#'
+#' @details The data in the book was not complete because doesn't report
+#'     individual plot values but the adjusted mean for a variety in
+#'     each single experiment. Neither mention which experimental design
+#'     was used in each station. The book report the Mean Square Error
+#'     estimates for each experiment. These values as provided as an
+#'     attribute of the object, \code{attr(peanut, "MSE")} and they
+#'     comes from the ANOVA table corresponding to an appropriate model
+#'     for each location. With these MSE is possible use them in a such
+#'     a way that a partial ANOVA table can be obtained to test the
+#'     effect of location, variety and its interaction.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(peanutYield2)
+#'
+#' @format a \code{data.frame} with 16 records and 3 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 150)
+#'
+#' Souza, O. Ferreira de.; Abramides, Eduardo. (1952). Ensaios de
+#'     variedades de amendoim. Bragantia 12:349-358.
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(peanutYield2)
+#' str(peanutYield2)
+#'
+#' xyplot(meanYield~variety, data=peanutYield2,
+#'        groups=loc, type="o",
+#'        ylab=expression(Yield~(t~ha^{-1})),
+#'        xlab="Variety")
+#'
+NULL
+
