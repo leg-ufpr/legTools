@@ -7,18 +7,24 @@
 ##                   block=factor(block), treat=factor(treat))
 ## dput(bib3)
 
-bib3 <-
-structure(list(block = structure(c(1L, 1L, 1L, 2L, 2L, 2L, 3L, 
-3L, 3L, 4L, 4L, 4L, 5L, 5L, 5L, 6L, 6L, 6L, 7L, 7L, 7L, 8L, 8L, 
-8L, 9L, 9L, 9L, 10L, 10L, 10L), .Label = c("1", "2", "3", "4", 
-"5", "6", "7", "8", "9", "10"), class = "factor"), treat = structure(c(1L, 
-2L, 3L, 1L, 2L, 4L, 1L, 2L, 5L, 1L, 3L, 4L, 1L, 3L, 5L, 1L, 4L, 
-5L, 2L, 3L, 4L, 2L, 3L, 5L, 2L, 4L, 5L, 3L, 4L, 5L), .Label = c("1", 
-"2", "3", "4", "5"), class = "factor"), y = c(35L, 28L, 27L, 
-30L, 20L, 22L, 28L, 16L, 18L, 36L, 29L, 30L, 29L, 19L, 22L, 25L, 
-16L, 19L, 26L, 30L, 28L, 27L, 29L, 27L, 29L, 29L, 27L, 27L, 26L, 
-29L)), .Names = c("block", "treat", "y"), row.names = c(NA, -30L
-), class = "data.frame")
+bib3 <- structure(list(
+    block = structure(c(1L, 1L, 1L, 2L, 2L, 2L, 3L, 3L, 3L, 4L, 4L, 4L,
+                        5L, 5L, 5L, 6L, 6L, 6L, 7L, 7L, 7L, 8L, 8L, 8L,
+                        9L, 9L, 9L, 10L, 10L, 10L),
+                      .Label = c("1", "2", "3", "4", "5", "6", "7", "8",
+                                 "9", "10"),
+                      class = "factor"),
+    treat = structure(c(1L, 2L, 3L, 1L, 2L, 4L, 1L, 2L, 5L, 1L, 3L, 4L,
+                        1L, 3L, 5L, 1L, 4L, 5L, 2L, 3L, 4L, 2L, 3L, 5L,
+                        2L, 4L, 5L, 3L, 4L, 5L),
+                      .Label = c("1", "2", "3", "4", "5"),
+                      class = "factor"),
+    y = c(35L, 28L, 27L, 30L, 20L, 22L, 28L, 16L, 18L, 36L, 29L, 30L,
+          29L, 19L, 22L, 25L, 16L, 19L, 26L, 30L, 28L, 27L, 29L, 27L,
+          29L, 29L, 27L, 27L, 26L, 29L)),
+          .Names = c("block", "treat", "y"),
+          row.names = c(NA, -30L),
+          class = "data.frame")
 
 bib <- bib3[with(bib3, order(block, treat)), ]
 
@@ -28,6 +34,9 @@ save(bib3, file="../data/bib3.RData")
 ## Examples.
 
 require(lattice)
+
+data(bib3)
+str(bib3)
 
 xyplot(y~treat|block, data=bib3,
        ylab="Y",
