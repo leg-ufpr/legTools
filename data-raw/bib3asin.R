@@ -34,7 +34,7 @@ bib3asin <- structure(list(
           row.names = c(NA, -52L),
           class = "data.frame")
 
-bib <- bib3asin[with(bib3asin, order(block, treat)), ]
+bib3asin <- bib3asin[with(bib3asin, order(block, treat)), ]
 
 save(bib3asin, file="../data/bib3asin.RData")
 

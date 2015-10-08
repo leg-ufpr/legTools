@@ -1368,7 +1368,7 @@ NULL
 #'
 NULL
 
-#' @name bib3sin
+#' @name bib3asin
 #'
 #' @title A balanced incomplete block design of type III
 #'
