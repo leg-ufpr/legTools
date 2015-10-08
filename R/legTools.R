@@ -1196,3 +1196,246 @@ NULL
 #'
 NULL
 
+#' @name bib3
+#'
+#' @title A balanced incomplete block design of type III
+#'
+#' @description This data is under a balanced complete block design
+#'     named type III. There are 5 treatments and 10 blocks of size 3
+#'     plots. Each treatment is repeated 6 times and they occour
+#'     together (in pairs) 3 times.
+#'
+#' \itemize{
+#'
+#' \item \code{block} a categorical unordered factor with 10 levels.
+#'
+#' \item \code{treat} a categorical unordered factor with 5 levels, the
+#'     treatments studied.
+#'
+#' \item \code{y} some response variable. The book doesn't gave details.
+#'
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(bib3)
+#'
+#' @format a \code{data.frame} with 30 records and 3 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 185)
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(bib3)
+#' str(bib3)
+#'
+#' xyplot(y~treat|block, data=bib3,
+#'        ylab="Y",
+#'        xlab="Treatment")
+#'
+#' g <- nlevels(bib3$treat)
+#' a <- seq(0, by=(2*pi)/(g), length.out=g)
+#' y <- sin(a)
+#' x <- cos(a)
+#' plot(y~x, asp=1, xlim=c(-1,1), ylim=c(-1,1))
+#'
+#' for (b in levels(bib3$block)){
+#'     cbn <- combn(x=as.integer(bib3$treat[bib3$block==b]),
+#'                  m=2)
+#'     segments(
+#'         x0=x[cbn[1,]], y0=y[cbn[1,]],
+#'         x1=x[cbn[2,]], y1=y[cbn[2,]], col=b)
+#' }
+#'
+NULL
+
+#' @name bib1
+#'
+#' @title A balanced incomplete block design of type I
+#'
+#' @description This data is under a balanced complete block design
+#'     named type I. There are 7 replications that are groups of 4
+#'     blocks of size 2 in a such a way that each treatment occurs once
+#'     in each replication and 7 times at all. There are 8 treatments,
+#'     28 blocks at all. Treatment occur in pairs once. These treatments
+#'     are in fact cells of a \eqn{2^3} factorial design from combining
+#'     nitrogen (P), phosphorus (P) and potassium (K) fertilizers at two
+#'     levels each.
+#'
+#' \itemize{
+#'
+#' \item \code{rept} a categorical unordered factor with 7 levels. Each
+#'     \code{rept} has 4 bloks of size 2.
+#'
+#' \item \code{N} content of nitrogen in the fertilizer (low/high).
+#'
+#' \item \code{P} content of phosphorus in the fertilizer (low/high).
+#'
+#' \item \code{K} content of potassium in the fertilizer (low/high).
+#'
+#' \item \code{block} a categorical unordered factor with 4 levels in
+#'     each \code{rept}, so 28 at all.
+#'
+#' \item \code{treat} a categorical unordered factor with 8 levels, the
+#'     treatments studied.
+#'
+#' \item \code{y} some response variable. The book doesn't gave details.
+#'
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(bib1)
+#'
+#' @format a \code{data.frame} with 56 records and 4 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 190)
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(bib1)
+#' str(bib1)
+#'
+#' xyplot(y~treat|rept, groups=block, data=bib1, type="b",
+#'        ylab="Y", xlab="Treatment")
+#'
+#' xyplot(y~treat, data=bib1, jitter.x=TRUE,
+#'        ylab="Y", xlab="Treatment")
+#'
+#' xyplot(y~N|P+K, groups=rept, data=bib1, type="b",
+#'        ylab="Y", xlab="Nitrogen")
+#'
+NULL
+
+#' @name bib2
+#'
+#' @title A balanced incomplete block design of type II
+#'
+#' @description This data is under a balanced complete block design
+#'     named type II. There are 3 replications that are groups of 7
+#'     blocks of size 2 in a such a way that each treatment occurs twice
+#'     in each replication and 6 times at all. There are 7 treatments
+#'     and 21 blocks at all. Treatments occur in pairs once.
+#'
+#' \itemize{
+#'
+#' \item \code{rept} a categorical unordered factor with 3 levels. Each
+#'     \code{rept} has 7 bloks of size 2.
+#'
+#' \item \code{block} a categorical unordered factor with 8 levels in
+#'     each \code{rept}, so 21 at all.
+#'
+#' \item \code{treat} a categorical unordered factor with 7 levels, the
+#'     treatments studied.
+#'
+#' \item \code{y} some response variable. The book doesn't gave details.
+#'
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(bib2)
+#'
+#' @format a \code{data.frame} with 42 records and 4 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 192)
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(bib2)
+#' str(bib2)
+#'
+#' xyplot(y~treat|rept, groups=block, data=bib2, type="b",
+#'        ylab="Y", xlab="Treatment")
+#'
+#' xyplot(y~treat, data=bib2, jitter.x=TRUE,
+#'        ylab="Y", xlab="Treatment")
+#'
+NULL
+
+#' @name bib3sin
+#'
+#' @title A balanced incomplete block design of type III
+#'
+#' @description This data is under a balanced complete block design
+#'     named type III. There are 13 treatments and 13 blocks of size 4
+#'     plots. Each treatment is repeated 6 times and they occour
+#'     together (in pairs) only once.
+#'
+#' \itemize{
+#'
+#' \item \code{block} a categorical unordered factor with 13 levels.
+#'
+#' \item \code{treat} a categorical unordered factor with 13 levels, the
+#'     treatments studied.
+#'
+#' \item \code{z} correpond a transformation of the original recorded
+#'     variable, the observed percentual of healthy plants, \eqn{p}. So,
+#'     \eqn{z = \arcsin{\sqrt{p/100}}}, in radians is applied to
+#'     stabilize the variance to comply with the assumption of constant
+#'     variance.
+#'
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(bib3asin)
+#'
+#' @format a \code{data.frame} with 52 records and 3 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 198)
+#'
+#' Fraga Jr., C. G.; Costa, A. S. (1950). Análise de um experimento para
+#'     combate de vira-cabeça do tomateiro. Bragantia, 10:305-316.
+#'
+#' @examples
+#'
+#' require(lattice)
+#'
+#' data(bib3asin)
+#' str(bib3asin)
+#'
+#' xyplot(z~treat|block, data=bib3asin,
+#'        ylab="Arc sin of heathy plants fraction",
+#'        xlab="Treatment")
+#'
+#' ## Why not consider a beta distribution for p?
+#' bib3asin$p <- sin(bib3asin$z*pi/180)^2
+#'
+#' xyplot(p~treat|block, data=bib3asin,
+#'        ylab="Fraction of healthy plants",
+#'        xlab="Treatment")
+#'
+#' g <- nlevels(bib3asin$treat)
+#' a <- seq(0, by=(2*pi)/(g), length.out=g)
+#' y <- sin(a)
+#' x <- cos(a)
+#' plot(y~x, asp=1, xlim=c(-1,1), ylim=c(-1,1))
+#'
+#' for (b in levels(bib3asin$block)){
+#'     cbn <- combn(x=as.integer(bib3asin$treat[bib3asin$block==b]),
+#'                  m=2)
+#'     segments(
+#'         x0=x[cbn[1,]], y0=y[cbn[1,]],
+#'         x1=x[cbn[2,]], y1=y[cbn[2,]], col=b)
+#' }
+#'
+NULL
