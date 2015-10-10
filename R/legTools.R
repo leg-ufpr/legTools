@@ -700,6 +700,10 @@ NULL
 #' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
 #'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 126)
 #'
+#' Straus, E. (1951). Experimentos de adubação na zona canavieira de
+#'     Pernambuco. In: Anais da III Reunião Brasileira de Ciência do
+#'     Solo. 1:336-443.
+#'
 #' @examples
 #'
 #' library(lattice)
@@ -1503,5 +1507,67 @@ NULL
 #'         x0=x[cbn[1,]], y0=y[cbn[1,]],
 #'         x1=x[cbn[2,]], y1=y[cbn[2,]], col=b)
 #' }
+#'
+NULL
+
+#' @name sugarcaneYield5
+#'
+#' @title A set of 38 essays on the effect of P in sugar cane yield
+#'
+#' @description Sugar cane yield evaluated in a set of 38
+#'     experiments. In each one was a triple factorial of NPK
+#'     dosage. These data correspond to the mean values by level of P
+#'     and the mean squares of each complete analysis.
+#'
+#' \itemize{
+#'
+#' \item \code{essay} an integer that represent each single experiment.
+#'
+#' \item \code{sugarcane} indicates which harvest the yield corresponts
+#'     to. \code{"plant"} represents the first harvest of the crop and
+#'     \code{"ratoon"} represents the second harvest.
+#'
+#' \item \code{P} phosphorus levels in kg/ha of \eqn{\textrm{P}_2
+#' \textrm{O}_5}.
+#'
+#' \item \code{yield} sugar cane yield (ton/ha).
+#'
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield5)
+#'
+#' @format a \code{data.frame} with 228 records and 4 variables. An
+#'     attribute \code{MSE} is a \code{data.frame} (76 by 3) with mean
+#'     square error estimate from the analysis of the complete data in
+#'     each experiment.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 259)
+#'
+#' Straus, E. (1951). Experimentos de adubação na zona canavieira de
+#'     Pernambuco. In: Anais da III Reunião Brasileira de Ciência do
+#'     Solo. 1:336-443.
+#'
+#' @examples
+#'
+#' library(lattice)
+#'
+#' data(sugarcaneYield5)
+#' str(sugarcaneYield5)
+#'
+#' xyplot(yield~P|sugarcane, groups=essay,
+#'        data=sugarcaneYield5, type="o",
+#'        ylab=expression(Yield~(ton~ha^{-1})),
+#'        xlab=expression(P[2]*O[5]~(kg~ha^{-1})))
+#'
+#' xyplot(yield~P|essay, groups=sugarcane,
+#'        data=sugarcaneYield5, auto.key=TRUE,
+#'        type="o", strip=FALSE,
+#'        ylab=expression(Yield~(ton~ha^{-1})),
+#'        xlab=expression(P[2]*O[5]~(kg~ha^{-1})))
 #'
 NULL

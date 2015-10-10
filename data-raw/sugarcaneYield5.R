@@ -38,9 +38,11 @@ qmr$mse <- c(66.4, 65.0, 187.5, 83.4, 185.7, 64.4, 254.6, 88.6, 85.9,
              185.2, 14.1)
 attr(sugarcaneYield5, "MSE") <- qmr
 
+save(sugarcaneYield5, file="../data/sugarcaneYield5.RData")
+
 ##----------------------------------------------------------------------
 
-aggregate(yield~sugarcane+P, data=sugarcaneYield5, FUN=mean)
+aggregate(yield~P+sugarcane, data=sugarcaneYield5, FUN=mean)
 
 m0 <- lm(yield~factor(essay)+factor(P),
          data=subset(sugarcaneYield5, sugarcane=="plant"))
@@ -65,12 +67,17 @@ data(sugarcaneYield5)
 str(sugarcaneYield5)
 
 xyplot(yield~P|sugarcane, groups=essay,
-       data=sugarcaneYield5, type="o")
+       data=sugarcaneYield5, type="o",
+       ylab=expression(Yield~(ton~ha^{-1})),
+       xlab=expression(P[2]*O[5]~(kg~ha^{-1})))
 
 xyplot(yield~P|essay, groups=sugarcane,
-       data=sugarcaneYield5, type="o", strip=FALSE)
+       data=sugarcaneYield5, auto.key=TRUE,
+       type="o", strip=FALSE,
+       ylab=expression(Yield~(ton~ha^{-1})),
+       xlab=expression(P[2]*O[5]~(kg~ha^{-1})))
 
 rm(list=ls())
 load("../data/sugarcaneYield5.RData")
 ls()
-str(sugarcaneYield4)
+str(sugarcaneYield5)

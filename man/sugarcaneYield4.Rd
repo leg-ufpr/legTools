@@ -8,6 +8,10 @@
 \source{
 Pimentel Gomes, F. (2009). Curso de Estatística Experimental
     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 126)
+
+Straus, E. (1951). Experimentos de adubação na zona canavieira de
+    Pernambuco. In: Anais da III Reunião Brasileira de Ciência do
+    Solo. 1:336-443.
 }
 \usage{
 data(sugarcaneYield4)
