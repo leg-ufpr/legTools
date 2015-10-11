@@ -1,0 +1,83 @@
+##----------------------------------------------------------------------
+## Data generation. Pimentel page 259.
+
+sugarcaneYield5 <- expand.grid(essay=1:38,
+                               P=c(0, 60, 120),
+                               sugarcane=c("plant", "ratoon"),
+                               KEEP.OUT.ATTRS=FALSE)
+sugarcaneYield5$yield <-
+    c(602, 409, 290, 610, 841, 157, 502, 870, 883, 420, 473, 531, 132,
+      204, 231, 436, 328, 321, 436, 275, 349, 240, 280, 284, 318, 212,
+      253, 315, 373, 564, 245, 449, 552, 402, 323, 453, 300, 300, 706,
+      561, 470, 675, 974, 452, 613, 972, 929, 566, 563, 987, 864, 548,
+      323, 716, 672, 495, 481, 573, 459, 401, 436, 469, 355, 558, 505,
+      602, 462, 746, 348, 564, 630, 578, 507, 527, 497, 388, 748, 627,
+      556, 724, 1051, 543, 772, 966, 964, 599, 585, 1085, 1067, 539,
+      525, 714, 718, 575, 515, 650, 553, 434, 459, 488, 377, 715, 589,
+      614, 502, 807, 350, 598, 652, 575, 666, 474, 488, 395, 308, 402,
+      106, 427, 463, 105, 167, 435, 647, 241, 238, 232, 17, 93, 133,
+      463, 79, 421, 614, 454, 462, 157, 577, 352, 265, 180, 289, 359,
+      350, 645, 161, 446, 288, 538, 301, 332, 122, 185, 319, 508, 110,
+      353, 516, 282, 263, 517, 681, 347, 308, 414, 269, 126, 241, 599,
+      272, 446, 596, 636, 521, 189, 541, 419, 268, 400, 516, 500, 369,
+      684, 298, 577, 330, 582, 437, 353, 200, 180, 355, 574, 168, 390,
+      563, 411, 371, 506, 635, 380, 304, 539, 422, 191, 401, 654, 348,
+      423, 600, 734, 566, 236, 579, 490, 283, 537, 515, 497, 383, 687,
+      359, 514, 309, 625, 493, 331, 227, 206)/10
+str(sugarcaneYield5)
+
+qmr <- expand.grid(essay=1:38, sugarcane=c("plant", "ratoon"))
+qmr$mse <- c(66.4, 65.0, 187.5, 83.4, 185.7, 64.4, 254.6, 88.6, 85.9,
+             41.0, 65.9, 35.7, 363.5, 112.2, 120, 67.8, 140.8, 125.4,
+             49.6, 45.5, 108.8, 34.4, 53.2, 35.1, 23.4, 37.2, 130.6,
+             65.0, 71.6, 60.6, 93.8, 63.1, 131.4, 27.3, 56.6, 123.2,
+             230.6, 98.6, 22.6, 85, 63.2, 124.4, 170.5, 49, 80.8, 71.1,
+             103.6, 51.6, 40.2, 21.5, 124.80, 19.4, 50.8, 167.1, 26,
+             62.2, 117, 129, 183, 82.9, 99.4, 64.1, 13.9, 51.5, 278.2,
+             102.5, 61.7, 74.1, 120.5, 135.5, 92.8, 53.7, 57.7, 248.2,
+             185.2, 14.1)
+attr(sugarcaneYield5, "MSE") <- qmr
+
+save(sugarcaneYield5, file="../data/sugarcaneYield5.RData")
+
+##----------------------------------------------------------------------
+
+aggregate(yield~P+sugarcane, data=sugarcaneYield5, FUN=mean)
+
+m0 <- lm(yield~factor(essay)+factor(P),
+         data=subset(sugarcaneYield5, sugarcane=="plant"))
+anova(m0)
+
+with(subset(attr(sugarcaneYield5, "MSE"), sugarcane=="plant"),
+     mean(mse)/9)
+
+m0 <- lm(yield~factor(essay)+factor(P),
+         data=subset(sugarcaneYield5, sugarcane=="ratoon"))
+anova(m0)
+
+with(subset(attr(sugarcaneYield5, "MSE"), sugarcane=="ratoon"),
+     mean(mse)/9)
+
+##----------------------------------------------------------------------
+## Examples.
+
+library(lattice)
+
+data(sugarcaneYield5)
+str(sugarcaneYield5)
+
+xyplot(yield~P|sugarcane, groups=essay,
+       data=sugarcaneYield5, type="o",
+       ylab=expression(Yield~(ton~ha^{-1})),
+       xlab=expression(P[2]*O[5]~(kg~ha^{-1})))
+
+xyplot(yield~P|essay, groups=sugarcane,
+       data=sugarcaneYield5, auto.key=TRUE,
+       type="o", strip=FALSE,
+       ylab=expression(Yield~(ton~ha^{-1})),
+       xlab=expression(P[2]*O[5]~(kg~ha^{-1})))
+
+rm(list=ls())
+load("../data/sugarcaneYield5.RData")
+ls()
+str(sugarcaneYield5)
