@@ -52,7 +52,7 @@ xyplot(greenmanure~culture|year, data=greenmanureYield, type=c("p","a"),
 ## 
 m0 <- lm(greenmanure~culture+block+year, data=greenmanureYield)
 str(m0)
-densityplot(m0$fitted.values)
+
 ## Departures from homecedasticity and normality.
 par(mfrow=c(2,2)); plot(m0); layout(1)
 
