@@ -3,7 +3,8 @@
 
 x <- read.table(file = 'clipboard', sep = "\t", header=TRUE)
 dput(x)
-greenmanureYield <- structure(list(ano = c(1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 
+greenmanureYield <- structure(list(ano = c(1L, 1L, 1L, 1L, 1L, 1L, 
+                                           1L, 1L, 2L, 2L, 
 2L, 2L, 2L, 2L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 
 2L, 2L, 2L, 2L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 
 2L, 2L, 2L, 2L, 2L, 2L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2L, 
@@ -18,9 +19,10 @@ greenmanureYield <- structure(list(ano = c(1L, 1L, 1L, 1L, 1L, 1L, 1L, 1L, 2L, 2
 3L, 2L, 4L, 8L, 7L, 1L, 5L, 6L, 3L, 2L, 4L, 8L, 7L, 1L, 5L, 6L, 
 3L, 2L, 4L, 8L, 7L, 1L, 5L, 6L, 3L, 2L, 4L, 8L, 7L, 1L, 5L), 
 .Label = c("Crotalaria grantiana", 
-"Crotalaria juncea", "Feijao-de-porco", "Guandu", "Milho", "Mucuna preta", 
-"Soja", "Tephrosia Candida"), class = "factor"), materiaverde = c(86.8, 
-44, 102.4, 68.4, 34, 33, 25.8, 138.8, 90.2, 83.8, 120.2, 91, 
+"Crotalaria juncea", "Feijao-de-porco", "Guandu", "Milho", 
+"Mucuna preta", "Soja", "Tephrosia Candida"), class = "factor"), 
+materiaverde = c(86.8, 44, 102.4, 68.4, 34, 33, 25.8, 138.8, 90.2, 
+                 83.8, 120.2, 91, 
 57.2, 33.6, 77, 110.2, 76.8, 56.6, 90.8, 55.2, 32.4, 34.8, 21.6, 
 106.4, 94, 72.2, 104.6, 78.8, 54, 33.2, 62.4, 80, 88.6, 52.4, 
 92, 49, 24.4, 32, 19.2, 108, 86.4, 88.6, 112, 83.4, 50.8, 33.4, 
