@@ -91,12 +91,12 @@ NULL
 #' @title Plowing level on corn yield
 #'
 #' @description These data are from an experiment done by the engineer
-#'     Duvilio Ometto to study the effect of plowing level on corn
+#'     Duvilio Ometto, to study the effect of plowing level on corn
 #'     yield. It was used 2 levels of plowing: normal (or superficial)
 #'     and deep. The experiment was done in a randomized complete block
 #'     design with 6 blocks. Corn yield (t/ha) was recorded in each
-#'     experimental unit but in this experiment there was 2 experimental
-#'     units for each factor level in each block.
+#'     experimental unit, but in this experiment there was 2 
+#'     experimental units for each factor level in each block.
 #'
 #' \itemize{
 #'     \item \code{block} a categorical unordered factor with 6 levels.
@@ -128,14 +128,14 @@ NULL
 
 #' @name defoliation
 #'
-#' @title Bolls in cotton as function of artifitial defoliation
+#' @title Bolls in cotton in function of artificial defoliation
 #'
-#' @description This dataset contais the result of a real experiment to
-#'     evaluate the effect of artifitial defoliation in combination with
-#'     phenological stage of occurence on the production of cotton
+#' @description This dataset contains the result of a real experiment to
+#'     evaluate the effect of artificial defoliation in combination with
+#'     phenological stage of occurrence on the production of cotton
 #'     represented by the number of bolls produced at the end of the
 #'     crop cycle. The experiment is a \eqn{5\times 5} factorial with 5
-#'     replications casualized at random to the experimental units (a
+#'     replications casualized randomly to the experimental units (a
 #'     randomized complete design). The experimental unit was a pot with
 #'     2 plants. An interesting fact about this data is that the
 #'     response is a count variable that shows underdispersion (sample
@@ -148,7 +148,8 @@ NULL
 #' \item \code{defol} a numeric factor with 5 levels that represents the
 #'     artifical level of defoliation (percent in leaf area removed with
 #'     scissors) applied for all leaves in the plant.
-#' \item \code{rept} index for each experimenal unit in each treatment cell.
+#' \item \code{rept} index for each experimenal unit in each treatment 
+#' cell.
 #' \item \code{bolls} the number of bolls produced (count variable)
 #'     evaluated at harvest.
 #' }
@@ -159,9 +160,10 @@ NULL
 #' \item 1) \code{http://www.cabdirect.org/abstracts/20123299470.html}
 #' \item 2) \code{http://leg.ufpr.br/doku.php/publications:papercompanions:zeviani-jas2014}
 #' }
-#' 1 for an article discussing the effect of defoliation on cotton yield and
-#'     visit 2 for an article that evaluate a count regression model able to
-#'     deal with the underdispersion. See the references section also.
+#' 1 for an article discussing the effect of defoliation on cotton yield 
+#'     and visit 2 for an article that evaluate a count regression model 
+#'     able to deal with the underdispersion. Also, see the references 
+#'     section.
 #'
 #' @docType data
 #'
@@ -173,14 +175,14 @@ NULL
 #'
 #' @references Silva, A. M., Degrande, P. E., Suekane, R., Fernandes,
 #'     M. G., & Zeviani, W. M. (2012). Impacto de diferentes níveis de
-#'     desfolha artificial nos estádios fenológicos do
-#'     algodoeiro. Revista de Ciências Agrárias, 35(1), 163–172.
+#'     desfolha artificial nos estúdios fenológicos do
+#'     algodoeiro. Revista de Ciências Agrárias, 35(1), 163???172.
 #'
 #' Zeviani, W. M., Ribeiro, P. J., Bonat, W. H., Shimakura, S. E., &
 #'     Muniz, J. A. (2014). The Gamma-count distribution in the analysis
 #'     of experimental underdispersed data. Journal of Applied
 #'     Statistics, 41(12),
-#'     1–11. http://doi.org/10.1080/02664763.2014.922168
+#'     1???11. http://doi.org/10.1080/02664763.2014.922168
 #'
 #' @examples
 #'
@@ -299,9 +301,9 @@ NULL
 #'
 #' \itemize{
 #'     \item \code{row} the rows of the latin square that controls in
-#'     one dimention. A categorical unordered factor with 5 levels.
+#'     one dimension. A categorical unordered factor with 5 levels.
 #'     \item \code{col} the columns of the latin square that controls in
-#'     one dimention perpendicular to the previus. A categorical
+#'     one dimension perpendicular to the previous. A categorical
 #'     unordered factor with 5 levels.
 #'     \item \code{variety} a categorical unordered factor with 5
 #'     levels.
@@ -348,7 +350,7 @@ NULL
 
 #' @name sugarcaneYield3
 #'
-#' @title Sugarcane yield as function of fertilization strategy
+#' @title Sugarcane yield in function of fertilization strategy
 #'
 #' @description These data are from an experiment done in a latin square
 #'     design of size 5. Sugarcane yield (kg/plot) was recorded in each
@@ -356,25 +358,25 @@ NULL
 #'
 #' \itemize{
 #'   \item \code{row} the rows of the latin square that controls in
-#'     one dimention. A categorical unordered factor with 6 levels.
+#'     one dimension. A categorical unordered factor with 6 levels.
 #'   \item \code{col} the columns of the latin square that controls in
-#'     one dimention perpendicular to the previus. A categorical
+#'     one dimension perpendicular to the previous. A categorical
 #'     unordered factor with 6 levels.
 #'   \item \code{fertil} a categorical unordered factor with 6
 #'     levels that is the fertilization strategy applied. These levels
 #'     are a result of treatment cells in a three incomplete factorial
-#'     arrangrment. See detais for more information.
+#'     arrangement. See details for more information.
 #'   \item \code{yield} sugarcane yield (kg/plot).
 #' }
 #'
 #' @details The levels of fertilization are in fact a combination of a
 #'     \eqn{3^2} factorial experiment but not all cells are present, so
-#'     this is a (intentional) incomplete three factorial
+#'     this is an (intentional) incomplete three factorial
 #'     experiment. The factors used were limestone (A: present, a:
 #'     absent), \emph{Crotalaria juncae} (B: present, b: absent) and
 #'     fertilizer (C: present, c: absent). Therefore, the level ABC
 #'     means that all three factors are present. To access the effect of
-#'     each factor and interactions can be applied contrasts.
+#'     each factor and interactions, contrasts can be applied.
 #'
 #' @docType data
 #'
@@ -426,17 +428,17 @@ NULL
 #'
 #' @title Age of castration in pig weight gain
 #'
-#' @description This is an artifial dataset corresponding a experiment
-#'     to study the effect of feeding type (factor with 4 categorical
-#'     nominal levels) in pig weight gain. The experiment was a
-#'     randomized complete design with five experimental units per
+#' @description This is an artificial dataset which corresponds to a  
+#'     experiment to study the effect of feeding type (factor with 4 
+#'     categorical nominal levels) in pig weight gain. The experiment 
+#'     was a randomized complete design with five experimental units per
 #'     treatment level. The experimental unit was a pig. The response
 #'     measured was weight gain from the beggining to the end of the
 #'     experiment.
 #'
 #' \itemize{
 #'   \item \code{litter} a categorical factor with 4 levels that
-#'     represents the rows of the lattin square design and control for
+#'     represents the rows of the latin square design and control for
 #'     the differences among litters.
 #'   \item code{size} a categorical ordered variable that represents the
 #'     columns of latin square desing and control for the weight of the
@@ -475,7 +477,7 @@ NULL
 #' @title Corn yield as function of fertilization with NPK
 #'
 #' @description These data are from an \eqn{2^3} factorial experiment
-#'     studing the effect of Nitrogen (N), Phosporus (P) and Potassium
+#'     studying the effect of Nitrogen (N), Phosporus (P) and Potassium
 #'     (K) on corn yield in a randomized block design.
 #'
 #' \itemize{
@@ -523,7 +525,7 @@ NULL
 #' @title Fertilization with vinasse and mineral
 #'
 #' @description These data are from an \eqn{2^2} factorial experiment
-#'     studing the effect of fertilizaton with vinasse (a residual from
+#'     studying the effect of fertilizaton with vinasse (a residual from
 #'     industrial processing of sugar cane) and complete mineral
 #'     fertilization.
 #'
@@ -531,7 +533,7 @@ NULL
 #'   \item \code{block} a factor with 4 levels.
 #'   \item \code{mineral} low (-1) and high (+1) levels of mineral
 #'     fertilization.
-#'   \item \code{vinasse} low (-1) and high (+1) levels of fetilization
+#'   \item \code{vinasse} low (-1) and high (+1) levels of fertilization
 #'     with vinasse.
 #'   \item \code{y} some response variable. The text book doesn't give
 #'     any information.
@@ -569,7 +571,7 @@ NULL
 #' @title Fertilization with filter cake and mineral
 #'
 #' @description These data are from an \eqn{2^2} factorial experiment
-#'     studing the effect of fertilizaton with filter cake (a residual
+#'     studying the effect of fertilizaton with filter cake (a residual
 #'     from industrial processing of sugar cane) and traditional mineral
 #'     fertilization.
 #'
@@ -616,7 +618,7 @@ NULL
 #' @title Triple factorial NPK fertilization on sugar cane yield
 #'
 #' @description These data are from an \eqn{3^3} factorial experiment
-#'     studing the effect of NPK on the yield of sugar cane.
+#'     studying the effect of NPK on the yield of sugar cane.
 #'
 #' \itemize{
 #'   \item \code{block} a local control factor with 3 levels.
@@ -665,11 +667,11 @@ NULL
 #'
 #' @description These data are from an observational study along 3 years
 #'     where acidity in fruits of 6 varieties of mango was determined in
-#'     Novermber, December and January.
+#'     November, December and January.
 #'
 #' \itemize{
 #'   \item \code{variety} a categorical variable with 6 levels that
-#'     represents mango varieties studied.
+#'     represents the mango varieties studied.
 #'   \item \code{year} the year of harvesting.
 #'   \item \code{month} the month of harvesting.
 #'   \item \code{acid} mean of the acidity determined in 3 fruits.
@@ -696,7 +698,7 @@ NULL
 #' data(mangoAcidity)
 #' str(mangoAcidity)
 #'
-#' ## reshape::cast() can also be used.
+#' ## reshape::cast() also can be used.
 #' with(mangoAcidity,
 #'      ftable(tapply(acid,
 #'                    list(variety, year, month),
@@ -715,8 +717,8 @@ NULL
 #' @title Axial factorial NPK experiment with added treatments
 #'
 #' @description These data are from an axial 3 factorial experiment
-#'     studing NPK in the yield of corn. Tow controls were added, one is
-#'     zer control (no NPK) and the other is central factorial point
+#'     studing NPK in the yield of corn. Two controls were added, one is
+#'     zero control (no NPK) and the other is central factorial point
 #'     plus presence of limestone.
 #'
 #' \itemize{
@@ -727,7 +729,7 @@ NULL
 #'   \item \code{acid} mean of corn yield in 16 locations (ton/ha).
 #' }
 #'
-#' @details The experiment was carried out in 16 different locations but
+#' @details The experiment was conducted in 16 different locations but
 #'     only the mean by cell combinations were available in the text
 #'     book.
 #'
@@ -767,10 +769,10 @@ NULL
 
 #' @name coffeeFert
 #'
-#' @title Number of dry branches in coffee trees as function of NPK
+#' @title Number of dry branches in coffee trees in function of NPK
 #'
 #' @description These data are from a \eqn{2^3} factorial experiment
-#'     studing the effect of NPK fertilizaton on the number of dry
+#'     studying the effect of NPK fertilizaton on the number of dry
 #'     branches in coffee trees.
 #'
 #' \itemize{
@@ -783,7 +785,7 @@ NULL
 #'     branches in a coffee the.
 #' }
 #'
-#' @details The experiment was carried out in a randomized block design
+#' @details The experiment was conducted in a randomized block design
 #'     with 6 blocks. In the book, the data is presented at squared root
 #'     scale.
 #'
@@ -816,3 +818,13 @@ NULL
 #'        xlab="Nutrient level")
 #'
 NULL
+
+#' @name greenmanureYield
+#'
+#' @title block design experiment with added treatments
+#'
+#' @description These data are from a block design experiment
+#'     studying the effect of four different blocks, with two 
+#'     repetitions each, in the resulting green manure in the yield of 
+#'     eight types of bean culture.  
+#'     
