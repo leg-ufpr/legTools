@@ -825,6 +825,42 @@ NULL
 #'
 #' @description These data are from a block design experiment
 #'     studying the effect of four different blocks, with two 
-#'     repetitions each, in the resulting green manure in the yield of 
-#'     eight types of bean culture.  
+#'     repetitions each (one per year), in the resulting green manure 
+#'     in the yield of eight types of bean culture.  
 #'     
+#' \itemize{
+#'   \item \code{year} the experiment was done in two years 
+#'      (repetitions).
+#'   \item \code{block} a categorical factor with 4 levels.
+#'   \item \code{culture} a categorical factor with 8 levels.
+#'   \item \code{greenmanure} the amount of resulting green manure.
+#' }
+#' 
+#' @details The experiment was conducted in a randomized block design
+#'     with 4 blocks, during 2 years.
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(greenmanureYield)
+#' 
+#' @format a \code{data.frame} with 64 records and 4 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 166)
+#'     
+#' @examples
+#' 
+#' library(lattice)
+#' library(latticeExtra)
+
+#' data(greenmanureYield)
+#' str(greenmanureYield)
+
+#' xyplot(greenmanure~culture|year, data=greenmanureYield, type=c("p",
+#' "a"), jitter.x=TRUE, groups=c(block, year), ylab = "Green Manure", 
+#'       xlab = "Type of Culture")
+#'       
+#'       
+NULL
