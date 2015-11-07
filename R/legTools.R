@@ -1680,3 +1680,56 @@ NULL
 #'
 NULL
 
+#' @name cowmilkYield2
+#'
+#' @title Milk yield in a change over blocked latin square design
+#'
+#' @description These are data adapted from Cochran et al. (1941). It
+#'     consists of a experiment to evaluate three levels of feed type in
+#'     the yield dairy cattle. Twelve cows were grouped in 4
+#'     blocks. Each block, then, had 3 cows that received each feed type
+#'     in a different period (three periods). Each block is a 3 size
+#'     latin square where cows are lines, periods are columns and feed
+#'     type is the treatment.
+#'
+#' \itemize{
+#'
+#' \item \code{groups} a nominal categorical factor with 4 levels.
+#'
+#' \item \code{period} an ordered categorical factor with 3 levels.
+#'
+#' \item \code{cow} a nominal variable that represent each cow in each
+#'     group.
+#'
+#' \item \code{feed} a nominal categorical factor that is the feed type
+#'     consumed by the cows.
+#'
+#' \item \code{yield} the milk yield.
+#'
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(cowmilkYield2)
+#'
+#' @format a \code{data.frame} with 36 records and 5 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 272)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' 
+#' data(cowmilkYield2)
+#' str(cowmilkYield2)
+#' 
+#' xyplot(yield~feed|group, groups=period,
+#'        data=cowmilkYield2, type=c("p", "a"),
+#'        ylab=expression(Milk~yield~(kg)),
+#'        xlab="Feed")
+#' 
+NULL
+

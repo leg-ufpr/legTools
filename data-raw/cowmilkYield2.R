@@ -3,7 +3,8 @@
 
 cowmilkYield2 <- expand.grid(period=gl(3, 1),
                              cow=gl(3, 1),
-                             group=gl(4, 1))
+                             group=gl(4, 1),
+                             KEEP.OUT.ATTRS=FALSE)
 cowmilkYield2$feed <- factor(c(1, 3, 2, 2, 1, 3, 3, 2, 1, 1, 2, 3, 2, 3,
                                1, 3, 1, 2, 1, 3, 2, 2, 1, 3, 3, 2, 1, 1,
                                2, 3, 2, 3, 1, 3, 1, 2),
@@ -47,7 +48,7 @@ library(lattice)
 data(cowmilkYield2)
 str(cowmilkYield2)
 
-xyplot(yield~feed, groups=group,
+xyplot(yield~feed|group, groups=period,
        data=cowmilkYield2, type=c("p", "a"),
        ylab=expression(Milk~yield~(kg)),
        xlab="Feed")
