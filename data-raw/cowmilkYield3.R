@@ -58,7 +58,7 @@ str(cowmilkYield3)
 
 xyplot(yield~period|cow, groups=treat,
        data=cowmilkYield3, type="o",
-       ylab=expression(Milk~yield~(kg)),
+       ylab="Milk yield",
        xlab="Period")
 
 rm(list=ls())
