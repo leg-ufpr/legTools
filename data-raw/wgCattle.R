@@ -1,13 +1,13 @@
 ##----------------------------------------------------------------------
 ## Data generation. Pimentel page 283.
 
-wgCattle <- read.table("clipboard", header=FALSE, sep="\t")
-wgCattle[,3] <- as.numeric(sub(x=wgCattle[,3], ",", "."))
-names(wgCattle) <- c("block", "group", "inten", "specie", "weight")
-str(wgCattle)
-wgCattle <- wgCattle[with(wgCattle,
-                          order(block, specie, inten, group)),]
-dput(wgCattle$weight)
+## wgCattle <- read.table("clipboard", header=FALSE, sep="\t")
+## wgCattle[,3] <- as.numeric(sub(x=wgCattle[,3], ",", "."))
+## names(wgCattle) <- c("block", "group", "inten", "specie", "weight")
+## str(wgCattle)
+## wgCattle <- wgCattle[with(wgCattle,
+##                           order(block, specie, inten, group)),]
+## dput(wgCattle$weight)
 
 wgCattle <- expand.grid(group=gl(4, 1),
                         inten=c(0.9, 1.5),
