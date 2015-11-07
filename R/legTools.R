@@ -1572,7 +1572,7 @@ NULL
 #'
 NULL
 
-#' @name wgChikens
+#' @name wgChickens
 #'
 #' @title Weight gain in chickens as function of sorghum in the feed
 #'
