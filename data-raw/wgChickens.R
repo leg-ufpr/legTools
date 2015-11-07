@@ -46,8 +46,8 @@ str(wgChickens)
 
 xyplot(tw/n~sorghum, groups=gender,
        data=wgChickens, type=c("p", "a"),
-       auto.key=list(columns=2,
-                     corner=c(0.95, 0.95), title="Gender"),
+       auto.key=list(
+           columns=2, corner=c(0.95, 0.95), title="Gender"),
        ylab="Mean weight gain (kg)",
        xlab="Sorghum concentration in the feed (%)")
 

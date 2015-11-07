@@ -1632,3 +1632,51 @@ NULL
 #'        xlab="Sorghum concentration in the feed (%)")
 #'
 NULL
+
+#' @name cowmilkYield
+#'
+#' @title Milk yield as function of casein for nutrition of dairy cattle
+#'
+#' @description Data from a randomized block design experiment to study
+#'     the milk yield in dairy cattle according to levels of casein. The
+#'     experimental units are cows and the milk yield is the sum of
+#'     daily volume over 8 weeks. The blocks keeps together cows with
+#'     similar yield, so block 1 have the most productive cows and the
+#'     block 3 the less productive ones.
+#'
+#' \itemize{
+#'
+#' \item \code{casein} a numeric variable that is the content of casein
+#'     per day consumed for each cow.
+#'
+#' \item \code{block} a factor with three levels.
+#'
+#' \item \code{yield} total milk yield over 8 weeks (kg).
+#'
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(cowmilkYield)
+#'
+#' @format a \code{data.frame} with 12 records and 3 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 269)
+#'
+#' @examples
+#'
+#' library(lattice)
+#' 
+#' data(cowmilkYield)
+#' str(cowmilkYield)
+#' 
+#' xyplot(yield~casein, groups=block,
+#'        data=cowmilkYield, type="o",
+#'        ylab=expression(Milk~yield~(kg)),
+#'        xlab=expression(Casein~(g~day^{-1})))
+#'
+NULL
+

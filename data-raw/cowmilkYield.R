@@ -2,10 +2,10 @@
 ## Data generation. Pimentel page 269.
 
 cowmilkYield <- expand.grid(casein=c(0, 10, 15, 20),
-                            block=gl(3, 1))
+                            block=gl(3, 1),
+                            KEEP.OUT.ATTRS=FALSE)
 cowmilkYield$yield <- c(431.4, 687.5, 679.2, 569.7, 485.2, 560.4, 563.3,
                         502.5, NA, 443, 430.5, 462.4)
-
 
 save(cowmilkYield, file="../data/cowmilkYield.RData")
 
