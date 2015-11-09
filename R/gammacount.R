@@ -71,3 +71,50 @@ L <- list(
     y3=rgc(500, shape=0.2, rate=0.2))
 
 lapply(L, FUN=function(x) c(mean(x), var(x)))
+
+##======================================================================
+## Fonte:
+## http://www.johndcook.com/blog/cpp_random_number_generation/
+
+## The Poisson process.
+## http://www.math.uchicago.edu/~may/VIGRE/VIGRE2010/REUPapers/Mcquighan.pdf
+
+## Gerador de Poisson.
+x <- replicate(10000, {
+    lambda <- 5
+    p <- 1
+    L <- exp(-lambda) ## Pr(X=0) = exp(-lambda)
+    k <- 0;
+    while (p>=L) {
+        k <- k+1
+        p <- p*runif(1)
+    }
+    k-1
+})
+
+plot(ecdf(x))
+curve(ppois(x, lambda=5), type="s", add=TRUE, col=2)
+
+##======================================================================
+## Density of a Gamma Count random variable.
+
+dgc <- function(x, alpha, beta){
+  pgamma(q=1, shape=alpha*x, rate=beta)-
+      pgamma(q=1, shape=alpha*(x+1), rate=beta)
+}
+
+dgc_test <- function(x, alpha, beta){
+    fx <- function(u){
+        (beta^(alpha*x))*
+            exp(-beta*u)*
+            (u^(alpha*x-1))*
+            ((1/gamma(alpha*x))-
+             (beta^alpha)*(u^alpha)/gamma(alpha*(x+1)))
+    }
+    integrate(fx, 0, 1)$value
+}
+
+dgc_test(x=5, alpha=1, beta=2)
+dgc(x=5, alpha=1, beta=2)
+
+##----------------------------------------------------------------------
