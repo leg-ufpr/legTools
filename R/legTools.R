@@ -864,3 +864,55 @@ NULL
 #'       
 #'       
 NULL
+#' @name sugarcaneYield5
+#'
+#' @title latin square experiment 
+#'
+#' @description These data are from an randomized experiment done in a 
+#'              latin square design of size 5, with two repetitions, 
+#'              each one meaning if there was fertilization or not in 
+#'              the parcel.  The response measured was sugar cane yield. 
+#'              Also, there was 5 types of variety of cane.
+#'
+#' \itemize{
+#'     \item \code{row} the rows of the latin square that controls in
+#'     one dimension. A categorical unordered factor with 5 levels.
+#'     \item \code{col} the columns of the latin square that controls in
+#'     one dimension perpendicular to the previous. A categorical
+#'     unordered factor with 5 levels.
+#'     \item \code{variety} a categorical unordered factor with 5
+#'     levels.
+#'     \item \code{fertilization} indicates the presence of fertilization
+#'     \item \code{yield} sugarcane yield (kg/plot).
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(sugarcaneYield5)
+#'
+#' @format a \code{data.frame} with 50 records and 5 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 172, section 9.3)
+#'
+#' @examples
+#' library(lattice)
+#' library(latticeExtra)
+#'
+#' data(sugarcaneYield5)
+#'str(sugarcaneYield5)
+#'
+#' levelplot(yield~row+column|fertilization, 
+#'         data=sugarcaneYield5, aspect="iso")
+#'
+#' levelplot(yield~row+column|variety,
+#'         data=sugarcaneYield5, aspect="iso")
+#'
+#' xyplot(yield~variety, data=sugarcaneYield5, type=c("p","a"), 
+#'        col="tomato", xlab="Variety", 
+#'        ylab="Total Yield", main="Latin Square experiment with five 
+#'        types of variety")
+#'        
+NULL        
