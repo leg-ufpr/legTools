@@ -877,7 +877,7 @@ NULL
 #' \itemize{
 #'     \item \code{row} the rows of the latin square that controls in
 #'     one dimension. A categorical unordered factor with 5 levels.
-#'     \item \code{col} the columns of the latin square that controls in
+#'     \item \code{column} the columns of the latin square that controls in
 #'     one dimension perpendicular to the previous. A categorical
 #'     unordered factor with 5 levels.
 #'     \item \code{variety} a categorical unordered factor with 5
@@ -902,7 +902,7 @@ NULL
 #' library(latticeExtra)
 #'
 #' data(sugarcaneYield5)
-#'str(sugarcaneYield5)
+#' str(sugarcaneYield5)
 #'
 #' levelplot(yield~row+column|fertilization, 
 #'         data=sugarcaneYield5, aspect="iso")
@@ -916,3 +916,46 @@ NULL
 #'        types of variety")
 #'        
 NULL        
+#' @name mangoBrix
+#'
+#' @title completely randomized design experiment 
+#'
+#' @description These data are from an completely randomized design 
+#'              experiment with subdivided parcels. The factor is the
+#'              mango variety, and there is 3 plants for each of the 
+#'              five varieties. The experiment was conducted and 
+#'              recorded in four directions: east, north, west and south.
+#'              
+#'
+#' \itemize{
+#'     \item \code{variety} represents the five mango varieties.
+#'     \item \code{direction} indicates from what direction the plant
+#'     comes. 
+#'     \item \code{brix} amount of brix in each plant. 
+#' }
+#'
+#' @docType data
+#'
+#' @keywords datasets
+#'
+#' @usage data(mangoBrix)
+#'
+#' @format a \code{data.frame} with 60 records and 3 variables.
+#'
+#' @source Pimentel Gomes, F. (2009). Curso de Estatística Experimental
+#'     (15th ed.). Piracicaba, São Paulo: FEALQ. (page 175, section 9.4)
+#'
+#' @examples
+#' library(lattice)
+#' library(latticeExtra)
+#' 
+#' data(mangoBrix)
+#' str(mangoBrix)
+#' 
+#' 
+#' xyplot(brix~variety|direction, data=mangoBrix, jitter.x=TRUE, 
+#'        xlab="Variety", main="Mango Brix", 
+#'        col="tomato", type=c("p","a"))
+#' 
+#'         
+NULL 
